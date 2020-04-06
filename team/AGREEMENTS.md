@@ -7,3 +7,4 @@
 * We will do our best to contribute to the team's success
 * Check phone/slack at least once a day so everyone is up to date
 * Perferred meeting time: after/before section and lecture times
+* We will make decisions based on a majority vote following a discussion of the subject
