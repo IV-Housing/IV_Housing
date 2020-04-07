@@ -1,7 +1,7 @@
 # IV Housing
 * A web app that allows people to post lease offerings, communicate with potential leasers, and help people find potential roommates to live with
 * Essentially, this would replace the UCSB housing facebook group, but more specialized to IV residents.
-* We will be using Next.js as the tech stack that we will be using
+* We will be using Next.js as the tech stack
 
 #### Members:
 * Mathew Kramsch: mathewkrmasch
@@ -9,3 +9,6 @@
 * Veltson Bastien: veltsonbastien
 * Congyuan Sun: congyuanSun
 * Moshe Haiem: moshehaiem
+
+#### Plan:
+Two types of users, landlords that are able to post lease offerings on the site, and people looking for housing. Our minimum viable product will be a list of properties in Isla Vista, where landlords can update the availability of each individual property. In order to post any lease/sublease offerings or update the availability of a property users must create an account and login, but users that just want to browse properties will not have to login. Later on we plan on integrating a way for people to post sublease offerings as well.
