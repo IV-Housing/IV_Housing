@@ -7,7 +7,7 @@
 * Mathew Kramsch: mathewkrmasch
 * Seth Vanbrocklin: sethvanb
 * Veltson Bastien: veltsonbastien
-* Congyuan Sun: congyuanSun
+* Congyuan Sun: CongyuanSun
 * Moshe Haiem: moshehaiem
 
 #### Plan:
