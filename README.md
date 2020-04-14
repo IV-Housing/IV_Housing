@@ -4,7 +4,7 @@
 * We will be using Next.js as the tech stack
 
 #### Members:
-* Mathew Kramsch: mathewkrmasch
+* Mathew Kramsch: mathewkramsch
 * Seth Vanbrocklin: sethvanb
 * Veltson Bastien: veltsonbastien
 * Congyuan Sun: CongyuanSun (feel free to call me Charles)
