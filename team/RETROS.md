@@ -6,6 +6,14 @@
 
 ## Action item
 
-* a goal: identify something the team wants to get better at
-* a change: identify one thing that the team will change about how it works together
-* a measurement: identify at least one way to measure whether the change helped the team acheive the goal, or move closer to it.
+* a goal: Keeping each other informed including outside of class on tutorials, project goals, tips, etc.  
+* a change: Meet on friday's at 11 am and sharing information. 
+* a measurement: If everyone attends the meeting consistently, than they will be informed.
+
+
+## Retro Assessment
+
+* A brief description of what retro outline or process you used: Start/Stop/Continue.
+* A brief assessment of how it went: The main focus on the retro was to keep each other informed and to not look too much into the future (rather we should focus on the MVP for now).
+* What advice would you give to the next person leading a retro
+  based on what you learned today?: Google Doc is helpful. Have it ready before each retro.
