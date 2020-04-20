@@ -1,7 +1,7 @@
 # Retro 04/20/20
 
 * Led by: name-goes-here
-* Present: 
+* Present: Seth VanBrocklin, 
 * Absent: 
 
 ## Action item
