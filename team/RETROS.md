@@ -1,7 +1,7 @@
 # Retro 04/20/20
 
 * Led by: name-goes-here
-* Present: Seth VanBrocklin, Mathew Kramsch， Congyuan Sun
+* Present: Seth VanBrocklin, Mathew Kramsch， Congyuan Sun, Moshe Haiem
 * Absent: 
 
 ## Action item
