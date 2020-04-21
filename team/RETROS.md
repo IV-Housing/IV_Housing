@@ -17,3 +17,24 @@
 * A brief assessment of how it went: The main focus on the retro was to keep each other informed and to not look too much into the future (rather we should focus on the MVP for now).
 * What advice would you give to the next person leading a retro
   based on what you learned today?: Google Doc is helpful. Have it ready before each retro.
+  
+  
+  # Retro 05/04/20
+
+* Led by: Congyuan Sun
+* Present: 
+* Absent: 
+
+## Action item
+
+* a goal:  
+* a change:
+* a measurement: 
+
+
+## Retro Assessment
+
+* A brief description of what retro outline or process you used:
+* A brief assessment of how it went: 
+* What advice would you give to the next person leading a retro
+  based on what you learned today?: 
