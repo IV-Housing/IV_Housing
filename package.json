@@ -1,19 +1,27 @@
 {
-    "name": "nextjs",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "dev": "next",
-        "build": "next build",
-        "start": "next start"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "next": "^9.3.4",
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1"
-    }
+  "name": "nextjs",
+  "version": "1.0.0",
+  "description": "* A web app that allows people to post lease offerings, communicate with potential leasers, and help people find potential roommates to live with * Essentially, this would replace the UCSB housing facebook group, but more specialized to IV residents. * We will be using Next.js as the tech stack",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^9.3.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ucsb-cs48-s20/project-s0-t3-iv-housing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ucsb-cs48-s20/project-s0-t3-iv-housing/issues"
+  },
+  "homepage": "https://github.com/ucsb-cs48-s20/project-s0-t3-iv-housing#readme"
 }
