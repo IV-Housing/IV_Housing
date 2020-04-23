@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start -p $PORT"
+    "start": "next start -p $PORT",
+	"danger": "danger"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,8 @@
     "next": "^9.3.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "devdependencies": {
+	"danger": "^10.0.0"
   }
 }
