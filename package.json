@@ -4,9 +4,9 @@
   "description": "* A web app that allows people to post lease offerings, communicate with potential leasers, and help people find potential roommates to live with * Essentially, this would replace the UCSB housing facebook group, but more specialized to IV residents. * We will be using Next.js as the tech stack",
   "main": "index.js",
   "scripts": {
-	"dev": "next",
-	"build": "next build",
-	"start": "next start"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start -p $PORT"
   },
   "repository": {
     "type": "git",
