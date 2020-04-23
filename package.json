@@ -7,7 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p $PORT",
-	"danger": "danger"
+    "danger": "danger"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,6 @@
     "react-dom": "^16.13.1"
   },
   "devdependencies": {
-	"danger": "^10.0.0"
+    "danger": "^10.0.0"
   }
 }
