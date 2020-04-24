@@ -1,3 +1,4 @@
+ 
 function messageDependencyChanges(packageDiff) {
   const dependenciesDiff = packageDiff.dependencies;
 
