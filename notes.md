@@ -7,4 +7,3 @@
 * npm run dev
 
 # IDEAS
-- test
