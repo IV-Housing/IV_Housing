@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/ucsb-cs48-s20/project-s0-t3-iv-housing#readme",
   "dependencies": {
+    "heroku": "^7.39.5",
     "next": "^9.3.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

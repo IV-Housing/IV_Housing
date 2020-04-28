@@ -2,7 +2,7 @@
 
 import React from 'react'
 import HouseTable from '../components/table.jsx'
-import data from '../data/houses.json'
+
 
 export default function Index() {
 	return (
