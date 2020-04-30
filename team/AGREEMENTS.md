@@ -2,7 +2,7 @@
 ## **Members:** Mathew Kramsch, Congyuan Sun, Moshe Haiem, Seth Vanbrocklin, Veltson Bastien
 
 ### 4/30/20
-* We decided to make our repo public so anyone can access it.  
+* We decided to make our repo public so anyone can access it (open source under MIT license).  
 
 ## Initial Team Agreements
 * We will let eachother know that we will miss a section/lecture asap
