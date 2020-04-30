@@ -1,6 +1,8 @@
 # Team Agreements
 **Members:** Mathew Kramsch, Congyuan Sun, Moshe Haiem, Seth Vanbrocklin, Veltson Bastien
 
+* We decided to make our repo public so anyone can access it. 
+
 * We will let eachother know that we will miss a section/lecture asap
 * We will keep absenses/lateness to a minimum
 * We will do our best to catch absent members up to speed
