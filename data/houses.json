@@ -4,7 +4,7 @@
     "size": 6,
     "totalPrice": 6000,
     "pricePerPerson": 1000,
-    "website": "http://delplayalife.com", 
+    "website": "https://www.playalifeiv.com/",
     "phone": "(805)-872-9875"
     },
     {
@@ -12,7 +12,7 @@
     "size": 5,
     "totalPrice": 5000,
     "pricePerPerson": 1000,
-    "website": "http://delplayalife.com", 
+    "website": "https://www.playalifeiv.com/",
     "phone": "(805)-872-9875"
     },
     {
@@ -20,7 +20,71 @@
     "size": 8,
     "totalPrice": 7200,
     "pricePerPerson": 900,
-    "website": "http://delplayalife.com", 
+    "website": "https://www.playalifeiv.com/",
     "phone": "(805)-872-9875"
-    }
+  },
+  {
+  "address": "6666 Del Playa Rd.",
+  "size": 6,
+  "totalPrice": 6000,
+  "pricePerPerson": 1000,
+  "website": "https://www.playalifeiv.com/",
+  "phone": "(805)-872-9875"
+  },
+  {
+  "address": "6665 Del Playa Rd.",
+  "size": 5,
+  "totalPrice": 5000,
+  "pricePerPerson": 1000,
+  "website": "https://www.playalifeiv.com/",
+  "phone": "(805)-872-9875"
+  },
+  {
+  "address": "6666 Del Playa Rd.",
+  "size": 8,
+  "totalPrice": 7200,
+  "pricePerPerson": 900,
+  "website": "https://www.playalifeiv.com/",
+  "phone": "(805)-872-9875"
+},
+{
+"address": "6666 Del Playa Rd.",
+"size": 6,
+"totalPrice": 6000,
+"pricePerPerson": 1000,
+"website": "https://www.playalifeiv.com/",
+"phone": "(805)-872-9875"
+},
+{
+"address": "6665 Del Playa Rd.",
+"size": 5,
+"totalPrice": 5000,
+"pricePerPerson": 1000,
+"website": "https://www.playalifeiv.com/",
+"phone": "(805)-872-9875"
+},
+{
+"address": "6666 Del Playa Rd.",
+"size": 8,
+"totalPrice": 7200,
+"pricePerPerson": 900,
+"website": "https://www.playalifeiv.com/",
+"phone": "(805)-872-9875"
+},
+{
+"address": "6666 Del Playa Rd.",
+"size": 6,
+"totalPrice": 6000,
+"pricePerPerson": 1000,
+"website": "https://www.playalifeiv.com/",
+"phone": "(805)-872-9875"
+},
+{
+"address": "6665 Del Playa Rd.",
+"size": 5,
+"totalPrice": 5000,
+"pricePerPerson": 1000,
+"website": "https://www.playalifeiv.com/",
+"phone": "(805)-872-9875"
+}
 ]

@@ -1,0 +1,78 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/** end of CSS Reset **/
+
+h1{
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+table{
+  border-spacing: 0px;
+  overflow-y: scroll;
+}
+
+th{
+  border: 1px solid #aaa;
+  padding: 0px 28px;
+  border-right-width: 0.5px;
+}
+
+th:last-child{
+  border-right-width: 1px;
+}
+
+td{
+  text-overflow: ellipsis;
+  padding: 0 5px;
+  border: 0.5px solid #aaa;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7.5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0c60a0;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0c60a0;
+}
