@@ -1,108 +1,117 @@
 .container{
-  padding: 15px;
-  text-align: center;
+	padding: 15px;
+	text-align: center;
 }
 .navbar{
-  margin-block-start: 0em;
-  background-color: #0984e3;
-  display: inline-flex;
-  width: -webkit-fill-available;
-  align-items: center;
+	margin-block-start: 0em;
+	background-color: #0984e3;
+	display: inline-flex;
+	width: -webkit-fill-available;
+	align-items: center;
 }
 
 .navbar > h1{
-  color: white;
-  padding: 5px 10px;
-  font-weight: 300;
-  letter-spacing: 0.7px;
+	color: white;
+	padding: 5px 10px;
+	font-weight: 300;
+	letter-spacing: 0.7px;
 }
 
 .navbar > .navlinks >  a {
- margin-left: 30px;
- color: white;
+	margin-left: 30px;
+	color: white;
 }
 
 .navlinks{
-  position: absolute;
-  right: 20px;
+	position: absolute;
+	right: 20px;
 }
 
 .heroImage{
-  height: 65vh;
-  width: fit-content;
-  opacity: 0.5;
+	height: 65vh;
+	width: fit-content;
+	opacity: 0.5;
 }
 
 .searchH1{
-  text-align: left;
-  margin-bottom: 30px;
-  margin-top: 20px;
-  color: #0984e3;
+	text-align: left;
+	margin-bottom: 30px;
+	margin-top: 20px;
+	color: #0984e3;
 }
 
 .indexDivs{
- display: flex;
- justify-content: space-evenly;
- margin-bottom: 75px;
+	display: flex;
+	justify-content: space-evenly;
+	margin-bottom: 75px;
 }
 
 .forms {
-  min-height: 400px;
-  max-height: 400px;
-  width: 35%;
-  min-width: 35%;
-  border-radius: 3px;
-  box-shadow: 0.1px 0.1px 5px #bbb;
-  padding: 5px 10px;
-  padding-bottom: 40px;
+	min-height: 400px;
+	max-height: 400px;
+	width: 35%;
+	min-width: 35%;
+	border-radius: 3px;
+	box-shadow: 0.1px 0.1px 5px #bbb;
+	padding: 5px 10px;
+	padding-bottom: 40px;
 }
 
 .forms > h2 {
-  color: #0984e3;
+	color: #0984e3;
 }
 
 .formSelects {
-  display: inline-flex;
-  flex-direction: column;
-  min-width: 251px;
+	display: inline-flex;
+	flex-direction: column;
+	min-width: 251px;
 }
 
 .formSelects > label {
-  margin-top: 10px;
-  margin-bottom: 2px;
+	margin-top: 10px;
+	margin-bottom: 2px;
 }
 
 .formSelects > select {
-  font-size: 20px;
-  padding: 3px;
-  font-weight: bold;
+	font-size: 20px;
+	padding: 3px;
+	font-weight: bold;
+	cursor: grab;
+}
+
+.formSelects > button {
+	padding: 3px;
+	margin-top: 5px;
+	display: inline-flex;
+	cursor: grab;
+	font-size: 15px;
 }
 
 .pageContainer{
-  color: #444;
+	color: #444;
 }
 
 .notfindingTextDiv{
-  color: #333;
+	color: #333;
 }
 
 .notfindingTextDiv > h2 {
-  font-size: 20px;
+	font-size: 20px;
 }
 
 .innerTableDiv{
-  height: 365px;
-  min-height: 365px;
-  max-height: 365px;
-  overflow-y: auto;
+	height: 365px;
+	min-height: 365px;
+	max-height: 365px;
+	overflow-y: auto;
 }
 
 .footer{
-  background-color: #1f2328;
-  margin-top: 100px;
-  color: #fff;
-  font-weight: 300;
-  padding: 5px;
-  text-align: end;
-  padding-right: 60px;
+	background-color: #1f2328;
+	margin-top: 100px;
+	color: #fff;
+	font-weight: 300;
+	padding: 5px;
+	text-align: end;
+	padding-right: 60px;
 }
