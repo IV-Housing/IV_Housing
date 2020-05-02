@@ -46,7 +46,7 @@
  margin-bottom: 75px;
 }
 
-.filterForm{
+.forms {
   min-height: 400px;
   max-height: 400px;
   width: 35%;
@@ -57,21 +57,22 @@
   padding-bottom: 40px;
 }
 
-.filterForm > h2 {
+.forms > h2 {
   color: #0984e3;
 }
 
-.filterFormSelects{
+.formSelects {
   display: inline-flex;
   flex-direction: column;
+  min-width: 251px;
 }
 
-.filterFormSelects > label {
+.formSelects > label {
   margin-top: 10px;
   margin-bottom: 2px;
 }
 
-.filterFormSelects > select{
+.formSelects > select {
   font-size: 20px;
   padding: 3px;
   font-weight: bold;

@@ -8,7 +8,7 @@ import Layout, {siteTitle} from '../components/layout.js'
 import Navbar from '../components/navbar.js'
 import Footer from '../components/footer.js'
 import HouseTable from '../components/table.jsx'
-import FilterForm from '../components/form.jsx'
+import Forms from '../components/forms/forms.jsx'
 
 export default function Index() {
 	return (
@@ -21,7 +21,7 @@ export default function Index() {
 			<div className={utilStyles.container}>
 				<h1 className={utilStyles.searchH1}>Search Listings</h1>
 				<div className={utilStyles.indexDivs}>
-					<FilterForm/>
+					<Forms/>
 					<HouseTable data={data}/>
 				</div>
 				<div className={utilStyles.notfindingTextDiv}>
