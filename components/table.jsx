@@ -6,7 +6,7 @@ import utilStyles from '../styles/utils.module.css'
 export default function HouseTable(props){
 	return (
 		<div className={utilStyles.pageContainer}>
-			<table>
+			<table id="house-table">
 				<thead>
 						<tr>
 							<th>Address</th>
