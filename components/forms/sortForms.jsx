@@ -6,11 +6,11 @@ export default function SortForms() {
 	return (
 		<div className={utilStyles.formSelects}>
 			<label>Sort Price From:</label>
-			<select id="price-values">
-				<option value="ascending" selected>Lowest to Highest</option>
+			<select id="price-values" onChange={sortByPrice}>
+				<option value="default" selected>Choose Direction</option>
+				<option value="ascending">Lowest to Highest</option>
 				<option value="descending">Highest to Lowest</option>
 			</select>
-			<button onClick={sortByPrice}>Sort</button>
 		</div>
 	);
 }
@@ -24,5 +24,6 @@ function sortByPrice() {
 function sortByPriceDirection(direction) {
 	const table = document.getElementById("house-table");
 	if (direction=="ascending") alert("Sort Price by Lowest to Highest");
-	else alert("Sort Price by Highest to Lowest");
+	else if (direction=="descending") alert("Sort Price by Highest to Lowest");
+	else alert("Choose a Sort Direction");
 }
