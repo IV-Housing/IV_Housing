@@ -26,10 +26,15 @@
   "dependencies": {
     "dgram": "^1.0.1",
     "dns": "^0.2.2",
+    "dotenv": "^8.2.0",
     "heroku": "^7.39.5",
+    "isomorphic-unfetch": "^3.0.0",
+    "mongo": "^0.1.0",
     "mongodb": "^3.5.7",
+    "mongodb-core": "^3.2.7",
     "next": "^9.3.5",
     "next-connect": "^0.6.5",
+    "npm": "^6.14.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
