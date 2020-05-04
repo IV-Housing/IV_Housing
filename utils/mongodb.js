@@ -14,15 +14,3 @@ export async function initDatabase() {
   }
   return client.db("HousingDataBase");
 }
-
-export function serializeDocument(doc, options = {}) {
-  const { idFields = ["_id"] } = options;
-
-  for (const idField of idFields) {
-    if (doc[idField]) {
-      doc[idField] = doc[idField].toString();
-    }
-  }
-
-  return doc;
-}
