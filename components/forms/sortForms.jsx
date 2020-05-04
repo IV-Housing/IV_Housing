@@ -8,7 +8,7 @@ export default function SortForms() {
 	return (
 		<div className={utilStyles.formSelects}>
 			<label>Sort Price From:</label>
-			<select id="price-values" onChange={sortByPrice} defaultValue="default">
+			<select id="sort-directions" onChange={sortByPrice} defaultValue="default">
 				<option value="default">Unsorted</option>
 				<option value="ascending">Lowest to Highest</option>
 				<option value="descending">Highest to Lowest</option>
@@ -18,7 +18,7 @@ export default function SortForms() {
 }
 
 function sortByPrice() {
-	const direction = document.getElementById("price-values");
+	const direction = document.getElementById("sort-directions");
 	const chosenDirection = direction.options[direction.selectedIndex].value;
 	sortByAttribute('pricePerPerson',chosenDirection);
 }
@@ -30,17 +30,10 @@ function sortByAttribute(attribute,direction) {
 	let sortedData;  // variable to hold sorted json object
 	let dataHtml = '';  // turns sortedData into html table
 
-	if (direction=="ascending") { sortedData = data.sort((h1,h2) => {
-			if (h1[attribute]>h2[attribute]) return 1;
-			else if (h1[attribute]<h2[attribute]) return -1;
-			else return 0;
-		});
-	} else if (direction=="descending") { sortedData = data.sort((h1,h2) => {
-			if (h1[attribute]<h2[attribute]) return 1;
-			else if (h1[attribute]>h2[attribute]) return -1;
-			else return 0;
-		});
-	} else { alert("Choose a Sort direction"); return; }
+	if (direction=="ascending") sortedData=data.sort((h1,h2)=>{ return h1[attribute]-h2[attribute]; });
+	else if (direction=="descending") sortedData=data.sort((h1,h2)=>{ return h2[attribute]-h1[attribute]; });
+	else { alert("Choose a Sort direction"); return; }
+		// NOTE: h1[attribute]-h2[attribute] returns 1 if h1>h2 (for attribute), -1 if h1<h2, and 0 if equal
 
 	for (let h of sortedData) {
 		dataHtml += `<tr><td>${h.address}</td><td>${h.size}</td><td>${h.totalPrice}</td><td>${h.pricePerPerson}</td>
