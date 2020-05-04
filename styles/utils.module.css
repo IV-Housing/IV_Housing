@@ -76,27 +76,19 @@
 	font-size: 20px;
 	padding: 3px;
 	font-weight: bold;
-	cursor: grab;
-}
-
-.formSelects > button {
-	padding: 3px;
-	margin-top: 5px;
-	display: inline-flex;
-	cursor: grab;
-	font-size: 15px;
+	cursor: pointer;
+	background-color: #eee;
+	border-width: 1px;
+	border-radius: 4px;
 }
 
 .pageContainer{
 	color: #444;
 }
 
-.notfindingTextDiv{
-	color: #333;
-}
-
-.notfindingTextDiv > h2 {
+.notFindingText {
 	font-size: 20px;
+	color: #333;
 }
 
 .innerTableDiv{

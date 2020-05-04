@@ -24,9 +24,7 @@ export default function Index() {
 					<Forms/>
 					<HouseTable data={data}/>
 				</div>
-				<div className={utilStyles.notfindingTextDiv}>
-					<h2>Not finding the right place? Narrowing down your filters often helps more preffered listings come to the top!</h2>
-				</div>
+				<h2 className={utilStyles.notFindingText}>Not finding the right place? Narrowing down your filters often helps more preffered listings come to the top!</h2>
 			</div>
 
 			<Footer/>

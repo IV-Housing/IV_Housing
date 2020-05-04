@@ -6,8 +6,8 @@ export default function FilterForms() {
 	return (
 		<div className={utilStyles.formSelects}>
 			<label>Choose a Street:</label>
-			<select id="street-values">
-				<option value = "default" selected> Any </option>
+			<select id="street-values" defaultValue="default">
+				<option value = "default"> Any </option>
 				<option value = "cervantes">Cervantes Rd.</option>
 				<option value = "elgreco">El Greco Rd.</option>
 				<option value = "picasso">Picasso Rd.</option>
@@ -35,8 +35,8 @@ export default function FilterForms() {
 			</select>
 
 			<label>Choose a Block:</label>
-			<select id="block-values">
-				<option value = "default" selected>Any</option>
+			<select id="block-values" defaultValue="default">
+				<option value = "default">Any</option>
 				<option value = "five"> 65 Block </option>
 				<option value = "six">  66 Block </option>
 				<option value = "seven"> 67 Block </option>

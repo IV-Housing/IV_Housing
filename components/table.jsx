@@ -17,7 +17,7 @@ export default function HouseTable(props){
 							<th>Phone Number</th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody id="house-table-data">
 						{
 							props.data.map(row => (
 								<tr>
