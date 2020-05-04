@@ -1,10 +1,9 @@
 import fetch from "isomorphic-unfetch";
 import React, { useState, useEffect } from 'react';
 
-export default function HouseTable(props){
+export default function HouseTable(){
 	const [list, setList] = useState([]);
 	useEffect(() => {
-		console.log(list)
 		if(list.length===0){
 			getList();
 		}
