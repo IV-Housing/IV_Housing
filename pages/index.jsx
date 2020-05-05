@@ -24,6 +24,7 @@ export default function Index() {
 					<Forms/>
 					<HouseTable data={data}/>
 				</div>
+				<p classname={utilStyles.parts}>Price per person is calculated by taking total price and dividing it by housing size. Therefore the actual price per person could change depending on individual room sizes. </p> 
 				<h2 className={utilStyles.notFindingText}>Not finding the right place? Narrowing down your filters often helps more preffered listings come to the top!</h2>
 			</div>
 
