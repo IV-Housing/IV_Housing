@@ -40,7 +40,7 @@ class Index extends React.Component {
 			})
 		}else{
 			let filterData=data.filter(item=>{
-				return item.address.split(' ')[0].slice(-2).indexOf(value)!==-1
+				return item.address.split(' ')[0].slice(0,2).indexOf(value)!==-1
 			})
 			this.setState({
 				data:filterData
