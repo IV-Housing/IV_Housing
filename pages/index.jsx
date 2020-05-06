@@ -10,7 +10,7 @@ import Footer from '../components/footer.js'
 import HouseTable from '../components/table.jsx'
 import Forms from '../components/forms/forms.jsx'
 
-class Index extends React.Component {
+export default function Index() {
 	constructor(props) {
 	  super(props);
 	  this.state = {
@@ -68,8 +68,3 @@ class Index extends React.Component {
 		</Layout>
 	)
 }
-
-export default Index
-// export default function Index() {
-
-// }
