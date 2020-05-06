@@ -65,6 +65,7 @@ export default function Index() {
 				<h2 className={utilStyles.notFindingText}>Not finding the right place? Narrowing down your filters often helps more preffered listings come to the top!</h2>
 			</div>
 			<Footer/>
-		</Layout>
-	)
+			</Layout>
+		)
+	}
 }
