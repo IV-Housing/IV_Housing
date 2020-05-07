@@ -11,7 +11,7 @@ export default function HouseTable(props){
 					<th>Address</th>
 					<th>Size</th>
 					<th>Total Price</th>
-					<th>Price Per Person</th>
+					<th>Price Per Person*</th>
 					<th>Phone Number</th>
 				</tr>
 			</thead>

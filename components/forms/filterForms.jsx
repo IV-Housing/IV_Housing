@@ -1,7 +1,6 @@
 // filterForms.jsx
 
 import utilStyles from '../../styles/utils.module.css'
-import HouseTable from '../table.jsx'
 
 class FilterForms extends React.Component {
 	constructor(props) {
