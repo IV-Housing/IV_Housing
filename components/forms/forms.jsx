@@ -9,8 +9,8 @@ export default function Forms(props) {
 		<div className={utilStyles.forms}>
 			<h2>Filter Results</h2>
 			<p>Here you can refine the details to find the perfect listing!</p>
-			<div><FilterForms filter={props.filter} filter2={props.filter2}/></div>
-			<div><SortForms/></div>
+			<div><FilterForms filter={props.filter}/></div>
+			<div><SortForms list={props.list}/></div>
 		</div>
 	);
 }
