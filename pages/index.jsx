@@ -1,4 +1,5 @@
 // index.jsx
+
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head'  // for Next.js
 import fetch from "isomorphic-unfetch";
@@ -14,11 +15,8 @@ export default function Index(){
 	const [filterData, setFilterData] = useState([]);  // houses data after it has been filtered
 	const [sortData, setSortData] = useState([]);  // houses data after it has been sorted
 	const [recentData, setRecentData] = useState([]);
-	useEffect(() => {
-		if(list.length===0){
-			getList();
-		}
-	});
+
+	useEffect(() => { if(list.length===0) getList(); });
 
 	const getList = async () => {
 		const response = await fetch(`/api`, { method: "GET" });
@@ -50,29 +48,28 @@ export default function Index(){
 		if (direction=="ascending") houses=houses.sort((h1,h2)=>{ return (h1['totalPrice']/h1['size'])-(h2['totalPrice']/h2['size']); });
 		else if (direction=="descending") houses=houses.sort((h1,h2)=>{ return (h2['totalPrice']/h2['size'])-(h1['totalPrice']/h1['size']); });
 		else alert("Choose a Sorting Direction");
-		alert(houses[0].totalPrice);
+		// alert(houses[0].totalPrice);
 		setSortData(houses);
 		setRecentData(houses);
-		alert(recentData[0].totalPrice);
-
+		// alert(recentData[0].totalPrice);
 	}
 
-    return (
-			<Layout index>
-				<Head>
-					<title>{siteTitle}</title>
-				</Head>
-				<Navbar></Navbar>
-				<div className={utilStyles.container}>
-					<h1 className={utilStyles.searchH1}>Search Listings</h1>
-					<div className={utilStyles.indexDivs}>
-						<Forms filter={filter} sortByPrice={sortByPrice}/>
-						<HouseTable list={recentData}/>
-					</div>
+	return (
+		<Layout index>
+			<Head>
+				<title>{siteTitle}</title>
+			</Head>
+			<Navbar></Navbar>
+			<div className={utilStyles.container}>
+				<h1 className={utilStyles.searchH1}>Search Listings</h1>
+				<div className={utilStyles.indexDivs}>
+					<Forms filter={filter} sortByPrice={sortByPrice}/>
+					<HouseTable list={recentData}/>
+				</div>
 				<p className={utilStyles.parts}>Price per person is calculated by taking total price and dividing it by housing size. Therefore the actual price per person could change depending on individual room sizes. </p>
 				<h2 className={utilStyles.notFindingText}>Not finding the right place? Narrowing down your filters often helps more preffered listings come to the top!</h2>
 			</div>
-		  <Footer/>
-			</Layout>
-   );
+			<Footer/>
+		</Layout>
+	);
 }
