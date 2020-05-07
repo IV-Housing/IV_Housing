@@ -11,19 +11,19 @@ export default function HouseTable(props){
 					<th>Address</th>
 					<th>Size</th>
 					<th>Total Price</th>
-					<th>Price Per Person</th>
+					<th>Price Per Person*</th>
 					<th>Phone Number</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody id="house-table-data">
 				{
 					props.list.map(row =>(
 						<tr>
 							<td>{row.company}</td>
 							<td><a href={row.website}>{row.address}</a></td>
 							<td>{row.size}</td>
-							<td>{row.totalPrice}</td>
-							<td>{row.totalPrice/row.size}</td>
+							<td>${row.totalPrice}</td>
+							<td>${(row.totalPrice/row.size).toFixed(2)}</td>
 							<td>{row.phone}</td>
 						</tr>
 					))

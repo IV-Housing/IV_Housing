@@ -10,7 +10,7 @@ export default function Forms(props) {
 			<h2>Filter Results</h2>
 			<p>Here you can refine the details to find the perfect listing!</p>
 			<div><FilterForms filter={props.filter}/></div>
-			<div><SortForms list={props.list}/></div>
+			<div><SortForms sortByPrice={props.sortByPrice}/></div>
 		</div>
 	);
 }
