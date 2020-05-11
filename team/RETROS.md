@@ -19,11 +19,11 @@
   based on what you learned today?: Google Doc is helpful. Have it ready before each retro.
   
   
-  # Retro 05/04/20
+# Retro 05/04/20
 
 * Led by: Congyuan Sun
-* Present: 
-* Absent: 
+* Present: Seth VanBrocklin, Mathew Kramsch, Congyuan Sun, Moshe Haiem, Veltson Bastien
+* Absent: None
 
 ## Action item
 
