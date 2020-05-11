@@ -27,14 +27,14 @@
 
 ## Action item
 
-* a goal:  
-* a change:
-* a measurement: 
+* a goal: To be more organized in planning our iterations and efficient in implementing features.
+* a change: Write more specific user stories with features that can actually be implemented in that iteration.
+* a measurement: Being able to check all the user story notes boxes without having to alter them that much.
 
 
 ## Retro Assessment
 
-* A brief description of what retro outline or process you used:
-* A brief assessment of how it went: 
+* A brief description of what retro outline or process you used: Start/Stop/Continue.
+* A brief assessment of how it went: We made some suggestions and changes on feature branches and decided to keep out-class meetings.
 * What advice would you give to the next person leading a retro
-  based on what you learned today?: 
+  based on what you learned today?: Keep on brainstorming on Google Doc, which is really helpful for everyone.
