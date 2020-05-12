@@ -6,16 +6,19 @@
 
 ## Sprint Goal for 05/12-05/21
   
-Which of the 10 powerful questions did you ask?
+What worry about our product is keeping you up at night? What can we build or test this Sprint to make you sleep a bit better?
   
-Describe your sprint goal here.
-  
-Describe briefly how you came up with that goal.
+* Adding the range based filters for size and price
+* adding tile view for house listings
+* adding map page 
+* adding login and create listing pages
+* making the website more mobile responsive
+
+We brainstormed user story ideas and discuess which ones each of us would like to work on for this iteration. All of those ideas went into our current to do list and the rest went into our final iteration to do list. 
   
 ## Discussion of previous Sprint Goal
   
-Briefly: was the sprint goal acheived?  Was it too ambitious?  Too modest? 
-  
+Briefly: The previous sprint goal was a little bit ambitious and we did not finish all of the filters we wanted to. Inspite of this we did accomplish the main goals of our last sprint and got a very nice product put together that was about 90% of what we wanted. 
   
 # Status, Monday 04/27/2020
 
