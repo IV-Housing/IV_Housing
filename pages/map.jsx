@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head'  
-import Layout, {siteTitle} from '../../components/layout.js'
-import Navbar from '../../components/navbar.js'
-import Footer from '../../components/footer.js'
-import utilStyles from '../../styles/utils.module.css'  // css style
-import MapView from "../../components/map.jsx"
+import Layout, {siteTitle} from '../components/layout.js'
+import Navbar from '../components/navbar.js'
+import Footer from '../components/footer.js'
+import utilStyles from '../styles/utils.module.css'  // css style
+import MapView from "../components/mapComp.jsx"
 
 export default function Map(){
     const [initList, setInitList] = useState([]);  // houses data
