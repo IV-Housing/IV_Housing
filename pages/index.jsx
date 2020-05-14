@@ -18,7 +18,6 @@ export default function Index(){
 
 	useEffect(() => { if(initList.length===0) getList(); });
 
-
 	const getList = async () => {
 		const response = await fetch(`/api`, { method: "GET" });
 		const data = await response.json();

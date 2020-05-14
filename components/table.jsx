@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import utilStyles from '../styles/utils.module.css'
 
 export default function HouseTable(props){
