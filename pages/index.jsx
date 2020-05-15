@@ -59,7 +59,7 @@ export default function Index(){
 				<title>{siteTitle}</title>
 			</Head>
 			<Navbar></Navbar>
-			<div className={utilStyles.container}>
+			<div className={utilStyles.containerIndex}>
 				<h1 className={utilStyles.searchH1}>Search Listings</h1>
 				<div className={utilStyles.indexDivs}>
 					<Forms filter={filter} sortByPrice={sortByPrice}/>

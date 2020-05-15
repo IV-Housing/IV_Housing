@@ -2,39 +2,56 @@
 import React, { useState, useEffect } from 'react';
 import ReactMapGL, {Marker, geocoder} from "react-map-gl"
 import utilStyles from '../styles/utils.module.css'
+import Geocode from 'react-geocode'
 
 export default function MapView(props){
-    const [viewport, setViewport] = useState({latitude: 34.412, longitude: -119.8573, width: "100vw", height: "100vh", zoom: 15.5});
+    const [viewport, setViewport] = useState({latitude: 34.412, longitude: -119.8573, width: "100vw", height: "93.8vh", zoom: 15
+});
+    const[lat, setLat] = useState();
+    const[lng, setLng] = useState();
+    //var lat, lng;
+
+    const addrToLatLng = (addr) => {
+        var geocoder = new MapboxGeocoder({ accessToken: "pk.eyJ1Ijoic2V0aHZhbmIiLCJhIjoiY2thNjhtOGh4MDVtODJzbW5jbHV1cmc3aiJ9.uXYwbhfNVaCx8_plHRewUg"});
+        var result;
+        geocoder.geocode(addr, result);
+        setLng(result.center.lng);
+        setLat(result.center.lat);
+
+        // Geocode.fromAddress(addr).then(
+        //     response => {
+        //         setLat(response.results[0].geometry.location);
+        //         setLng(response.result[10].geometry.location);
+        //         console.log(lat, lng);
+        //     }
+        // );
+    }
+
     return(
-        <div>
-            <div style = {utilStyles.mapContainer}>
-                <div style = {utilStyles.comparisonContainer}>
-                    <p>compare 1</p>
+        <div className = {utilStyles.mapCompContainer}>
+            <div className = {utilStyles.compContainer}>
+                <div className = {utilStyles.comparisonView}>
+                    <p>{lat}</p>
                 </div>
-                <div style = {utilStyles.comparisonContainer}>
-                    <p>compare 2</p>
+                <div className = {utilStyles.comparisonView}>
+                    <p>{lng}</p>
                 </div>
             </div>
-            <div>
+            <div className = {utilStyles.mapView}>
                 <ReactMapGL 
                     {...viewport} 
                     mapboxApiAccessToken={"pk.eyJ1Ijoic2V0aHZhbmIiLCJhIjoiY2thNjhtOGh4MDVtODJzbW5jbHV1cmc3aiJ9.uXYwbhfNVaCx8_plHRewUg"}
                     mapStyle="mapbox://styles/sethvanb/cka744x8c16b31ilhulkr0d26"
-                    onViewportChange = {viewport => {setViewport(viewport);}}
+                    onViewportChange = {viewport => {setViewport({latitude: 34.412, longitude: -119.8573, width: "100vw", height: "93.8vh", zoom: 15})}}
                 >
-                {/*<div> 
-                    var house_coordinates;
-                    geocoding.forwardGeocode({
-                        query: "6666 Del Playa Dr.",
-                        latitude: house_coordinates.lat,
-                        longitude: house_coordinates.lng
-                    })
-                </div> 
-                {props.list.address.map(house => (
-                    <Marker key={house} latitude={parkgeometry}>
-                        <div>HOUSE</div>
-                    </Marker>
-                ))}*/}
+                {props.list.map(house => (
+                    <div>
+                        {addrToLatLng(house.address)}
+                        <Marker key={house.address} latitude={house.size} longitude={house.totalPrice} >
+                            <div>HOUSE</div>
+                        </Marker>
+                    </div>
+                ))}
                 </ReactMapGL>
             </div>
         </div>
