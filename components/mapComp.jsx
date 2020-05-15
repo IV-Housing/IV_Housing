@@ -1,17 +1,17 @@
 //import configMapToken from "../utils/configMapToken"
 import React, { useState, useEffect } from 'react';
 import ReactMapGL, {Marker, geocoder} from "react-map-gl"
+import utilStyles from '../styles/utils.module.css'
 
 export default function MapView(props){
     const [viewport, setViewport] = useState({latitude: 34.412, longitude: -119.8573, width: "100vw", height: "100vh", zoom: 15.5});
-    
     return(
         <div>
-            <div style = "display: inline-flex; flex-direction: column">
-                <div style = "border: 1px solid black; height: 300px; width: 300px">
+            <div style = {utilStyles.mapContainer}>
+                <div style = {utilStyles.comparisonContainer}>
                     <p>compare 1</p>
                 </div>
-                <div style = "border: 1px solid black; height: 300px; width: 300px">
+                <div style = {utilStyles.comparisonContainer}>
                     <p>compare 2</p>
                 </div>
             </div>

@@ -107,3 +107,15 @@
 	text-align: end;
 	padding-right: 60px;
 }
+
+.mapContainer{
+	display: inline-flex; 
+	flex-direction: column;
+}
+
+
+.comparisonContainer{
+	border: 1px solid black; 
+	height: 300px;
+	width: 300px;
+}
