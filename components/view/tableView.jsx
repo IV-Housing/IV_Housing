@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import utilStyles from '../styles/utils.module.css'
+// tableView.jsx
 
-export default function HouseTable(props){
+import React, { useState, useEffect } from 'react';
+import utilStyles from '../../styles/utils.module.css'
+
+export default function TableView(props){
 	return(
 		<div className={utilStyles.pageContainer}>
 			<table id="house-table">
@@ -17,14 +19,14 @@ export default function HouseTable(props){
 			</thead>
 			<tbody id="house-table-data">
 				{
-					props.list.map(row =>(
+					props.data.map(house =>(
 						<tr>
-							<td>{row.company}</td>
-							<td><a href={row.website}>{row.address}</a></td>
-							<td>{row.size}</td>
-							<td>${row.totalPrice}</td>
-							<td>${(row.totalPrice/row.size).toFixed(2)}</td>
-							<td>{row.phone}</td>
+							<td>{house.company}</td>
+							<td><a href={house.website}>{house.address}</a></td>
+							<td>{house.size}</td>
+							<td>${house.totalPrice}</td>
+							<td>${(house.totalPrice/house.size).toFixed(2)}</td>
+							<td>{house.phone}</td>
 						</tr>
 					))
 				}

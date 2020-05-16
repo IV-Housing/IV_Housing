@@ -40,7 +40,7 @@
 	color: #0984e3;
 }
 
-.indexDivs{
+.indexDivs {
 	display: flex;
 	justify-content: space-evenly;
 	margin-bottom: 75px;
@@ -80,6 +80,9 @@
 	background-color: #eee;
 	border-width: 1px;
 	border-radius: 4px;
+}
+
+.clicked {
 }
 
 .pageContainer{
