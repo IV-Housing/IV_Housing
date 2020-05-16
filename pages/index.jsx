@@ -11,6 +11,7 @@ import Footer from '../components/footer.js'
 
 import DataView from '../components/view/dataView.jsx'
 import Forms from '../components/forms/forms.jsx'
+import Info from '../components/info.jsx'
 
 export default function Index(){
 	const [initList, setInitList] = useState([]);  // houses data
@@ -63,15 +64,12 @@ export default function Index(){
 			</Head>
 			<Navbar></Navbar>
 			<div className={utilStyles.container}>
-				<h1 className={utilStyles.searchH1}>Search Listings</h1>
 				<div className={utilStyles.indexDivs}>
 					<Forms filter={filter} sortByPrice={sortByPrice}/>
 					<DataView chosenView={view} data={refinedData} toggleTable={toggleTable} toggleCard={toggleCard}/>
+					<Info/>
 				</div>
-				<p className={utilStyles.parts}>*Price per person is calculated by taking total price and dividing it by housing size. Therefore the actual price per person could change depending on individual room sizes. </p>
-				<h2 className={utilStyles.notFindingText}>Not finding the right place? Narrowing down your filters often helps more preffered listings come to the top!</h2>
 			</div>
-			<Footer/>
 		</Layout>
 	);
 }

@@ -5,8 +5,7 @@ import utilStyles from '../../styles/utils.module.css'
 
 export default function TableView(props){
 	return(
-		<div className={utilStyles.pageContainer}>
-			<table id="house-table">
+		<table className={utilStyles.table}>
 			<thead>
 				<tr>
 					<th>Housing Company</th>
@@ -14,10 +13,9 @@ export default function TableView(props){
 					<th>Size</th>
 					<th>Total Price</th>
 					<th>Price Per Person*</th>
-					<th>Phone Number</th>
 				</tr>
 			</thead>
-			<tbody id="house-table-data">
+			<tbody>
 				{
 					props.data.map(house =>(
 						<tr>
@@ -26,12 +24,10 @@ export default function TableView(props){
 							<td>{house.size}</td>
 							<td>${house.totalPrice}</td>
 							<td>${(house.totalPrice/house.size).toFixed(2)}</td>
-							<td>{house.phone}</td>
 						</tr>
 					))
 				}
-				</tbody>
-			</table>
-		</div>
+			</tbody>
+		</table>
 	)
 }
