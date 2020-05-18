@@ -15,10 +15,9 @@ class SortForms extends React.Component {
 	render() {
 		return (
 			<div className={utilStyles.formSelects}>
-				<label>Sort Price From:</label>
 				<select id="sort-directions" defaultValue="ascending" onChange={this.sortChange}>
-					<option value="ascending">Lowest to Highest</option>
-					<option value="descending">Highest to Lowest</option>
+					<option value="ascending">Price: Low to High</option>
+					<option value="descending">Price: High to Low</option>
 				</select>
 			</div>
 		);

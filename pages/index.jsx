@@ -34,8 +34,18 @@ export default function Index(){
 	}
 	useEffect(() => {
 		let houses = [...initList];
-		if (street!=='Any') { houses = houses.filter((item)=>{ return item.address.indexOf(street)!==-1; }) }
-		if (block!=='Any') { houses = houses.filter((item)=>{ return item.address.substr(0,2) === block}) }
+		let s = document.getElementById('streetSelect');
+		let b = document.getElementById('blockSelect');
+
+		if (street!=='Any') { 
+			houses = houses.filter((item)=>{ return item.address.indexOf(street)!==-1; }) 
+			if (!s.classList.contains(utilStyles['active'])) s.classList.toggle(utilStyles['active']);	
+		} else { if (s.classList.contains(utilStyles['active'])) s.classList.toggle(utilStyles['active']); }
+
+		if (block!=='Any') { 
+			houses = houses.filter((item)=>{ return item.address.substr(0,2) === block}) 
+			if (!b.classList.contains(utilStyles['active'])) b.classList.toggle(utilStyles['active']);	
+		} else { if (b.classList.contains(utilStyles['active'])) b.classList.toggle(utilStyles['active']); }
 
 		if (direction=="ascending")
 			houses.sort((h1,h2)=>{ return (h1['totalPrice']/h1['size'])-(h2['totalPrice']/h2['size']); });

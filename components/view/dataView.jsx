@@ -11,8 +11,10 @@ export default function DataView(props) {
 				<button onClick={props.toggleTable} id='tableButton' className={utilStyles.tableButton}>Table View</button>
 				<button onClick={props.toggleCard} id='cardButton' className={utilStyles.cardButton}>Card View</button>
 			</div>
-			{props.chosenView=='table' && <TableView data={props.data}/>}
-			{props.chosenView=='card' && <CardView data={props.data}/>}
+			<div className={utilStyles.viewContent}>
+				{props.chosenView=='table' && <TableView data={props.data}/>}
+				{props.chosenView=='card' && <CardView data={props.data}/>}
+			</div>
 		</div>
 	);
 }
