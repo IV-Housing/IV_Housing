@@ -1,4 +1,5 @@
 import { initDatabase } from "../../utils/mongodb";
+const opencage = require('opencage-api-client');
 
 export async function getHouses(){
   const client = await initDatabase();
@@ -14,6 +15,9 @@ export default async function performAction(req, res) {
       res.statusCode = 200;
       res.end(JSON.stringify(list));
       break;
+    }
+    case "POST":{
+      //addLatLng();
     }
     default: 
       res.statusCode = 405;

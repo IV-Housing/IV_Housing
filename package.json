@@ -35,13 +35,17 @@
     "mongodb-core": "^3.2.7",
     "next": "^9.3.5",
     "next-connect": "^0.6.5",
+    "next-optimized-images": "^2.6.0",
     "npm": "^6.14.4",
+    "opencage-api-client": "^0.7.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-geocode": "^0.2.1",
     "react-geolocated": "^3.0.1",
-    "react-map-gl": "^5.2.5"
+    "react-image": "^3.0.3",
+    "react-map-gl": "^5.2.5",
+    "webpack": "^4.43.0"
   },
   "devDependencies": {
     "danger": "^10.1.1"
