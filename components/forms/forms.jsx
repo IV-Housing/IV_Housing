@@ -7,10 +7,11 @@ import SortForms from './sortForms.jsx'
 export default function Forms(props) {
 	return (
 		<div className={utilStyles.forms}>
-			<h2>Filter Results</h2>
-			<p>Here you can refine the details to find the perfect listing!</p>
+			<h2>Filter Listings</h2>
 			<div><FilterForms filter={props.filter}/></div>
+			<h2>Sort Listings</h2>
 			<div><SortForms sortByPrice={props.sortByPrice}/></div>
+			<p>Not finding the right place? Narrow down the filters to show preffered listings at the top!</p>
 		</div>
 	);
 }

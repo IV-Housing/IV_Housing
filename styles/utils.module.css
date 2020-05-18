@@ -1,104 +1,281 @@
-.container{
+.container {
 	padding: 15px;
 	text-align: center;
+	background-color: #f0f0f0;
 }
-.navbar{
+
+.navbar {
+	position: fixed;
 	margin-block-start: 0em;
 	background-color: #0984e3;
 	display: inline-flex;
 	width: -webkit-fill-available;
+	height: 80px;
 	align-items: center;
+	justify-content: center;
+	border-bottom-style: solid;
+	border-color: #0c60a0;
 }
 
-.navbar > h1{
+.navbar > h1 {
+	margin: 15px 1125px 5px 0px;
 	color: white;
-	padding: 5px 10px;
 	font-weight: 300;
 	letter-spacing: 0.7px;
 }
 
-.navbar > .navlinks >  a {
-	margin-left: 30px;
-	color: white;
-}
-
-.navlinks{
+.navlinks {
 	position: absolute;
 	right: 20px;
 }
 
-.heroImage{
+.navbar > .navlinks >  a {
+	border-radius: 4px;
+	padding: 15px;
+	margin-left: 30px;
+	color: white;
+} .navbar > .navlinks >  a:hover {
+	background-color: #087cd4;
+}
+
+.heroImage {
 	height: 65vh;
 	width: fit-content;
 	opacity: 0.5;
 }
 
-.searchH1{
-	text-align: left;
-	margin-bottom: 30px;
-	margin-top: 20px;
-	color: #0984e3;
+.indexDivs {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 75px;
+	margin-top: 65px;
 }
 
-.indexDivs{
-	display: flex;
-	justify-content: space-evenly;
-	margin-bottom: 75px;
-}
+/*-----------------------------------------------------------------*/
+/* FORMS */
 
 .forms {
-	min-height: 400px;
-	max-height: 400px;
-	width: 35%;
-	min-width: 35%;
-	border-radius: 3px;
-	box-shadow: 0.1px 0.1px 5px #bbb;
-	padding: 5px 10px;
-	padding-bottom: 40px;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 160px;
+	height: 400px;
+	text-align: left;
+	width: 260px;
 }
 
 .forms > h2 {
-	color: #0984e3;
+	font-size: 22px;
+	color: #888;
+	margin-bottom: 5px;
+}
+
+.forms > p {
+	font-size: 15px;
+	margin-top: 30px;
+	color: #888;
 }
 
 .formSelects {
 	display: inline-flex;
 	flex-direction: column;
-	min-width: 251px;
-}
-
-.formSelects > label {
-	margin-top: 10px;
-	margin-bottom: 2px;
 }
 
 .formSelects > select {
-	font-size: 20px;
-	padding: 3px;
-	font-weight: bold;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance:none;
 	cursor: pointer;
-	background-color: #eee;
-	border-width: 1px;
-	border-radius: 4px;
-}
-
-.pageContainer{
-	color: #444;
-}
-
-.notFindingText {
 	font-size: 20px;
-	color: #333;
+	padding: 7px;
+	margin-bottom: 4px;
+	border: none;
+	margin-left: 20px;
+	color: #888;
+	background-color: #f0f0f0;
+} .formSelects > select:hover {
+	color: black;
+} .formSelects > select:focus {
+	outline: none;
+}
+.active {
+	background-color: #ddd !important;
+	color: black !important;
+	border-right-style: solid !important;
+	border-color: #0984e3 !important;
+	border-width: 5px !important;
+	font-weight: bold;
 }
 
-.innerTableDiv{
+/*-----------------------------------------------------------------*/
+/* CARD/TABLE VIEW */
+
+.view {
+	margin-left: 30px;
+	margin-right: 40px;
+	width: 940px;
+	min-height: 700px;
+}
+
+/*-----------------------------------------------------------------*/
+/* VIEW BUTTONS */
+.viewButtons {
+	position: sticky;
+	position: -webkit-sticky;
+	top: 79.5px;
+	background-color: #f0f0f0;
+}
+.viewButtons > button {
+	border-style: solid;
+	width: 50%;
+	height: 60px;
+	border-color: #f0f0f0;
+	border-bottom-color: #ccc;
+	border-radius: 5px;
+	border-bottom-width: 5px;
+	background-color: #f0f0f0;
+	font-size: 20px;
+	color: #888;
+	font-weight: bold;
+} 
+.viewButtons > button:hover {
+	background-color: #d8e6f2;
+	cursor: pointer;
+	color: #0984e3;
+}
+.viewButtons > button:focus {
+	outline: none;
+}
+.clicked {
+	border-bottom-color: #0984e3 !important;
+	color: #0984e3 !important;
+}
+
+/*-----------------------------------------------------------------*/
+/* CARD VIEW */
+.cardView {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.card {
+	border-style: solid;
+	border-color: #bbb;
+	border-width: 1px;
+	border-radius: 3px;
+	box-shadow: 0.1px 0.1px 5px #bbb;
+	width: 931px;
+	margin: 10px 0px 10px 0px;
+	background-color: white;
+}
+
+.cardHeader {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 14px 28px 7px 20px;
+}
+
+#cardHeaderTitle {
+	color: #0984e3;;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#cardHeaderSubTitle {
+	margin-top: 3px;
+	color: #888;
+}
+
+#cardBody {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin: 7px 0px 12px 20px;
+}
+
+#cardInfo {
+	text-align: left;
+	padding-top: 5px;
+} .icon {
+	color: #888;
+	font-size: 22px;
+}
+
+#cardPrice {
+	padding-bottom: 2px;
+}
+
+#cardBody > a > button {
+	margin-right: 25px;
+	margin-bottom: 10px;
+	background-color: white;
+	border: 1px solid #bbb;
+	border-radius: 4px;
+	padding: 4px 10px 4px 10px;
+	cursor: pointer;
+	font-size: 16px;
+	color: #888;
+} #cardBody > a > button:hover {
+	background-color: #eee;
+	color: black;
+}
+
+/*-----------------------------------------------------------------*/
+/* TABLE VIEW */
+.table {
+	color: #444;
+	width: 940px;
+	margin-top: 0px;
+}
+.table > thead th {
+	position: sticky;
+	position: -webkit-sticky;
+	top: 172px;
+	background-color: #f0f0f0;
+	height: 40px;
+	border-bottom: 3px solid #888;
+} #line {
+	position: sticky;
+	position: -webkit-sticky;
+	top: 140px;
+	border: 16px solid #f0f0f0;
+	margin: 0px;
+}
+.innerTableDiv {
 	height: 365px;
 	min-height: 365px;
 	max-height: 365px;
 	overflow-y: auto;
 }
 
-.footer{
+/*-----------------------------------------------------------------*/
+/* INFO (text right of table) */
+.info {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 160px;
+	text-align: left;
+	width: 300px;
+	height: 400px;
+	color: #888;
+	font-size: 15px;
+} .info > p {
+	margin-bottom: 13px;
+} .info > a {
+	color: #888;
+} .info > a:hover {
+	text-decoration: underline;
+	color: #888;
+} #copywright {
+	color: #555;
+}
+
+/*-----------------------------------------------------------------*/
+/* FOOTER */
+.footer {
 	background-color: #1f2328;
 	margin-top: 100px;
 	color: #fff;

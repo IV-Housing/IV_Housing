@@ -7,6 +7,7 @@ body {
   line-height: 1.6;
   font-size: 18px;
   scroll-behavior: smooth;
+  background-color: #f0f0f0;
 }
 
 * {
@@ -40,7 +41,6 @@ table{
 }
 
 th{
-  border: 1px solid #aaa;
   padding: 0px 28px;
   border-right-width: 0.5px;
 }
@@ -51,15 +51,18 @@ th:last-child{
 
 td{
   text-overflow: ellipsis;
-  padding: 0 5px;
-  border: 0.5px solid #aaa;
+  padding: 6px;
   white-space: nowrap;
   overflow: hidden;
 }
 
+tr:nth-child(even) {
+  background-color: #e5e5e5;
+ }
+
 /* width */
 ::-webkit-scrollbar {
-  width: 7.5px;
+  width: 13px;
 }
 
 /* Track */
