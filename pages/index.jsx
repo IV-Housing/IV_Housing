@@ -13,11 +13,10 @@ import Forms from '../components/forms/forms.jsx'
 export default function Index(){
 	const [initList, setInitList] = useState([]);  // houses data
 	const [refinedData, setRefinedData] = useState([]);
-	const [{block, street}, setStreetBlock] = useState({block:'Any',street:'Any'});
+	const [{street, block,  size, price, priceType}, setStreetBlock] = useState({street:'Any', block:'Any', size:'Any', price:'Any',priceType:'total'});
 	const [direction, setDirection] = useState("ascending");
 
 	useEffect(() => { if(initList.length===0) getList(); });
-
 
 	const getList = async () => {
 		const response = await fetch(`/api`, { method: "GET" });
@@ -28,7 +27,6 @@ export default function Index(){
 
 	useEffect(() => {
 		let houses = [...initList];
-
 		if(street!=='Any') {
 			houses = houses.filter(item=>{
 				return item.address.indexOf(street)!==-1
@@ -39,15 +37,48 @@ export default function Index(){
 				return item.address.substr(0,2) === block
 			})
 		 }
+		 if(size!=='Any') {
+			houses = houses.filter(item=>{
+				let tIndex=size.indexOf('+')
+				if(tIndex!==-1){
+					return item.size > Number(size.substring(0,tIndex))
+				}else{
+					return item.size === Number(size)
+				}
+		   })
+		}
+		 if(price!=='Any') {
+			 if(priceType=='total'){
+				houses = houses.filter(item=>{
+					let tIndex=price.indexOf('+')
+					if(tIndex!==-1){
+						return item.totalPrice >= Number(price.substring(0,tIndex))
+					}else{
+						let tarr=price.split('-')
+						return item.totalPrice >= Number(tarr[0])&&item.totalPrice < Number(tarr[1])
+					}
+				})
+			 }else{
+				houses = houses.filter(item=>{
+					let tIndex=price.indexOf('+')
+					if(tIndex!==-1){
+						return Number((item.totalPrice/item.size).toFixed(2)) >= Number(price.substring(0,tIndex))
+					}else{
+						let tarr=price.split('-')
+						return Number((item.totalPrice/item.size).toFixed(2)) >= Number(tarr[0])&&Number((item.totalPrice/item.size).toFixed(2)) < Number(tarr[1])
+					}
+				})
+			 }
+		}
 
 		if (direction=="ascending") houses.sort((h1,h2)=>{ return (h1['totalPrice']/h1['size'])-(h2['totalPrice']/h2['size']); });
 		else if (direction=="descending") houses.sort((h1,h2)=>{ return (h2['totalPrice']/h2['size'])-(h1['totalPrice']/h1['size']); });
 
 		setRefinedData(houses);
-	}, [initList, street, block, direction]);
+	}, [initList, street, block,  size, price, priceType, direction]);
 
-	const filter = (street,block) => {  // filter function to pass down to filterForms.jsx using props
-		setStreetBlock({block, street});
+	const filter = (street, block,  size, price, priceType) => {  // filter function to pass down to filterForms.jsx using props
+		setStreetBlock({street, block,  size, price, priceType});
 	}
 
 	const sortByPrice = (direction) => {

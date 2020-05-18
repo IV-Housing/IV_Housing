@@ -17,8 +17,8 @@ export default function HouseTable(props){
 			</thead>
 			<tbody id="house-table-data">
 				{
-					props.list.map(row =>(
-						<tr>
+					props.list.map((row,index) =>(
+						<tr key={index}>
 							<td>{row.company}</td>
 							<td><a href={row.website}>{row.address}</a></td>
 							<td>{row.size}</td>
