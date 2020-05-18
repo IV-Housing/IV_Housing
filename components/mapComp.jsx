@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactMapGL, {Marker, Popup} from "react-map-gl"
 import utilStyles from '../styles/utils.module.css'
+import CompView from './compTileComp.jsx'
 
 export default function MapView(props){
     const [viewport, setViewport] = useState({latitude: 34.4124, longitude: -119.8573, width: "100vw", height: "93.8vh", zoom: 15.5});
@@ -8,9 +9,7 @@ export default function MapView(props){
     const[comp1, setComp1] = useState({address:"", company:"", size:0, totalPrice:0, phone:"", website:""});
     const[comp2, setComp2] = useState({address:"", company:"", size:0, totalPrice:0, phone:"", website:""});
     const[comp, setComp] = useState(0);
-    // const[lat, setLat] = useState();
-    // const[lng, setLng] = useState();   
-    // var lattitude, longitude;
+    
     useEffect(() => {
         if(comp === 1){
             setComp1(selectedPark);
@@ -23,24 +22,8 @@ export default function MapView(props){
     return(
         <div className = {utilStyles.mapCompContainer}>
             <div className = {utilStyles.compContainer}>
-                <div className = {utilStyles.comparisonView}>
-                    <h2 className={utilStyles.compHead}>{comp1.address}</h2>
-                    <p className={utilStyles.compContent}>Size: {comp1.size}</p>
-                    <p className={utilStyles.compContent}>Total Price: {comp1.totalPrice}</p>
-                    <p className={utilStyles.compContent}>Price Per Person: {(comp1.totalPrice/comp1.size).toFixed(2)}</p>
-                    <p className={utilStyles.compContent}>Company: {comp1.company}</p>
-                    <p className={utilStyles.compContent}>Phone: {comp1.phone}</p>
-                    <p className={utilStyles.compContent}><a href={comp1.website}>More Info Here</a></p>
-                </div>
-                <div className = {utilStyles.comparisonView}>
-                <h2 className={utilStyles.compHead}>{comp2.address}</h2>
-                    <p className={utilStyles.compContent}>Size: {comp2.size}</p>
-                    <p className={utilStyles.compContent}>Total Price: {comp2.totalPrice}</p>
-                    <p className={utilStyles.compContent}>Price Per Person: {(comp2.totalPrice/comp2.size).toFixed(2)}</p>
-                    <p className={utilStyles.compContent}>Company: {comp2.company}</p>
-                    <p className={utilStyles.compContent}>Phone: {comp2.phone}</p>
-                    <p className={utilStyles.compContent}><a href={comp2.website}>More Info Here</a></p>
-                </div>
+                <CompView comp={comp1}/>
+                <CompView comp={comp2}/>
             </div>
             <div className = {utilStyles.mapView}>
                 <ReactMapGL 
