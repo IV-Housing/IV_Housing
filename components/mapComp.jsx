@@ -4,12 +4,12 @@ import utilStyles from '../styles/utils.module.css'
 import CompView from './compTileComp.jsx'
 
 export default function MapView(props){
-    const [viewport, setViewport] = useState({latitude: 34.4124, longitude: -119.8573, width: "100vw", height: "93.8vh", zoom: 15.5});
+    const[viewport, setViewport] = useState({latitude: 34.4124, longitude: -119.858, width: "77vw", height: "93.8vh", zoom: 15});
     const[selectedPark, setSelectedPark] = useState(null);
     const[comp1, setComp1] = useState({address:"", company:"", size:0, totalPrice:0, phone:"", website:""});
     const[comp2, setComp2] = useState({address:"", company:"", size:0, totalPrice:0, phone:"", website:""});
     const[comp, setComp] = useState(0);
-    
+
     useEffect(() => {
         if(comp === 1){
             setComp1(selectedPark);
@@ -32,7 +32,7 @@ export default function MapView(props){
                     mapStyle="mapbox://styles/sethvanb/cka744x8c16b31ilhulkr0d26"
                     onViewportChange = {
                         viewport => {                      
-                            viewport.width = "100vw";
+                            viewport.width = "77vw";
                             viewport.height = "93.8vh";
                             setViewport(viewport)
                         }}

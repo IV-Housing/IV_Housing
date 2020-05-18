@@ -8,7 +8,7 @@ import Layout, {siteTitle} from '../components/layout.js'
 import Navbar from '../components/navbar.js'
 import Footer from '../components/footer.js'
 import HouseTable from '../components/table.jsx'
-import Forms from '../components/forms/forms.jsx'
+import IndexForms from '../components/forms/indexForms.jsx'
 
 export default function Index(){
 	const [initList, setInitList] = useState([]);  // houses data
@@ -62,7 +62,7 @@ export default function Index(){
 			<div className={utilStyles.containerIndex}>
 				<h1 className={utilStyles.searchH1}>Search Listings</h1>
 				<div className={utilStyles.indexDivs}>
-					<Forms filter={filter} sortByPrice={sortByPrice}/>
+					<IndexForms filter={filter} sortByPrice={sortByPrice}/>
 					<HouseTable list={refinedData}/>
 				</div>
 				<p className={utilStyles.parts}>*Price per person is calculated by taking total price and dividing it by housing size. Therefore the actual price per person could change depending on individual room sizes. </p>

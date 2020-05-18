@@ -4,7 +4,7 @@ import utilStyles from '../../styles/utils.module.css'
 import FilterForms from './filterForms.jsx'
 import SortForms from './sortForms.jsx'
 
-export default function Forms(props) {
+export default function IndexForms(props) {
 	return (
 		<div className={utilStyles.forms}>
 			<h2>Filter Results</h2>

@@ -7,6 +7,5 @@ module.exports = {
     env: {
         MAP_TOKEN: token,
         MONGODB_URI: process.env.MONGODB_URI,
-        //OCD_API_KEY: process.env.OCD_API_KEY,
     },
 }

@@ -6,40 +6,41 @@ import Navbar from '../components/navbar.js'
 import Footer from '../components/footer.js'
 import utilStyles from '../styles/utils.module.css'  // css style
 import MapView from "../components/mapComp.jsx"
+import MapForms from '../components/forms/mapForms.jsx'
 
 export default function Map(){
-    const [initList, setInitList] = useState([]);  // houses data
+	const [initList, setInitList] = useState([]);  // houses data
+	const [refinedData, setRefinedData] = useState([]);
+	const [{block, street}, setStreetBlock] = useState({block:'Any',street:'Any'});
 
-    useEffect(() => { if(initList.length===0) getList();});
+	useEffect(() => { if(initList.length===0) getList();});
 
     const getList = async () => {
 		const response = await fetch(`/api`, { method: "GET" });
 		const data = await response.json();
 		setInitList(data);
+		setRefinedData(data);
 	}
 
-	const addLatLng = async () => {
-		// initlist.map(house => (
-		//   if(!house.lat){
-		// 	newAddr = house.address.substr(0,house.address.indexOf("#"));
-		// 	console.log(newAddr);
-		// 	opencage.geocode({q: newAddr}).then(data => {
-		// 		if (data.status.code == 200) {
-		// 		  if (data.results.length > 0) {
-		// 			  var place = data.results[0];
-		// 			  console.log(place.geometry.lat);
-		// 			  console.log(place.geometry.lng);
-		// 		  }
-		// 		} else if (data.status.code == 402) {
-		// 		  console.log('hit free-trial daily limit');
-		// 		} else {
-		// 		  console.log('error', data.status.message);
-		// 		}
-		// 	}).catch(error => {
-		// 	  console.log('error', error.message);
-		// 	}); 
-		//   }
-		// ));
+	useEffect(() => {
+		let houses = [...initList];
+
+		if(street!=='Any') {
+			houses = houses.filter(item=>{
+				return item.address.indexOf(street)!==-1
+			 })
+		 }
+		 if(block!=='Any') {
+			 houses = houses.filter(item=>{
+				return item.address.substr(0,2) === block
+			})
+		 }
+
+		setRefinedData(houses);
+	}, [initList, street, block]);
+
+	const filter = (street,block) => {  // filter function to pass down to filterForms.jsx using props
+		setStreetBlock({block, street});
 	}
     
     return (
@@ -51,7 +52,8 @@ export default function Map(){
 			<div className={utilStyles.containerMap}>
 				<h1 className={utilStyles.mapH1}>Listings Map</h1>
 				<div>
-					<MapView list={initList}/>
+					<MapForms filter={filter}/>
+					<MapView list={refinedData}/>
 				</div>
 			</div>
 			<Footer/>
