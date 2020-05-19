@@ -7,3 +7,4 @@
 | Mon 05/07 | Veltson Bastien   | Did the demo of MVP                                    |
 | Mon 05/11 | Congyuan Sun      | Led second Retro                                       |
 | Mon 05/12 | Mathew Kramsch    | Led Sprint Goal discussion                             |
+| Mon 05/21 | Congyuan Sun      | Did the demo of iteration 2                            |
