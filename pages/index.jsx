@@ -3,14 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head'  // for Next.js
 import fetch from "isomorphic-unfetch";
-
 import utilStyles from '../styles/utils.module.css'  // css style
 import Layout, {siteTitle} from '../components/layout.js'
 import Navbar from '../components/navbar.js'
-import Footer from '../components/footer.js'
-
+import IndexForms from '../components/forms/indexForms.jsx'
 import DataView from '../components/view/dataView.jsx'
-import Forms from '../components/forms/forms.jsx'
 import Info from '../components/info.jsx'
 
 export default function Index(){
@@ -20,18 +17,20 @@ export default function Index(){
 	const [direction, setDirection] = useState("ascending");
 	const [view, setView] = useState('table');
 
+	useEffect(() => { if(initList.length===0) getList(); });
+
 	const filter = (street,block)=>{ setStreetBlock({block, street}); }
 	const sortByPrice = (direction)=>{ setDirection(direction); }
 	const toggleTable = ()=>{ setView('table'); }
 	const toggleCard = ()=>{ setView('card'); }
 
-	useEffect(() => { if(initList.length===0) getList(); });
 	const getList = async () => {
 		const response = await fetch(`/api`, { method: "GET" });
 		const data = await response.json();
 		setInitList(data);
 		setRefinedData(data);
 	}
+
 	useEffect(() => {
 		let houses = [...initList];
 		let s = document.getElementById('streetSelect');
@@ -73,9 +72,10 @@ export default function Index(){
 				<title>{siteTitle}</title>
 			</Head>
 			<Navbar></Navbar>
-			<div className={utilStyles.container}>
+			<div className={utilStyles.containerIndex}>
+				<h1 className={utilStyles.searchH1}>Search Listings</h1>
 				<div className={utilStyles.indexDivs}>
-					<Forms filter={filter} sortByPrice={sortByPrice}/>
+					<IndexForms filter={filter} sortByPrice={sortByPrice}/>
 					<DataView chosenView={view} data={refinedData} toggleTable={toggleTable} toggleCard={toggleCard}/>
 					<Info/>
 				</div>

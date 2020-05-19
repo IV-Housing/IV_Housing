@@ -62,7 +62,7 @@ tr:nth-child(even) {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 13px;
+  width: 15px;
 }
 
 /* Track */
