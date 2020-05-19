@@ -9,7 +9,7 @@ export default function Navbar(){
  return(
    <>
     <div className={utilStyles.navbar}>
-     <h1> Isla Vista Housing Search </h1>
+     <h1>🏠 Isla Vista Housing Search </h1>
      <div className={utilStyles.navlinks}>
        <a href="/">Search Listings</a>
        <a href="/map">Listings Map</a>
