@@ -11,8 +11,8 @@ export default function Navbar(){
     <div className={utilStyles.navbar}>
      <h1>🏠 Isla Vista Housing Search </h1>
      <div className={utilStyles.navlinks}>
-       <a href="/">Search Listings</a>
-       <a href="/map">Listings Map</a>
+       <a href="/">Listings</a>
+       <a href="/map">Map</a>
      </div>
     </div>
    </>

@@ -37,7 +37,7 @@ class FilterForms extends React.Component {
 	render() {
 		let priceType=this.state.priceType
 		let selTotalMap=['Any','0-2000','2000-4000','4000-6000','6000-8000','8000-10000','10000+']
-		let selPerMap=['Any','0-700','700-800','800-900','900-1000','1000-1100','1100-12000','1200+']
+		let selPerMap=['Any','0-700','700-800','800-900','900-1000','1000-1100','1100-1200','1200+']
 		let listOpts
 		if(priceType==='total'){
 			listOpts=selTotalMap

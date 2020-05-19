@@ -4,7 +4,7 @@ import utilStyles from '../styles/utils.module.css'
 import CompView from './compTileComp.jsx'
 
 export default function MapView(props){
-    const[viewport, setViewport] = useState({latitude: 34.4124, longitude: -119.858, width: "77vw", height: "93.8vh", zoom: 15});
+    const[viewport, setViewport] = useState({latitude: 34.41, longitude: -119.858, width: "77vw", height: "103vh", zoom: 15});
     const[selectedPark, setSelectedPark] = useState(null);
     const[comp1, setComp1] = useState({address:"", company:"", size:0, totalPrice:0, phone:"", website:""});
     const[comp2, setComp2] = useState({address:"", company:"", size:0, totalPrice:0, phone:"", website:""});
@@ -33,7 +33,7 @@ export default function MapView(props){
                     onViewportChange = {
                         viewport => {                      
                             viewport.width = "77vw";
-                            viewport.height = "93.8vh";
+                            viewport.height = "103vh";
                             setViewport(viewport)
                         }}
                 >

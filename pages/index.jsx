@@ -13,13 +13,15 @@ import Info from '../components/info.jsx'
 export default function Index(){
 	const [initList, setInitList] = useState([]);  // houses data
 	const [refinedData, setRefinedData] = useState([]);
-	const [{street, block,  size, price, priceType}, setStreetBlock] = useState({street:'Any', block:'Any', size:'Any', price:'Any',priceType:'total'});
+	const [{street, block,  size, price, priceType}, setStreetBlock] = useState({street:'Any', block:'Any', size:'Any', price:'Any', priceType:'total'});
 	const [direction, setDirection] = useState("ascending");
 	const [view, setView] = useState('table');
 
 	useEffect(() => { if(initList.length===0) getList(); });
 
-	const filter = (street,block)=>{ setStreetBlock({block, street}); }
+	const filter = (street, block,  size, price, priceType) => {  // filter function to pass down to filterForms.jsx using props
+		setStreetBlock({street, block,  size, price, priceType});
+	}
 	const sortByPrice = (direction)=>{ setDirection(direction); }
 	const toggleTable = ()=>{ setView('table'); }
 	const toggleCard = ()=>{ setView('card'); }
@@ -56,8 +58,8 @@ export default function Index(){
 				}
 		   })
 		}
-		 if(price!=='Any') {
-			 if(priceType=='total'){
+		if(price!=='Any') {
+			 if(priceType==='total'){
 				houses = houses.filter(item=>{
 					let tIndex=price.indexOf('+')
 					if(tIndex!==-1){
@@ -78,6 +80,14 @@ export default function Index(){
 					}
 				})
 			 }
+		}
+
+		if(priceType==='total'){
+			if (direction=="ascending") houses.sort((h1,h2)=>{ return (h1['totalPrice'])-(h2['totalPrice']); });
+			else if (direction=="descending") houses.sort((h1,h2)=>{ return (h2['totalPrice'])-(h1['totalPrice']); });
+		}else{
+			if (direction=="ascending") houses.sort((h1,h2)=>{ return (h1['totalPrice']/h1['size'])-(h2['totalPrice']/h2['size']); });
+			else if (direction=="descending") houses.sort((h1,h2)=>{ return (h2['totalPrice']/h2['size'])-(h1['totalPrice']/h1['size']); });
 		}
 
 		setRefinedData(houses);
@@ -103,7 +113,6 @@ export default function Index(){
 			</Head>
 			<Navbar></Navbar>
 			<div className={utilStyles.containerIndex}>
-				<h1 className={utilStyles.searchH1}>Search Listings</h1>
 				<div className={utilStyles.indexDivs}>
 					<IndexForms filter={filter} sortByPrice={sortByPrice}/>
 					<DataView chosenView={view} data={refinedData} toggleTable={toggleTable} toggleCard={toggleCard}/>
