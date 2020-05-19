@@ -78,7 +78,8 @@
 /* FORMS */
 
 .forms {
-	position: -webkit-sticky;
+	min-height: 400px;
+	max-height: 600px;
 	position: sticky;
 	top: 160px;
 	height: 400px;
