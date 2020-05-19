@@ -1,6 +1,9 @@
 // card.jsx
 
 import utilStyles from '../../styles/utils.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBed } from '@fortawesome/free-solid-svg-icons'
+import { faPhone } from '@fortawesome/free-solid-svg-icons'
 
 export default function Card(props) {
 	return (
@@ -11,9 +14,9 @@ export default function Card(props) {
 			</div>
 			<div id={utilStyles.cardBody}>
 				<div id={utilStyles.cardInfo}>
-					<div id={utilStyles.cardPrice}><span className={utilStyles.icon}>${(props.h.totalPrice/props.h.size).toFixed(2)} </span>&nbsp;approximately per person</div>
-					<div><span className={utilStyles.icon}>🛏️ </span>&nbsp;Suitable for {props.h.size} people</div>
-					<div><span className={utilStyles.icon}>☎️ &nbsp;</span>&nbsp;Contact at {props.h.phone}</div>
+					<div id={utilStyles.cardPrice}><span className={utilStyles.icon}>${(props.h.totalPrice/props.h.size).toFixed(2)}</span>approximately per person</div>
+					<div><FontAwesomeIcon icon={faBed} className={utilStyles.icon}/>Suitable for {props.h.size} people</div>
+					<div><FontAwesomeIcon icon={faPhone} className={utilStyles.icon}/>Contact at {props.h.phone}</div>
 				</div>
 				<a href={props.h.website}><button>More Info.</button></a>
 			</div>

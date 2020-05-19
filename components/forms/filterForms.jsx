@@ -5,7 +5,7 @@ import utilStyles from '../../styles/utils.module.css'
 class FilterForms extends React.Component {
 	constructor(props) {
 		super(props)
-		this.state = {block:'Any',street:'Any',size:'Any',price:'Any',priceType:'total'}
+		this.state = {block:'Any',street:'Any',size:'Any',price:'Any Price',priceType:'total'}
 		this.streetChange = this.streetChange.bind(this)
 		this.blockChange = this.blockChange.bind(this)
 		this.sizeChange = this.sizeChange.bind(this)
@@ -29,21 +29,19 @@ class FilterForms extends React.Component {
 		this.props.filter(this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
 	}
 	selPriceCahnge(event) {
-		this.setState({priceType: event.target.value,price:'Any'},()=>{
+		this.setState({priceType: event.target.value,price:'Any Price'},()=>{
 			this.props.filter(this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
 		})
 
 	}
 	render() {
 		let priceType=this.state.priceType
-		let selTotalMap=['Any','0-2000','2000-4000','4000-6000','6000-8000','8000-10000','10000+']
-		let selPerMap=['Any','0-700','700-800','800-900','900-1000','1000-1100','1100-1200','1200+']
+		let selTotalMap=['Any Price','0-2000','2000-4000','4000-6000','6000-8000','8000-10000','10000+']
+		let selPerMap=['Any Price','0-700','700-800','800-900','900-1000','1000-1100','1100-1200','1200+']
 		let listOpts
-		if(priceType==='total'){
-			listOpts=selTotalMap
-		}else{
-			listOpts=selPerMap
-		}
+		if (priceType==='total') listOpts = selTotalMap
+		else listOpts = selPerMap
+
 		return (
 			<div className={utilStyles.formSelects}>
 				<select id="streetSelect" defaultValue="default" onChange={this.streetChange}>
@@ -82,32 +80,30 @@ class FilterForms extends React.Component {
 					<option value = "68"> 68 Block </option>
 				</select>
 
-				<label>Choose by Size:</label>
-				<select id="block-values" defaultValue="default" onChange={this.sizeChange}>
-					<option value = "Any">Any</option>
-					<option value = "1"> 1 </option>
-					<option value = "2"> 2 </option>
-					<option value = "3"> 3 </option>
-					<option value = "4"> 4 </option>
-					<option value = "5"> 5 </option>
-					<option value = "6"> 6 </option>
-					<option value = "7"> 7 </option>
-					<option value = "8"> 8 </option>
-					<option value = "9"> 9 </option>
-					<option value = "10"> 10 </option>
-					<option value = "10+"> 10+ </option>
+				<select id="sizeSelect" defaultValue="default" onChange={this.sizeChange}>
+					<option value = "Any">Any Size</option>
+					<option value = "1">For 1 Person</option>
+					<option value = "2">For 2 People</option>
+					<option value = "3">For 3 People</option>
+					<option value = "4">For 4 People</option>
+					<option value = "5">For 5 People</option>
+					<option value = "6">For 6 People</option>
+					<option value = "7">For 7 People</option>
+					<option value = "8">For 8 People</option>
+					<option value = "9">For 9 People</option>
+					<option value = "10">For 10 People</option>
+					<option value = "10+">For 10+ People</option>
 				</select>
 				
-				<label>Choose by Price:</label>
-				<div>
+				<select id="priceSelect" defaultValue="default" onChange={this.priceChange}>
+					{listOpts.map(item=>{
+						return <option value={item} key={item}>{item}</option>
+					})}
+				</select>
+				<div className={utilStyles.radioSelect}>
 					<label><input type="radio" name="price" value="total" onChange={this.selPriceCahnge} checked={priceType==='total'} />Total Price</label>
 					<label>	<input type="radio" name="price" value="per" onChange={this.selPriceCahnge} checked={priceType==='per'} />Price Per Person</label>
 				</div>
-				<select id="block-values" defaultValue="default" onChange={this.priceChange}>
-					{listOpts.map(item=>{
-						return <option value = {item} key={item}>{item}</option>
-					})}
-				</select>
 			</div>
 		);
 	}
