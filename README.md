@@ -17,3 +17,5 @@ Two types of users, landlords that are able to post lease offerings on the site,
 * Narrow down to specific block/street: 66 Del Playa to start off small
 * list all properties on 66 Del Playa w/ info
 * user can sort by price per person/ size
+
+## [Deployment Instructions](./docs/DEPLOY.md)
