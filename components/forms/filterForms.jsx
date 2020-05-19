@@ -46,9 +46,8 @@ class FilterForms extends React.Component {
 		}
 		return (
 			<div className={utilStyles.formSelects}>
-				<label>Choose a Street:</label>
-				<select id="street-values" defaultValue="default" onChange={this.streetChange}>
-					<option value = "Any"> Any </option>
+				<select id="streetSelect" defaultValue="default" onChange={this.streetChange}>
+					<option value = "Any">Any Street</option>
 					<option value = "Cervantes Rd.">Cervantes Rd.</option>
 					<option value = "El Greco Rd.">El Greco Rd.</option>
 					<option value = "Picasso Rd.">Picasso Rd.</option>
@@ -75,9 +74,8 @@ class FilterForms extends React.Component {
 					<option value = "Camino Lindo">Camino Lindo</option>
 				</select>
 
-				<label>Choose a Block:</label>
-				<select id="block-values" defaultValue="default" onChange={this.blockChange}>
-					<option value = "Any">Any</option>
+				<select id="blockSelect" defaultValue="default" onChange={this.blockChange}>
+					<option value = "Any">Any Block</option>
 					<option value = "65"> 65 Block </option>
 					<option value = "66">  66 Block </option>
 					<option value = "67"> 67 Block </option>
