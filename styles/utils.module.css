@@ -337,6 +337,7 @@
 	display: inline-flex;
   align-items: center;
   padding: 5px 15px;
+  flex-direction: column;
 }
 
 .mapCompContainer{
