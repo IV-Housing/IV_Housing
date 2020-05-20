@@ -42,6 +42,7 @@ export default function MapView(props){
                             <button className={utilStyles.marker} onClick={(e) => {
                                 e.preventDefault();
                                 setSelectedPark(house);
+                                setComp(0);
                             }}>
                                  <img src="/houseLogo4.png" alt="House Icon" className = {utilStyles.imgView}/>
                             </button>
