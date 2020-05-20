@@ -52,6 +52,7 @@ export default function MapView(props){
                         <Popup 
                             latitude={selectedPark.lat} 
                             longitude={selectedPark.lng}
+                            closeOnClick = {false}
                             onClose={() => {
                                 setSelectedPark(null);
                                 setComp(0);
