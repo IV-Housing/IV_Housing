@@ -5,7 +5,7 @@ export default function CompView(props){
     if(props.comp.address === ""){
         return(
             <div className = {utilStyles.comparisonView}>
-                <p>No house is selected yet. Select a house marker from the map and use the buttons add it to a comparison box</p>
+                <p> <b>No house is selected yet.</b><br></br> Select a house marker from the map and use the buttons add it to a comparison box.</p>
             </div>
         )
     }
