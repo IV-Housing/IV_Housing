@@ -6,9 +6,10 @@
   * link profs    
   * ???Session Cookie Secret???
 3. Setup MongoDB account and add MONGODB_URI to Heroku 
-  * link profs
-  * set up database/cluster/documents to be houses(give a screenshot of example doc)
-  * config-vars on Heroku for MONGODB_URI 
+  * Follow the directions here https://ucsb-cs48.github.io/topics/mongodb_cloud_atlas_setup/ to create a mongoDB account and get your MongoDB URI. 
+  * After you create the URI make sure to copy it. Go to your Heroku application home page and click on the "Settings" menu on the top navbar. The second section on this page should be Config Vars. In this section click on the white/purple "Reveal Config Vars" button. Add a new Config Var with KEY set to "MONGODB_URI" (without quotation marks) and paste the URI into Value.
+    * Now go back to the MongoDB page https://cloud.mongodb.com/. From here click on the connections button under your cluster. Now click on the "Create Database" button. Name the Database "HousingDataBase" and name the collection "Houses". 
+    set up database/cluster/documents to be houses(give a screenshot of example doc)
 4. Setup Mapbox account and add Map Token to Heroku (map styles?)
   * Go to https://account.mapbox.com/auth/signup/ and signup for a free mapbox account
   * Verify your account through email 
@@ -16,7 +17,7 @@
       * You can give the token any name, a good one may be something like "IV Housing Map Token"
       * All of the other settings should be left alone
       * This is not neccesary but for extra security of your token, so people do not steal it use up your free map requests, you can restrict the urls that can request a map with this token. This is at the very bottom of the create token page and you should input the URL that your application will be deployed on (aka the Heroku URL, to find it go to the Home Heroku page for your application and click on the purple "open app" button, this should open a new page with your application and you just need to copy the URL)
-  * After you create the token it should take you back to the mapbox account page. Scroll to the bottom of this page and you should see your new token underneath a default token. Copy this token by clicking the blue clipboard button next to the token. Go to your Heroku application home page and click on the "Settings" menu on the top navbar. The second section on this page should be Config Vars. In this section click on the whit/purple "Reveal Config Vars" button. Add a new Config Var with KEY set to "MAP_TOKEN_PROD" (without quotation marks) and paste the token into Value. 
+  * After you create the token it should take you back to the mapbox account page. Scroll to the bottom of this page and you should see your new token underneath a default token. Copy this token by clicking the blue clipboard button next to the token. Go to your Heroku application home page and click on the "Settings" menu on the top navbar. The second section on this page should be Config Vars. In this section click on the white/purple "Reveal Config Vars" button. Add a new Config Var with KEY set to "MAP_TOKEN_PROD" (without quotation marks) and paste the token into Value. 
   * https://api.mapbox.com/styles/v1/sethvanb/cka744x8c16b31ilhulkr0d26.html?fresh=true&title=copy&access_token=pk.eyJ1Ijoic2V0aHZhbmIiLCJhIjoiY2thNjhpaWowMDVseDJybmx2dGVqc3UxeiJ9.MLbmm_S5HaD7ZleO_qGA2A
 5. Deploy app on Heroku
   * Go to your Heroku application home page and click on the "Deploy" menu on the top navbar.
