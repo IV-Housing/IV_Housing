@@ -1,6 +1,8 @@
 # Instructions for Deployment (to deploy you will need a github account)
-## 1. fork repo onto your own github account
-  * Goto https://github.com/ucsb-cs48-s20/project-s0-t3-iv-housing and click on the fork button in
+## 1. Fork repo onto your own github account
+  * Goto https://github.com/ucsb-cs48-s20/project-s0-t3-iv-housing and click on the fork button in the top right. 
+  * A popup will appear asking you to choose where to fork the repo to. Select your Github account. 
+  * This will clone the repository to your accounts repositories so you have your own copy of the code. 
 ## 2. Setup Heroku account and applictaion
   * link profs    
   * ???Session Cookie Secret???
