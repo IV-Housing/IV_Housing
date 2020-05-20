@@ -8,7 +8,6 @@ body {
   font-size: 18px;
   scroll-behavior: smooth;
   background-color: #f0f0f0;
-  overflow-x: hidden; 
 }
 
 * {
@@ -63,7 +62,7 @@ tr:nth-child(even) {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 7.5px;
+  width: 15px;
 }
 
 /* Track */

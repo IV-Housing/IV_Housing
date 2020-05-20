@@ -62,7 +62,7 @@
 	text-align: middle;
 	font-size: 45px;
 	margin-bottom: 0px;
-	margin-top: 80px;
+	margin-top: 120px;
 	color: #0984e3;
 	width: auto;
 	height: 60px;
@@ -329,15 +329,14 @@
 
 .comparisonView{
 	margin: 10px;
-	/* border: 0.5px solid #0984e3; */
 	box-shadow: 4px 4px 3px #BBB;
-  border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 	height: 270px;
 	width: 300px;
 	display: inline-flex;
-  align-items: center;
-  padding: 5px 15px;
-  flex-direction: column;
+    align-items: center;
+    padding: 5px 15px;
+    flex-direction: column;
 }
 
 .mapCompContainer{
@@ -349,12 +348,11 @@
 }
 
 .mapView{
-	/* border: 10px solid  #0984e3; */
 	border-radius: 10px;
 	margin: 10px;
 	height: 105vh;
 	width: 100%;
-	margin-top: -320px;
+	margin-top: -310px;
 	position: static;
 	z-index: 1;
 }
@@ -424,9 +422,8 @@
 .mapForms{
 	margin: 10px;
 	margin-top: 40px;
-	/* border: 0.5px solid #0984e3; */
 	box-shadow: 4px 4px 3px #BBB;
-  border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 	height: 300px;
 	width: 300px;
 	text-align: left;
@@ -438,7 +435,7 @@
 
 .mapInfo{
 	position: absolute;
-	right: 0px;
+	right: 20px;
 	top: 80px;
 	z-index: 1;
 }
