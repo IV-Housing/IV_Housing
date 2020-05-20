@@ -88,7 +88,8 @@ export default function Map(){
 			<div className={utilStyles.containerMap}>
 				<h1 className={utilStyles.mapH1}>Listings Map</h1>
 				<div className={utilStyles.mapInfo}>
-			</div>
+					<Info/>
+				</div>
 				<div>
 					<MapForms filter={filter}/>
 					<MapView list={refinedData}/>
