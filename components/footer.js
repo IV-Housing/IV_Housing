@@ -2,7 +2,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
 //Style Imports
-import styles from '../components/layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 
 export default function Footer(){
