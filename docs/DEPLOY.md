@@ -4,8 +4,16 @@
   * A popup will appear asking you to choose where to fork the repo to. Select your Github account. 
   * This will clone the repository to your accounts repositories so you have your own copy of the code. 
 ## 2. Setup Heroku account and applictaion
-  * link profs    
-  * ???Session Cookie Secret???
+  * If you don’t have a Heroku Account yet, please create a Heroku account by logging in at https://heroku.com
+    * Click the “Sign up for Free” link. You’ll be asked for:
+    * First Name, Last Name
+    * Email (we suggest using your @ucsb.edu email, but that’s up to you)
+    * Company (you may leave this blank).
+    * Preferred Development Language: choose JavaScript
+  * NOTE for folks with existing Heroku Accounts: You might need to delete old apps to make space for new ones. There is a limit of five apps on the free tier of Heroku (unless/until you enter a credit card.)
+  * login to the Heroku Dashboard https://dashboard.heroku.com
+  * create a new Heroku app called, for example: iv-housing-prod-clone 
+  * This application will now be add to your Heroku Dashboad and when you click on it, it will take you to your Heroku application home page. 
 ## 3. Setup MongoDB account and add MONGODB_URI to Heroku 
   * Follow the directions here https://ucsb-cs48.github.io/topics/mongodb_cloud_atlas_setup/ to create a mongoDB account and get your MongoDB URI. 
   * After you create the URI make sure to copy it. Go to your Heroku application home page and click on the "Settings" menu on the top navbar. The second section on this page should be Config Vars. In this section click on the white/purple "Reveal Config Vars" button. Add a new Config Var with KEY set to "MONGODB_URI" (without quotation marks) and paste the URI into Value.
