@@ -66,6 +66,10 @@
     "css-loader": "^3.5.3",
     "danger": "^10.1.1",
     "style-loader": "^1.2.1",
-    "terser-webpack-plugin": "^2.3.5"
+    "terser": "^4.6.12",
+    "terser-webpack-plugin": "^2.3.6"
+  },
+  "resolution": {
+    "terser": "3.17.0"
   }
 }
