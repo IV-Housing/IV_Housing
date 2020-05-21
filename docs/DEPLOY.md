@@ -39,14 +39,18 @@
   * Go to https://account.mapbox.com/auth/signup/ and signup for a free mapbox account
   * Verify your account through email 
   * On your mapbox account page https://account.mapbox.com/ click on "create a token"
+  ![MapBox Home page, highlighting create a token button](./images/Step4Img1.png)
       * You can give the token any name, a good one may be something like "IV Housing Map Token"
       * All of the other settings should be left alone
       * This is not neccesary but for extra security of your token, so people do not steal it use up your free map requests, you can restrict the urls that can request a map with this token. This is at the very bottom of the create token page and you should input the URL that your application will be deployed on (aka the Heroku URL, to find it go to the Home Heroku page for your application and click on the purple "open app" button, this should open a new page with your application and you just need to copy the URL)
-  * After you create the token it should take you back to the mapbox account page. Scroll to the bottom of this page and you should see your new token underneath a default token. Copy this token by clicking the blue clipboard button next to the token. 
+     ![MapBox create token page, highlighting URL section](./images/Step4Img2.png)
+  * After you create the token it should take you to a page with all your access tokens. You should see your new token underneath a default token. Copy this token by clicking the blue clipboard button next to the token. 
+  ![MapBox access tokens page, highlighting clipboard button](./images/Step4Img3.png)
   * Go to your Heroku application home page  at `https://dashboard.heroku.com/apps/<your heroku applicatin name here>` and click on the "Settings" menu on the top navbar. The second section on this page should be Config Vars. In this section click on the white/purple "Reveal Config Vars" button. Add a new Config Var with KEY set to "MAP_TOKEN_PROD" (without quotation marks) and paste the token into Value. 
   ![Heroku App settings highlighting Config Vars section and Reveal config vars button](./images/Step3Img5.png)
-  * Now your application will have a grey/default map that looks bland. If you want to change this to the themed map used on our appliation just click this link below and then click copy this style to your account. 
+  * Now your application will have a grey/default map that looks bland. If you want to change this to the themed map used on our appliation just click this link below and then in the bottom right of the window click copy this style to your account. 
   https://api.mapbox.com/styles/v1/sethvanb/cka744x8c16b31ilhulkr0d26.html?fresh=true&title=copy&access_token=pk.eyJ1Ijoic2V0aHZhbmIiLCJhIjoiY2thNjhpaWowMDVseDJybmx2dGVqc3UxeiJ9.MLbmm_S5HaD7ZleO_qGA2A
+  ![MapBox Style Sharing page, highlighting copy style button](./images/Step4Img4.png)
 ## 5. Deploy app on Heroku
   * Go to your Heroku application home page at `https://dashboard.heroku.com/apps/<your heroku applicatin name here>` and click on the "Deploy" menu on the top navbar.
   ![Heroku website highlighting deploy button](./images/Step5Img1.png)
