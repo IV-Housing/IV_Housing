@@ -17,8 +17,14 @@
 ## 3. Setup MongoDB account and add MONGODB_URI to Heroku 
   * Follow the directions here https://ucsb-cs48.github.io/topics/mongodb_cloud_atlas_setup/ to create a mongoDB account and get your MongoDB URI. 
   * After you create the URI make sure to copy it. Go to your Heroku application home page at `https://dashboard.heroku.com/apps/<your heroku applicatin name here>` and click on the "Settings" menu on the top navbar. The second section on this page should be Config Vars. In this section click on the white/purple "Reveal Config Vars" button. Add a new Config Var with KEY set to "MONGODB_URI" (without quotation marks) and paste the URI into Value.
-  * Now go back to the MongoDB page https://cloud.mongodb.com/. From here click on the collections button under your cluster. Now click on the "Create Database" button. Name the Database "HousingDataBase" and name the collection "Houses". Click on the Database and then the collection.
-    * You will repeat this step 4 times with the following house information below. Click on "Insert Document" on the right. Change the View on the top of the poopup to {} instead of table. Then paste in the house info for one house after the closing bracket on line 4. 
+  * Now go back to the MongoDB page https://cloud.mongodb.com/. From here click on the collections button under your cluster. 
+  ![MongoDB webiste highlighting collections button on cluster](./images/Step3Img1.png)
+  * Now click on the "Create Database" button. Name the Database "HousingDataBase" and name the collection "Houses". 
+  ![MongoDB website highlighting create database button](./images/Step3Img2.png)
+  * Click on the Database and then the collection.
+  ![MongoDB website highlighting newly created database and collection](./images/Step3Img3.png)
+    * You will repeat this step 4 times with the following house information below. Click on "Insert Document" on the right. Change the View on the top of the popup to {} instead of table. Then paste in the house info for one house after the closing bracket on line 4.
+    ![MongoDB document editing popup, highlighting view option and showing where to input data](./images/Step3Img4.png)
     * House 1 Info: `,"company":"Playa Life IV","address":"6561 Del Playa Dr. #4","size":{"$numberInt":"7"},"totalPrice":{"$numberInt":"6000"},"pricePerPerson":{"$numberInt":"0"},"website":"https://www.playalifeiv.com/listings/detail/7dda3077-fbb0-4464-870c-bbdac7147243","phone":"(805)603-4777","lat":{"$numberDouble":"34.409286"},"lng":{"$numberDouble":"-119.85692"}`
     * House 2 Info: `,"company":"Wolfe and Associates","address":"6545 Picasso Rd. #2","size":{"$numberInt":"4"},"totalPrice":{"$numberInt":"2800"},"pricePerPerson":"0","website":"https://www.rlwa.com/listings/detail/461184c0-bb41-4c31-ac33-9d5ec142f4f0","phone":"(805)964-6770","lat":{"$numberDouble":"34.414924"},"lng":{"$numberDouble":"-119.85623"}`
     * House 3 Info: `,"company":"KAMAP","address":"6521 Cordoba Rd. #33","size":{"$numberInt":"2"},"totalPrice":{"$numberInt":"1940"},"pricePerPerson":{"$numberInt":"0"},"website":"http://www.kamap.net/boardwalk.html","phone":"(805)685-2627","lat":{"$numberDouble":"34.413804"},"lng":{"$numberDouble":"-119.854406"}`
