@@ -53,7 +53,6 @@
     "webpack": "^4.43.0"
   },
   "devDependencies": {
-    "danger": "^10.1.1",
     "@babel/core": "^7.9.6",
     "@storybook/addon-a11y": "^5.3.18",
     "@storybook/addon-actions": "^5.3.18",
@@ -64,6 +63,9 @@
     "@storybook/addons": "^5.3.18",
     "@storybook/react": "^5.3.18",
     "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.3",
+    "danger": "^10.1.1",
+    "style-loader": "^1.2.1",
     "terser-webpack-plugin": "^2.3.5"
   }
 }

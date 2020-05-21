@@ -1,4 +1,6 @@
 import DataView from "../components/view/dataView";
+import '../styles/global.css'
+import '../styles/utils.module.css'
 
 import React from "react";
 
