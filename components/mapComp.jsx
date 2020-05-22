@@ -17,7 +17,7 @@ export default function MapView(props){
         else if(comp === 2){
             setComp2(selectedPark);
         }
-    }, [comp]); 
+    }, [comp]);
 
     return(
         <div className = {utilStyles.mapCompContainer}>
@@ -26,12 +26,12 @@ export default function MapView(props){
                 <CompView comp={comp2}/>
             </div>
             <div className = {utilStyles.mapView}>
-                <ReactMapGL 
-                    {...viewport} 
+                <ReactMapGL
+                    {...viewport}
                     mapboxApiAccessToken={process.env.MAP_TOKEN}
                     mapStyle="mapbox://styles/sethvanb/cka744x8c16b31ilhulkr0d26"
                     onViewportChange = {
-                        viewport => {                      
+                        viewport => {
                             viewport.width = "77vw";
                             viewport.height = "103vh";
                             setViewport(viewport)
@@ -42,16 +42,18 @@ export default function MapView(props){
                             <button className={utilStyles.marker} onClick={(e) => {
                                 e.preventDefault();
                                 setSelectedPark(house);
+                                setComp(0);
                             }}>
-                                <img src="/houseLogo3.png" alt="House Icon" className = {utilStyles.imgView}/>
+                                 <img src="/houseLogo4.png" alt="House Icon" className = {utilStyles.imgView}/>
                             </button>
                         </Marker>
                     ))}
 
                     {selectedPark ? (
-                        <Popup 
-                            latitude={selectedPark.lat} 
+                        <Popup
+                            latitude={selectedPark.lat}
                             longitude={selectedPark.lng}
+                            closeOnClick = {false}
                             onClose={() => {
                                 setSelectedPark(null);
                                 setComp(0);
@@ -60,8 +62,8 @@ export default function MapView(props){
                             <div className={utilStyles.popup}>
                                 <h3 className={utilStyles.popHead}>{selectedPark.address}</h3>
                                 <p className={utilStyles.popContent}>Size: {selectedPark.size}</p>
-                                <p className={utilStyles.popContent}>Total Price: {selectedPark.totalPrice}</p>
-                                <p className={utilStyles.popContent}><a href={selectedPark.website}>More Info Here</a></p>
+                                <p className={utilStyles.popContent}>Total Price: ${selectedPark.totalPrice}</p>
+                                <p className={utilStyles.popContent}><a href={selectedPark.website}>More Info</a></p>
                                     <button className={utilStyles.compButtons} onClick={(e) => {
                                         e.preventDefault();
                                         setComp(1);
@@ -73,7 +75,7 @@ export default function MapView(props){
                                         setComp(2);
                                     }}>
                                         Add to second comparison
-                                    </button>    
+                                    </button>
                             </div>
                         </Popup>
                     ): null}
