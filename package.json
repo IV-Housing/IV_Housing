@@ -10,7 +10,9 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p $PORT",
-    "danger": "danger"
+    "danger": "danger",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook -c .storybook -o ../project-s0-t3-iv-housing-storybook/docs"
   },
   "repository": {
     "type": "git",
@@ -52,6 +54,23 @@
     "webpack": "^4.43.0"
   },
   "devDependencies": {
-    "danger": "^10.1.1"
+    "@babel/core": "^7.9.6",
+    "@storybook/addon-a11y": "^5.3.18",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-knobs": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addon-storysource": "^5.3.18",
+    "@storybook/addon-viewport": "^5.3.18",
+    "@storybook/addons": "^5.3.18",
+    "@storybook/react": "^5.3.18",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.3",
+    "danger": "^10.1.1",
+    "style-loader": "^1.2.1",
+    "terser": "^4.6.12",
+    "terser-webpack-plugin": "^2.3.6"
+  },
+  "resolution": {
+    "terser": "3.17.0"
   }
 }
