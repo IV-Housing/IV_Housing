@@ -1,3 +1,4 @@
+### Link to Retro Planning Google Doc(link is open to anyone to view): https://docs.google.com/document/d/1YwYHKXiYvg7XDdXbuQX5VLNUb7LQ_0-eYYJwiTIMQro/edit?usp=sharing
 # Retro 04/20/20
 
 * Led by: Moshe Haiem
