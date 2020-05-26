@@ -22,7 +22,7 @@
 # Retro 05/04/20
 
 * Led by: Congyuan Sun
-* Present: Seth VanBrocklin, Mathew Kramsch, Congyuan Sun, Moshe Haiem, Veltson Bastien
+* Present: Seth VanBrocklin, Mathew Kramsch,  Moshe Haiem, Veltson Bastien
 * Absent: None
 
 ## Action item
@@ -43,7 +43,7 @@
   # Retro 05/26/20
 
 * Led by: Seth VanBrocklin
-* Present: Congyuan Sun, Mathew Kramsch, Congyuan Sun, Moshe Haiem, Veltson Bastien
+* Present: Congyuan Sun, Mathew Kramsch, Moshe Haiem, Veltson Bastien
 * Absent: None
 
 ## Action item
