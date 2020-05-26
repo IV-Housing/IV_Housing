@@ -22,7 +22,7 @@
 # Retro 05/04/20
 
 * Led by: Congyuan Sun
-* Present: Seth VanBrocklin, Mathew Kramsch,  Moshe Haiem, Veltson Bastien
+* Present: Seth VanBrocklin, Mathew Kramsch, Congyuan Sun, Moshe Haiem, Veltson Bastien
 * Absent: None
 
 ## Action item
@@ -43,14 +43,14 @@
   # Retro 05/26/20
 
 * Led by: Seth VanBrocklin
-* Present: Congyuan Sun, Mathew Kramsch, Moshe Haiem, Veltson Bastien
+* Present: Congyuan Sun, Mathew Kramsch, Congyuan Sun, Moshe Haiem, Veltson Bastien
 * Absent: None
 
 ## Action item
 
-* a goal: 
-* a change: 
-* a measurement: 
+* a goal: We should improve communication with checking slack and approving pull requests. 
+* a change: We should check slack at least once a day and approve pull requests when you are assigned to them. 
+* a measurement: No one should merge the pull requests until every reviewer has approved it and we can see if this is done in GitHub. Everyone should at the very least react to messages sent so people will now you have read them and we can see if everyone is keeping up with checking slack. 
 
 
 ## Retro Assessment
@@ -59,5 +59,5 @@
     * Lean Coffee
     * Force Field Analysis
     * Start/Stop/Continue
-* A brief assessment of how it went: 
-* What advice would you give to the next person leading a retro based on what you learned today?: 
+* A brief assessment of how it went: I think the retro went very well and it was a little more organized than before so we are improving each time. 
+* What advice would you give to the next person leading a retro based on what you learned today?: It helps to come with a plan and lots of questions to stimulate conversation.
