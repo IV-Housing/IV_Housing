@@ -1,4 +1,5 @@
 # Instructions for Deployment (to deploy you will need a github account)
+* video instructions: https://www.youtube.com/watch?v=jtsq72x04v0
 ## 1. Fork repo onto your own github account
   * Goto https://github.com/ucsb-cs48-s20/project-s0-t3-iv-housing and click on the fork button in the top right. 
   ![Top of our Github page highlighting fork button](./images/Step1Img1.png)
