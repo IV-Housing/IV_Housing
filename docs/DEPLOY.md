@@ -62,15 +62,3 @@
   * A samll display should popup at the bottom of the window. Wait until the popup is replaced by 4 sections each checked off and the last one should say "Deploy to Heroku" in green font and have a green check mark to the right.
   ![Heroku website showing app deploying](./images/Step5Img4.png) ![Heroku website showing app deployed](./images/Step5Img5.png)
   * Now the application is deployed on the Heroku URL. To get to the application just click the white/purple "View" button at the bottom of the page. This should open a new page with your application. 
-  
-# Deployment Testing
-    
-Our team: s0-t1-ride-share
-
-Other Teams:
-  
-| Team                     | Who is reviewing | Issue Number |
-|--------------------------|------------------|--------------|
-| s0-t2-covid-19           | Alice, Bob       |   65         |
-| s0-t3-restaurant-reviews | Chris, Danny     |   66         |
-| s0-t4-dog-sitting        | Ellery           |   67         |
