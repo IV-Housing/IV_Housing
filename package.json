@@ -12,7 +12,9 @@
     "start": "next start -p $PORT",
     "danger": "danger",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -c .storybook -o ../project-s0-t3-iv-housing-storybook/docs"
+    "build-storybook": "build-storybook -c .storybook -o ../project-s0-t3-iv-housing-storybook/docs",
+    "test": "npm-run-all test:*",
+    "test:jest": "jest"
   },
   "repository": {
     "type": "git",
@@ -68,7 +70,9 @@
     "danger": "^10.1.1",
     "style-loader": "^1.2.1",
     "terser": "^4.6.12",
-    "terser-webpack-plugin": "^2.3.6"
+    "terser-webpack-plugin": "^2.3.6",
+    "jest": "^25.4.0",
+    "npm-run-all": "^4.1.5"
   },
   "resolution": {
     "terser": "3.17.0"
