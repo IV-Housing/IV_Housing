@@ -10,3 +10,4 @@
 | Mon 05/21 | Congyuan Sun      | Did the demo of iteration 2                            |
 | Tue 05/26 | Seth VanBrocklin  | Led third team Retro                                   | 
 | Tue 05/26 | Moshe Haiem       | Will lead sprint goal                                  | 
+* Veltson went twice in a row because the schedule switched the MVP demo and Second Retro
