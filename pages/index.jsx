@@ -9,6 +9,8 @@ import Navbar from '../components/navbar.js'
 import IndexForms from '../components/forms/indexForms.jsx'
 import DataView from '../components/view/dataView.jsx'
 import Info from '../components/info.jsx'
+import { markActiveFilter } from '../utils/activeFilter.js'
+import { markInactiveFilter } from '../utils/inactiveFilter.js'
 
 export default function Index(){
 	const [initList, setInitList] = useState([]);  // houses data
@@ -38,13 +40,13 @@ export default function Index(){
 
 		if (street!=='Any') { 
 			houses = houses.filter((item)=>{ return item.address.indexOf(street)!==-1; }) 
-			if (!s.classList.contains(utilStyles['active'])) s.classList.toggle(utilStyles['active']);	
-		} else { if (s.classList.contains(utilStyles['active'])) s.classList.toggle(utilStyles['active']); }
+			markActiveFilter(s);
+		} else markInactiveFilter(s);
 
 		if (block!=='Any') { 
 			houses = houses.filter((item)=>{ return item.address.substr(0,2) === block}) 
-			if (!b.classList.contains(utilStyles['active'])) b.classList.toggle(utilStyles['active']);	
-		} else { if (b.classList.contains(utilStyles['active'])) b.classList.toggle(utilStyles['active']); }
+			markActiveFilter(b);
+		} else markInactiveFilter(b);
 
 		if(size!=='Any') {
 			houses = houses.filter(item=>{
@@ -52,8 +54,8 @@ export default function Index(){
 				if (tIndex!==-1) return item.size > Number(size.substring(0,tIndex))
 				else return item.size === Number(size)
 			})
-			if (!si.classList.contains(utilStyles['active'])) si.classList.toggle(utilStyles['active']);	
-		} else { if (si.classList.contains(utilStyles['active'])) si.classList.toggle(utilStyles['active']); }
+			markActiveFilter(si);
+		} else markInactiveFilter(si);
 
 		if (price!=='Any Price') {
 			 if (priceType==='total'){
@@ -76,8 +78,8 @@ export default function Index(){
 					}
 				})
 			 }
-			if (!p.classList.contains(utilStyles['active'])) p.classList.toggle(utilStyles['active']);	
-		} else { if (p.classList.contains(utilStyles['active'])) p.classList.toggle(utilStyles['active']); }
+			markActiveFilter(p);
+		} else markInactiveFilter(p);
 
 		if (priceType==='total') {
 			if (direction=="ascending") houses.sort((h1,h2)=>{ return (h1['totalPrice'])-(h2['totalPrice']); });
