@@ -38,3 +38,26 @@
 * A brief assessment of how it went: We made some suggestions and changes on feature branches and decided to keep out-class meetings.
 * What advice would you give to the next person leading a retro
   based on what you learned today?: Keep on brainstorming on Google Doc, which is really helpful for everyone.
+  
+  
+  # Retro 05/26/20
+
+* Led by: Seth VanBrocklin
+* Present: Congyuan Sun, Mathew Kramsch, Congyuan Sun, Moshe Haiem, Veltson Bastien
+* Absent: None
+
+## Action item
+
+* a goal: 
+* a change: 
+* a measurement: 
+
+
+## Retro Assessment
+
+* A brief description of what retro outline or process you used: Five Phases of a Succesful Retrospective including:
+    * Lean Coffee
+    * Force Field Analysis
+    * Start/Stop/Continue
+* A brief assessment of how it went: 
+* What advice would you give to the next person leading a retro based on what you learned today?: 
