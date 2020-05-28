@@ -19,3 +19,11 @@ Two types of users, landlords that are able to post lease offerings on the site,
 * user can sort by price per person/ size
 
 ## [Deployment Instructions](./docs/DEPLOY.md)
+
+## Commands
+| Command                | Description                                  |
+| ---------------------- | -------------------------------------------- |
+| `npm install`          | Install Dependencies                         |
+| `npm run dev`          | Runs locally                                 |
+| `npm run test`         | Runs entire test suite                       |
+| `npm run test:cypress` | Runs Cypress integration tests               |
