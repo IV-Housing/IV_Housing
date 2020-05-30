@@ -6,7 +6,7 @@ export function filterByBlock(block) { return (item)=>{ return item.address.subs
 export function filterBySize(size) {
 	return (item) => {
 		let tIndex = size.indexOf('+');
-		if (tIndex!==-1) return item.size > Number(size.substring(0,tIndex));
+		if (tIndex!==-1) return item.size>=Number(size.substring(0,tIndex));
 		else return item.size === Number(size);
 	} 
 }
@@ -30,7 +30,7 @@ export function filterByPricePerPerson(price) {
 		else {
 			let tarr = price.split('-');
 			return Number((item.totalPrice/item.size).toFixed(2))>=Number(tarr[0])
-				&& Number((item.totalPrice/item.size).toFixed(2));
+				&& Number((item.totalPrice/item.size).toFixed(2))<Number(tarr[1]);
 		}
 	}
 }

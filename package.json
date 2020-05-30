@@ -14,7 +14,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o ../project-s0-t3-iv-housing-storybook/docs",
     "test": "npm-run-all test:*",
-    "test:jest": "jest"
+    "test:jest": "jest --verbose"
   },
   "repository": {
     "type": "git",
@@ -53,9 +53,10 @@
     "react-geolocated": "^3.0.1",
     "react-image": "^3.0.3",
     "react-map-gl": "^5.2.5",
+    "request": "^2.88.2",
     "webpack": "^4.43.0"
   },
-  "devDependencies": {
+  "devdependencies": {
     "@babel/core": "^7.9.6",
     "@storybook/addon-a11y": "^5.3.18",
     "@storybook/addon-actions": "^5.3.18",
@@ -76,5 +77,8 @@
   },
   "resolution": {
     "terser": "3.17.0"
+  },
+  "devDependencies": {
+    "jest": "^26.0.1"
   }
 }

@@ -31,8 +31,7 @@ export default function Map(){
 	useEffect(()=>{ if(initList.length===0) getList();});
 	useEffect(() => {
 		let houses = [...initList];
-		let refinedHouses = sortAndFilter(houses,street,block,size,price,priceType,'none');
-		setRefinedData(refinedHouses);
+		setRefinedData( sortAndFilter(houses,street,block,size,price,priceType,'none') );
 	}, [initList, street, block, size, price, priceType]);
 
     return (

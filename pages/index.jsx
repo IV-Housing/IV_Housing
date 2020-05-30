@@ -38,8 +38,7 @@ export default function Index(){
 
 	useEffect(() => {
 		let houses = [...initList];
-		let refinedHouses = sortAndFilter(houses,street,block,size,price,priceType,direction);
-		setRefinedData(refinedHouses);
+		setRefinedData( sortAndFilter(houses,street,block,size,price,priceType,direction) );
 	}, [initList, street, block, size, price, priceType, direction]);
 	
 	useEffect(() => {
