@@ -56,7 +56,7 @@
     "request": "^2.88.2",
     "webpack": "^4.43.0"
   },
-  "devdependencies": {
+  "devDependencies": {
     "@babel/core": "^7.9.6",
     "@storybook/addon-a11y": "^5.3.18",
     "@storybook/addon-actions": "^5.3.18",
@@ -72,13 +72,10 @@
     "style-loader": "^1.2.1",
     "terser": "^4.6.12",
     "terser-webpack-plugin": "^2.3.6",
-    "jest": "^25.4.0",
+    "jest": "^26.0.1",
     "npm-run-all": "^4.1.5"
   },
   "resolution": {
     "terser": "3.17.0"
-  },
-  "devDependencies": {
-    "jest": "^26.0.1"
   }
 }
