@@ -11,6 +11,7 @@ export default function Layout({children}){
      <Head>
       <meta name = "description" content = "Search for housing listings throughout Isla Vista!"/>
       <meta name = "og:title" content={siteTitle} />
+      <title>{siteTitle}</title>
      </Head>
      <Navbar></Navbar>
      <main>{children}</main>
