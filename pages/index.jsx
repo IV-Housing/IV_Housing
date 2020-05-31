@@ -9,8 +9,12 @@ import Navbar from '../components/navbar.js'
 import IndexForms from '../components/forms/indexForms.jsx'
 import DataView from '../components/view/dataView.jsx'
 import Info from '../components/info.jsx'
+import { optionalAuth } from "../utils/ssr";
 
-export default function Index(){
+export const getServerSideProps = optionalAuth;
+
+export default function Index(props){
+	const user=props.user
 	const [initList, setInitList] = useState([]);  // houses data
 	const [refinedData, setRefinedData] = useState([]);
 	const [{street, block,  size, price, priceType}, setStreetBlock] = useState({street:'Any', block:'Any', size:'Any', price:'Any Price', priceType:'total'});
@@ -108,7 +112,7 @@ export default function Index(){
 			<Head>
 				<title>{siteTitle}</title>
 			</Head>
-			<Navbar></Navbar>
+			<Navbar user={user}></Navbar>
 			<div className={utilStyles.containerIndex}>
 				<div className={utilStyles.indexDivs}>
 					<IndexForms filter={filter} sortByPrice={sortByPrice}/>
