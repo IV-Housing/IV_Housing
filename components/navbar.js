@@ -1,6 +1,3 @@
-//Next.JS imports
-import Head from 'next/head'
-import Link from 'next/link'
 //Style Imports
 import utilStyles from '../styles/utils.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

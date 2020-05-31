@@ -1,11 +1,8 @@
 // index.jsx
-
 import React, { useState, useEffect } from 'react';
-import Head from 'next/head'  // for Next.js
 import fetch from "isomorphic-unfetch";
 import utilStyles from '../styles/utils.module.css'  // css style
 import Layout, {siteTitle} from '../components/layout.js'
-import Navbar from '../components/navbar.js'
 import IndexForms from '../components/forms/indexForms.jsx'
 import DataView from '../components/view/dataView.jsx'
 import Info from '../components/info.jsx'
@@ -105,10 +102,6 @@ export default function Index(){
 
 	return (
 		<Layout index>
-			<Head>
-				<title>{siteTitle}</title>
-			</Head>
-			<Navbar></Navbar>
 			<div className={utilStyles.containerIndex}>
 				<div className={utilStyles.indexDivs}>
 					<IndexForms filter={filter} sortByPrice={sortByPrice}/>

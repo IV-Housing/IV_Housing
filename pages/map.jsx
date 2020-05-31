@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Head from 'next/head'
 import fetch from "isomorphic-unfetch";
 import Layout, {siteTitle} from '../components/layout.js'
-import Navbar from '../components/navbar.js'
 import utilStyles from '../styles/utils.module.css'  // css style
 import MapView from "../components/mapComp.jsx"
 import MapForms from '../components/forms/mapForms.jsx'
@@ -81,10 +79,6 @@ export default function Map(){
 
     return (
        <Layout map>
-			<Head>
-				<title>{siteTitle}</title>
-			</Head>
-			<Navbar></Navbar>
 			<div className={utilStyles.containerMap}>
 				<h1 className={utilStyles.mapH1}>Listings Map</h1>
 				<div className={utilStyles.mapInfo}>
