@@ -24,9 +24,9 @@ describe("Home Page", () => {
     it("has a view that switches between a table and cards", () => {
         cy.get("button").should('have.text', 'Table ViewCard View');
 
-        cy.get('button').its(1).click();
+        cy.get('button').its(1).click({force: true} );
         cy.get('table').should('not.visible');
-        cy.get('button').its(0).click();
+        cy.get('button').its(0).click({force: true} );
         cy.get('table').should('visible');
 
         cy.get("thead>tr>th").its(0).should('have.text', 'Address');
@@ -80,13 +80,13 @@ describe("Home Page", () => {
         // cy.get("h2").its(1)).should('have.text', '');
     }); 
 
-    it("has a canvas cotaining the map thst visible", () => {
-        cy.get("canvas").should('visible');
-        cy.get("button").should('have.length', 129);
-        // cy.get("button").its(3).click();
-        // cy.get("h3").its(0).should('visible');
-        // cy.get("h3").its(0).should('have.text', '6736 Sueno Rd. #A');
-    }); 
+    // it("has a canvas cotaining the map that is visible", () => {
+    //     cy.get("canvas").should('visible');
+    //     cy.get("button").should('have.length', 129);
+    //     // cy.get("button").its(3).click();
+    //     // cy.get("h3").its(0).should('visible');
+    //     // cy.get("h3").its(0).should('have.text', '6736 Sueno Rd. #A');
+    // }); 
 
     it("has a link under the title Developers and paragraphs in the side disclaimer", () => {
         cy.get("a").its(2).should('have.text', 'Developers');
