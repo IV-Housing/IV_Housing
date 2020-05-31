@@ -24,9 +24,9 @@ describe("Home Page", () => {
     it("has a view that switches between a table and cards", () => {
         cy.get("button").should('have.text', 'Table ViewCard View');
 
-        cy.get('button').its(1).click({force: true} );
+        cy.get('button').its(1).click({force: true});
         cy.get('table').should('not.visible');
-        cy.get('button').its(0).click({force: true} );
+        cy.get('button').its(0).click({force: true});
         cy.get('table').should('visible');
 
         cy.get("thead>tr>th").its(0).should('have.text', 'Address');
@@ -35,7 +35,7 @@ describe("Home Page", () => {
         cy.get("thead>tr>th").its(3).should('have.text', 'Total Price');
         cy.get("thead>tr>th").its(4).should('have.text', 'Price Per Person*');
 
-        cy.get('tbody').find('tr').should('have.length', 129);
+        cy.get('tbody>tr').should('have.length', 129);
 
         // cy.get('select').its(0)
         //   .select('Any Street').should('have.value', 'Any');
