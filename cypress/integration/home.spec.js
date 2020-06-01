@@ -34,11 +34,6 @@ describe("Home Page", () => {
         cy.get("thead>tr>th").its(2).should('have.text', 'Size');
         cy.get("thead>tr>th").its(3).should('have.text', 'Total Price');
         cy.get("thead>tr>th").its(4).should('have.text', 'Price Per Person*');
-
-        //cy.get('tbody>tr').should('have.length', 129);
-
-        // cy.get('select').its(0)
-        //   .select('Any Street').should('have.value', 'Any');
     });
 
     it("has a link under the title Developers and paragraphs in the side disclaimer", () => {
@@ -76,17 +71,7 @@ describe("Home Page", () => {
     it("has the same paragraphs in the leftside comparisons views", () => {
         cy.get("p").its(1).should('have.text', ' No house is selected yet. Select a house marker from the map and use the buttons add it to a comparison box.');
         cy.get("p").its(2).should('have.text', ' No house is selected yet. Select a house marker from the map and use the buttons add it to a comparison box.');
-        // cy.get("button").its(3).click();
-        // cy.get("h2").its(1)).should('have.text', '');
     }); 
-
-    // it("has a canvas cotaining the map that is visible", () => {
-    //     cy.get("canvas").should('visible');
-    //     cy.get("button").should('have.length', 129);
-    //     // cy.get("button").its(3).click();
-    //     // cy.get("h3").its(0).should('visible');
-    //     // cy.get("h3").its(0).should('have.text', '6736 Sueno Rd. #A');
-    // }); 
 
     it("has a link under the title Developers and paragraphs in the side disclaimer", () => {
         cy.get("a").its(2).should('have.text', 'Developers');
