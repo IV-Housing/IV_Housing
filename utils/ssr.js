@@ -23,17 +23,11 @@ export async function optionalAuth({ req, res }) {
   const user = await getUserSession(req);
 
   if (user) {
-    if(user.hasBeenCreated){
       return {
         props: {
           user,
         },
       };
-    }else{
-      res.writeHead(302, {
-        Location: "/create",
-      });
-    }
   }
 
   return { props: {} };
