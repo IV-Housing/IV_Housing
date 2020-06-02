@@ -1,5 +1,4 @@
 import IndexForms from "../components/forms/indexForms";
-import Index from "../pages";
 
 export default {
   title: "IndexForms",
