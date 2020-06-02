@@ -75,24 +75,23 @@ class FilterForms extends React.Component {
 				<select id="blockSelect" defaultValue="default" onChange={this.blockChange}>
 					<option value = "Any">Any Block</option>
 					<option value = "65"> 65 Block </option>
-					<option value = "66">  66 Block </option>
+					<option value = "66"> 66 Block </option>
 					<option value = "67"> 67 Block </option>
 					<option value = "68"> 68 Block </option>
 				</select>
 
 				<select id="sizeSelect" defaultValue="default" onChange={this.sizeChange}>
 					<option value = "Any">Any Size</option>
-					<option value = "1">For 1 Person</option>
-					<option value = "2">For 2 People</option>
-					<option value = "3">For 3 People</option>
-					<option value = "4">For 4 People</option>
-					<option value = "5">For 5 People</option>
-					<option value = "6">For 6 People</option>
-					<option value = "7">For 7 People</option>
-					<option value = "8">For 8 People</option>
-					<option value = "9">For 9 People</option>
-					<option value = "10">For 10 People</option>
-					<option value = "10+">For 10+ People</option>
+					<option value = "1">for 1 person</option>
+					<option value = "2">for 2 people</option>
+					<option value = "3">for 3 people</option>
+					<option value = "4">for 4 people</option>
+					<option value = "5">for 5 people</option>
+					<option value = "6">for 6 people</option>
+					<option value = "7">for 7 people</option>
+					<option value = "8">for 8 people</option>
+					<option value = "9">for 9 people</option>
+					<option value = "10+">for 10+ people</option>
 				</select>
 				
 				<select id="priceSelect" defaultValue="default" onChange={this.priceChange}>
