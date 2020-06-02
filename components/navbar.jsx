@@ -8,7 +8,7 @@ import Image from "react-bootstrap/Image";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head'
-import Link from 'next/Link'
+import Link from 'next/link'
 
 
 
