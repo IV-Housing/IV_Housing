@@ -5,7 +5,11 @@ import Navbar from './navbar'
 
 export const siteTitle = 'Isla Vista Housing Search'
 
-export default function Layout({children}){
+export default function Layout(props){
+  const children=props.children
+  const user=props.user
+  console.log(props)
+  debugger
   return (
     <div>
      <Head>
@@ -13,7 +17,7 @@ export default function Layout({children}){
       <meta name = "og:title" content={siteTitle} />
       <title>{siteTitle}</title>
      </Head>
-     <Navbar></Navbar>
+     <Navbar user={user}></Navbar>
      <main>{children}</main>
     </div>
   )

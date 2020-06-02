@@ -1,5 +1,3 @@
-//Next.JS imports
-import Head from 'next/head'
 //Style Imports
 import utilStyles from '../styles/utils.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,11 +6,19 @@ import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import React, { useState, useEffect } from 'react';
+import Head from 'next/head'
+import Link from 'next/Link'
+
+
 
 
 
 export default function Navbar(props){
   const user = props.user;
+  
+
+
  return(
    <>
     <div className={utilStyles.navbar}>
@@ -45,7 +51,8 @@ export default function Navbar(props){
             </Button>
           )}
         </Nav>
-     </div>
+        {user && <Link href="/create" >Add Listing</Link>}
+     </div>  
     </div>
    </>
  )
