@@ -57,11 +57,7 @@ export default function Index(props){
 	}, [view]);
 
 	return (
-		<Layout index>
-			<Head>
-				<title>{siteTitle}</title>
-			</Head>
-			<Navbar user={user}></Navbar>
+		<Layout user={user} index>
 			<div className={utilStyles.containerIndex}>
 				<div className={utilStyles.indexDivs}>
 					<IndexForms filter={filter} sortByPrice={sortByPrice}/>

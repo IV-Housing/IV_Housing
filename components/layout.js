@@ -8,8 +8,6 @@ export const siteTitle = 'Isla Vista Housing Search'
 export default function Layout(props){
   const children=props.children
   const user=props.user
-  console.log(props)
-  debugger
   return (
     <div>
      <Head>
