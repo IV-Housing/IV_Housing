@@ -23,16 +23,11 @@ export default function Navbar(props){
         <a href="/">Listings</a>
         <a href="/map">Map</a>
         {user && <a href="/create" >Add Listing</a>}
-        <Nav className={utilStyles.navlogin}>
+        <Nav>
           {user ? (
-            <NavDropdown 
+            <NavDropdown
               title={
-<<<<<<< HEAD:components/navbar.js
-                <>
-                  Hi, {user.name}
-=======
-                <div>
->>>>>>> 236673ded43ed09a3fff91e76f0bdb20128dbaf1:components/navbar.jsx
+                <div className={utilStyles.navUser}>
                   <Image
                     className="ml-2"
                     src={user.picture}
@@ -45,7 +40,7 @@ export default function Navbar(props){
                 </div>
               }
             >
-              <NavDropdown.Item href="/api/logout">
+              <NavDropdown.Item href="/api/logout" className={utilStyles.navLogout}>
                 Logout
               </NavDropdown.Item>
             </NavDropdown>
