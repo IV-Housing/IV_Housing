@@ -8,8 +8,6 @@ import DataView from '../components/view/dataView.jsx'
 import Info from '../components/info.jsx'
 import { optionalAuth } from "../utils/ssr";
 import sortAndFilter from '../utils/sortAndFilterFunctions.js'
-import Head from 'next/head'
-import Navbar from '../components/navbar'
 
 export const getServerSideProps = optionalAuth;
 
