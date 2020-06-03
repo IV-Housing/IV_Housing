@@ -169,6 +169,19 @@
 	color: #888;
 }
 
+.listingForm{
+	position: absolute;
+	margin: 15px;
+	padding: 10px;
+	margin-top: 100px;
+	margin-left: 20%;
+	text-align: center;
+	height: auto;
+	width: 800px;
+}.listingForm > form >input{
+	text-align: left;
+}
+
 /*-----------------------------------------------------------------*/
 /* CARD/TABLE VIEW */
 

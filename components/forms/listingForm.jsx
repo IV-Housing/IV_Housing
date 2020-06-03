@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import utilStyles from '../../styles/utils.module.css'
 
 export default function ListingForm(props){
+   const [submitted, setSubmitted] = useState(false);
+   const sub = false;
    const submit = ()=>{
         // var company = getElementById("Company").value;
         // var address = document.getElementById("address").value;
@@ -11,11 +13,11 @@ export default function ListingForm(props){
         // var website = document.getElementById("website").value;
         // var phone = document.getElementById("phone").value;
         // this.props.getFormInfo(company, address, size, totalPrice, pricePerPerson, website, phone);
-        //reset form
+        setSubmitted(true);
     }
 
     return (
-        <div className={utilStyles.formSelects}>
+        <div className={utilStyles.listingForm}> 
             <form>
                 <select id="Company" defaultValue="Subleaser" onChange={this}>
                     <option value="Subleaser">Subleaser</option>
@@ -31,15 +33,14 @@ export default function ListingForm(props){
                 <input type="number" id="size" name="size"></input><br></br>
                 <label for="totalPrice">Total Price of Avalible Spots:</label>
                 <input type="number" id="totalPrice" name="totalPrice"></input><br></br>
-                <label for="pricePerPerson">Estimated Price for a Single Person:</label>
-                <input type="number" id="pricePerPerson" name="pricePerPerson"></input><br></br>
-                <label for="website">Original House Listing/Facebook Listing:</label>
+                <label for="website">Original House Listing/Facebook Listing Webpage:</label>
                 <input type="text" id="website" name="website"></input><br></br>
                 <label for="phone">Contact Phone Number:</label>
                 <input type="tel" id="phone" name="phone"></input><br></br>
-                <input type="submit" value="Submit" onClick={submit()}></input>
+                <input type="submit" value="Submit" onClick={() => submit()}></input>
                 <input type="reset"></input>
             </form>
+            {submitted && <p>Submission Successful</p>}
         </div>
     );
 }
