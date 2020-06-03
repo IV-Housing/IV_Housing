@@ -62,9 +62,8 @@
     "react-geolocated": "^3.0.1",
     "react-image": "^3.0.3",
     "react-map-gl": "^5.2.5",
-    "react-scripts": "^3.4.1",
-    "start-server-and-test": "^1.10.11",
     "request": "^2.88.2",
+    "start-server-and-test": "^1.10.11",
     "webpack": "^4.43.0"
   },
   "devDependencies": {
