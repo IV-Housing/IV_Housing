@@ -25,7 +25,7 @@ export default function Navbar(props){
             <NavDropdown
               title={
                 <>
-                  Hi, {user.name} 
+                  Hi, {user.name}
                   <Image
                     className="ml-2"
                     src={user.picture}
