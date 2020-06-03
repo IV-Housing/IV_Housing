@@ -6,9 +6,15 @@ import Layout, {siteTitle} from '../components/layout.js'
 import IndexForms from '../components/forms/indexForms.jsx'
 import DataView from '../components/view/dataView.jsx'
 import Info from '../components/info.jsx'
+import { optionalAuth } from "../utils/ssr";
 import sortAndFilter from '../utils/sortAndFilterFunctions.js'
+import Head from 'next/head'
+import Navbar from '../components/navbar'
 
-export default function Index(){
+export const getServerSideProps = optionalAuth;
+
+export default function Index(props){
+	const user=props.user
 	const [initList, setInitList] = useState([]);  // houses data
 	const [refinedData, setRefinedData] = useState([]);
 	const [direction, setDirection] = useState("ascending");
@@ -51,7 +57,7 @@ export default function Index(){
 	}, [view]);
 
 	return (
-		<Layout index>
+		<Layout user={user} index>
 			<div className={utilStyles.containerIndex}>
 				<div className={utilStyles.indexDivs}>
 					<IndexForms filter={filter} sortByPrice={sortByPrice}/>

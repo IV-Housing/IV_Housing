@@ -8,8 +8,14 @@ import MapView from "../components/mapComp.jsx"
 import MapForms from '../components/forms/mapForms.jsx'
 import Info from '../components/info.jsx'
 import sortAndFilter from '../utils/sortAndFilterFunctions.js'
+import { optionalAuth } from "../utils/ssr";
+import Navbar from '../components/navbar'
 
-export default function Map(){
+export const getServerSideProps = optionalAuth;
+
+export default function Map(props){
+	const user=props.user
+	debugger
 	const [initList, setInitList] = useState([]);  // houses data
 	const [refinedData, setRefinedData] = useState([]);
 	const [{street,block,size,price,priceType}, setStreetBlock] = useState(
@@ -33,7 +39,7 @@ export default function Map(){
 	}, [initList, street, block, size, price, priceType]);
 
     return (
-       <Layout map>
+       <Layout map user={user}>
 			<div className={utilStyles.containerMap}>
 				<h1 className={utilStyles.mapH1}>Listings Map</h1>
 				<div className={utilStyles.mapInfo}>
