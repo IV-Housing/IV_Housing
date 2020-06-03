@@ -6,5 +6,5 @@ export default {
 };
 
 export const simple_mapForms = () => {
-  return <MapForms />;
+  return <MapForms filter={()=>{}}/>;
 };

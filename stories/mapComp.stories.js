@@ -1,5 +1,4 @@
 import MapComp from "../components/mapComp";
-
 import {object} from "@storybook/addon-knobs"
 
 export default {

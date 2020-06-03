@@ -6,5 +6,5 @@ export default {
 };
 
 export const simple_indexForms = () => {
-  return <IndexForms />;
+  return <IndexForms filter={()=>{}}/>;
 };
