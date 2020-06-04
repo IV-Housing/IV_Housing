@@ -57,11 +57,11 @@
 
 You will be asked to create a tenant. It doesn't matter what your tenant name is, and it's totally fine to take the default. However, we suggest that you name it: `cs48-s20-githubid` where `githubid` is your githubid, as shown here (using `pconrad` as an example):
 
-![create tenant](images/create-tenant_40pct.png)
+![create tenant](./images/Step6Img1.png)
 
 For "Account Type", click "Personal", then "Create Account":
 
-![create personal account](images/create-personal-account_40pct.png)
+![create personal account](./images/Step6Img2.png)
 *Next, register a new application. You do this by navigating to the "Applications" page in the sidebar and clicking the
 "Create Application" button.
 
@@ -72,11 +72,11 @@ Give it a name:
 
 Click to select "Single Page Application" as shown below:
 
-![single page application](images/single-page-app_25pct.png)
+![single page application](./images/Step6Img3.png)
 *In the configuration for the application you just created, click on the "Settings" tab. The settings tab is the second from right in the center of the page
 as shown here:
 
-![click-settings-tab.png](images/click-settings-tab.png)
+![click-settings-tab.png](./images/Step6Img4.png)
 
 Once on the settings tab, you'll need to do two things:
 
@@ -103,7 +103,7 @@ Once on the settings tab, you'll need to do two things:
 
    You should see these fields:
 
-   ![secret-values.png](images/secret-values.png)
+   ![secret-values.png](./images/Step6Img5.png)
 
    At the right hand side of the fields
    `Domain`, `Client Id` and `Client Secret`, there is a box where you can
@@ -124,14 +124,14 @@ Once on the settings tab, you'll need to do two things:
    *Now find the `Connections` tab of **your app** (not the `Connections`
    item on the sidebar) and click it:
 
-   ![connections-tab.png](images/connections-tab.png)
+   ![connections-tab.png](./images/Step6Img6.png)
 
    Adjust and/or check these settings:
 
    - Uncheck Username-Password-Authentication.
    - Ensure google-oauth2 is checked (it should be by default).
 
-   ![connections-settings.png](images/connections-settings.png)
+   ![connections-settings.png](./images/Step6Img7.png)
   * Go to your Heroku application home page  at `https://dashboard.heroku.com/apps/<your heroku applicatin name here>` and click on the "Settings" menu on the top navbar. The second section on this page should be Config Vars. In this section click on the white/purple "Reveal Config Vars" button. Add a new Config Var with KEY set to "AUTH0_DOMAIN", "AUTH0_CLIENT_ID", and AUTH0_CLIENT_SECRET (without quotation marks) and paste for each into Value. 
   ![Heroku App settings highlighting Config Vars section and Reveal config vars button](./images/Step3Img5.png)
 ## 6. Deploy app on Heroku
