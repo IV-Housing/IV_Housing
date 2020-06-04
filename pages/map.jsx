@@ -1,5 +1,4 @@
 // map.jsx
-
 import React, { useState, useEffect } from 'react';
 import fetch from "isomorphic-unfetch";
 import Layout, {siteTitle} from '../components/layout.js'
@@ -9,7 +8,6 @@ import MapForms from '../components/forms/mapForms.jsx'
 import Info from '../components/info.jsx'
 import sortAndFilter from '../utils/sortAndFilterFunctions.js'
 import { optionalAuth } from "../utils/ssr";
-import Navbar from '../components/navbar'
 
 export const getServerSideProps = optionalAuth;
 
