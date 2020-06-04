@@ -1,21 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import utilStyles from '../../styles/utils.module.css'
 
+//const NodeGeocoder = require('node-geocoder');
+
 export default function ListingForm(props){
    const [submitted, setSubmitted] = useState(false);
    const [state, setState] = React.useState({ company: "Subleaser", address: "", size: "", totalPrice: "", website: "", phone: "" });
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(state.comapny);
         postListing();
-        console.log(state.company);
         setState({ company: "Subleaser", address: "", size: "", totalPrice: "", website: "", phone: "" });
-        console.log(state.comapny);
         setSubmitted(true);
     };
 
     const postListing = async () => {
+        // const options = {
+        //     provider: 'opencage',
+        //     fetch: customFetchImplementation,
+        //     apiKey: 'ce9151e4db0e4c9c87af37b712013576',
+        //     formatter: null
+        // };
+
+        // const res = await geocoder.geocode({
+        //     address: state.address,
+        //     countryCode: 'us',
+        //     limit: 1
+        // });
+
+        console.log(state.comapny);
+        console.log(state.address);
+        console.log(state.size);
+        console.log(state.totalPrice);
+        console.log(state.website);
+        console.log(state.phone);
+
 		const response = await fetch("/api", {
             method: "POST",
             // headers: {
@@ -26,7 +45,7 @@ export default function ListingForm(props){
               address: state.address,
               size: state.size,
               totalPrice: state.totalPrice,
-              pricePerPerson: 0,
+              pricePerPerson: 1,
               website: state.website,
               phone: state.phone,
               lat: 0,
