@@ -48,21 +48,19 @@
 }
 
 .navUser{
-	margin-right: 100px;
+	margin-right: 10px;
 	display: inline-flex;
 	margin-left: -20px;
 }
 
 .navLogout{
-	position: absolute;
-	z-index: 5;
-	top: -43px;
-	right: -270px;
-	padding: 15px;
-	border-radius: 4px;
 	color: white;
-}.navLogout:hover{
+	font-size: 18px;
+	margin-left: 15px;
+	padding: 5px;
+	box-shadow: 1px 3px darkgrey; 
 	background-color: #087cd4;
+
 }
 
 .navLogin{
@@ -71,7 +69,7 @@
 	margin-left: -25px;
 	margin-right: 5px;
 	color: white;
-} .navLogin:hover{
+}.navLogin:hover{
 	background-color: #087cd4;
 }
 
@@ -177,9 +175,34 @@
 	margin-left: 20%;
 	text-align: center;
 	height: auto;
-	width: 800px;
-}.listingForm > form >input{
-	text-align: left;
+	width: 600px;
+	background-color: #0984e3;
+	box-shadow: 5px 10px darkgrey;
+}
+.listingFormInput{
+	float: right;
+}
+.listingFormLabel{
+	color: white;
+	float: left;
+	font-weight: bold;
+}
+.listingFormLabel2{
+	color: white;
+	font-weight: bold;
+}
+.listingFormButton{
+	font-weight: bold;
+	font-size: 18px;
+	border: 0px;
+	border-radius: 4px;
+	padding: 15px;
+	margin-left: 5px;
+	margin-right: 5px;
+	background-color: #0984e3;
+	color: white;
+} .listingFormButton:hover {
+	background-color: #087cd4;
 }
 
 /*-----------------------------------------------------------------*/
