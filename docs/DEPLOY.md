@@ -135,7 +135,7 @@ Once on the settings tab, you'll need to do two things:
 
    ![connections-settings.png](./images/Step6Img7.png)
    
-  * Go to your Heroku application home page  at `https://dashboard.heroku.com/apps/<your heroku applicatin name here>` and click on the "Settings" menu on the top navbar. The second section on this page should be Config Vars. In this section click on the white/purple "Reveal Config Vars" button. Add a new Config Var with KEY set to "AUTH0_DOMAIN", "AUTH0_CLIENT_ID", and AUTH0_CLIENT_SECRET (without quotation marks) and paste for each into Value. 
+  * Go to your Heroku application home page  at `https://dashboard.heroku.com/apps/<your heroku applicatin name here>` and click on the "Settings" menu on the top navbar. The second section on this page should be Config Vars. In this section click on the white/purple "Reveal Config Vars" button. Add a new Config Var with KEY set to "AUTH0_DOMAIN", "AUTH0_CLIENT_ID", and AUTH0_CLIENT_SECRET (without quotation marks) and paste for each the coresponding value from the .env into Value. 
   ![Heroku App settings highlighting Config Vars section and Reveal config vars button](./images/Step3Img5.png)
 ## 6. Deploy app on Heroku
   * Go to your Heroku application home page at `https://dashboard.heroku.com/apps/<your heroku applicatin name here>` and click on the "Deploy" menu on the top navbar.
