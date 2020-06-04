@@ -57,7 +57,7 @@
 
 You will be asked to create a tenant. It doesn't matter what your tenant name is, and it's totally fine to take the default. However, we suggest that you name it: `cs48-s20-githubid` where `githubid` is your githubid, as shown here (using `pconrad` as an example):
 
-![create tenant](./images/Screen Shot 2020-06-03 at 8.04.42 PM.png)
+![create tenant](./images/Step6Img1.png)
 
 For "Account Type", click "Personal", then "Create Account":
 
