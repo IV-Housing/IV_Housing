@@ -52,7 +52,89 @@
   * Now your application will have a grey/default map that looks bland. If you want to change this to the themed map used on our appliation just click this link below and then in the bottom right of the window click copy this style to your account. 
   https://api.mapbox.com/styles/v1/sethvanb/cka744x8c16b31ilhulkr0d26.html?fresh=true&title=copy&access_token=pk.eyJ1Ijoic2V0aHZhbmIiLCJhIjoiY2thNjhpaWowMDVseDJybmx2dGVqc3UxeiJ9.MLbmm_S5HaD7ZleO_qGA2A
   ![MapBox Style Sharing page, highlighting copy style button](./images/Step4Img4.png)
-## 5. Deploy app on Heroku
+  ## 5. Setup Auth0 account and add AUTH0_DOMAIN, AUTH0_CLIENT_ID, and AUTH0_CLIENT_SECRET to Heroku
+  * First, [sign up for an account with Auth0](https://auth0.com/signup).
+
+You will be asked to create a tenant. It doesn't matter what your tenant name is, and it's totally fine to take the default. However, we suggest that you name it: `cs48-s20-githubid` where `githubid` is your githubid, as shown here (using `pconrad` as an example):
+
+![create tenant](images/create-tenant_40pct.png)
+
+For "Account Type", click "Personal", then "Create Account":
+
+![create personal account](images/create-personal-account_40pct.png)
+*Next, register a new application. You do this by navigating to the "Applications" page in the sidebar and clicking the
+"Create Application" button.
+
+Give it a name:
+
+- We suggest the name of your repo, prefixed by `cs48-s20`
+- Example: `cs48-s20-cgaucho-lab00`
+
+Click to select "Single Page Application" as shown below:
+
+![single page application](images/single-page-app_25pct.png)
+*In the configuration for the application you just created, click on the "Settings" tab. The settings tab is the second from right in the center of the page
+as shown here:
+
+![click-settings-tab.png](images/click-settings-tab.png)
+
+Once on the settings tab, you'll need to do two things:
+
+1. At the top of the page, you'll see `Basic Information`
+   - Under `Basic Information`, you'll see `Name`, `Domain`, `Client Id` and `Client Secret`.
+   - In a moment, you'll copy the three secrets that you see here into your `.env` file. But not yet; first, scroll down until you find `Application URIs`
+2. Once you've found `Application URIs`, you are ready to enter the following values:
+
+   | Field                 | Value                                                     |
+   | --------------------- | ------------------------------------                      |
+   | Application Login URI | (leave this blank)                                        |
+   | Allowed Callback URLs | `http://localhost:3000/api/callback,`                     |
+   |                       | `https://cs48-s20-s0-t3-qa.herokuapp.com/api/callback,`   |
+   |                       | `https://cs48-s20-s0-t3-prod.herokuapp.com/api/callback ` |
+   | Allowed Logout URLs   | `http://localhost:3000,`                                  |
+   |                       | `https://cs48-s20-s0-t3-qa.herokuapp.com,`                |
+   |                       | `https://cs48-s20-s0-t3-prod.herokuapp.com `              |
+
+   Make sure to scroll down to the bottom of the page and click
+   "Save Changes" at the bottom of the page to save
+   your changes.
+   *Now, after clicking "Save Changes", scroll back to the top
+   where you see the `Basic Information`.
+
+   You should see these fields:
+
+   ![secret-values.png](images/secret-values.png)
+
+   At the right hand side of the fields
+   `Domain`, `Client Id` and `Client Secret`, there is a box where you can
+   click to copy the value. Copy each of these values, and place it
+   in the file `.env`, after the three assignment statements, similar
+   to the example below:
+
+   ```
+   AUTH0_DOMAIN=cs48-s20-pconrad.auth0.com
+   AUTH0_CLIENT_ID=7sdg8FSDg7s6dlkjsdHGl35345gfkBCQs8s
+   AUTH0_CLIENT_SECRET=6_BAi57vhRr3gETMV1ZYDSMQ-Tupp6uSW38XJj1lJ2d157MQXUpgaQ81d5e7bR6k
+   ```
+
+   NOTE: Do NOT put spaces before or after the = in the `.env` file.
+
+   - ok: `AUTH0_CLIENT_ID=7sdg8FSDg7s6dlkjsdHGl35345gfkBCQs8s`
+   - NOT ok: `AUTH0_CLIENT_ID = 7sdg8FSDg7s6dlkjsdHGl35345gfkBCQs8s`
+   *Now find the `Connections` tab of **your app** (not the `Connections`
+   item on the sidebar) and click it:
+
+   ![connections-tab.png](images/connections-tab.png)
+
+   Adjust and/or check these settings:
+
+   - Uncheck Username-Password-Authentication.
+   - Ensure google-oauth2 is checked (it should be by default).
+
+   ![connections-settings.png](images/connections-settings.png)
+  * Go to your Heroku application home page  at `https://dashboard.heroku.com/apps/<your heroku applicatin name here>` and click on the "Settings" menu on the top navbar. The second section on this page should be Config Vars. In this section click on the white/purple "Reveal Config Vars" button. Add a new Config Var with KEY set to "AUTH0_DOMAIN", "AUTH0_CLIENT_ID", and AUTH0_CLIENT_SECRET (without quotation marks) and paste for each into Value. 
+  ![Heroku App settings highlighting Config Vars section and Reveal config vars button](./images/Step3Img5.png)
+## 6. Deploy app on Heroku
   * Go to your Heroku application home page at `https://dashboard.heroku.com/apps/<your heroku applicatin name here>` and click on the "Deploy" menu on the top navbar.
   ![Heroku website highlighting deploy button](./images/Step5Img1.png)
   * Select Github as the Deploy Method and sign into your Github. Then select your account as the organization and search "iv" in the search bar to the right. When the results popup click the "Connect" button next to the repository that you cloned the source code to. 
