@@ -62,6 +62,7 @@ You will be asked to create a tenant. It doesn't matter what your tenant name is
 For "Account Type", click "Personal", then "Create Account":
 
 ![create personal account](./images/Step6Img2.png)
+
 *Next, register a new application. You do this by navigating to the "Applications" page in the sidebar and clicking the
 "Create Application" button.
 
@@ -73,6 +74,7 @@ Give it a name:
 Click to select "Single Page Application" as shown below:
 
 ![single page application](./images/Step6Img3.png)
+
 *In the configuration for the application you just created, click on the "Settings" tab. The settings tab is the second from right in the center of the page
 as shown here:
 
@@ -98,6 +100,7 @@ Once on the settings tab, you'll need to do two things:
    Make sure to scroll down to the bottom of the page and click
    "Save Changes" at the bottom of the page to save
    your changes.
+   
    *Now, after clicking "Save Changes", scroll back to the top
    where you see the `Basic Information`.
 
@@ -132,6 +135,7 @@ Once on the settings tab, you'll need to do two things:
    - Ensure google-oauth2 is checked (it should be by default).
 
    ![connections-settings.png](./images/Step6Img7.png)
+   
   * Go to your Heroku application home page  at `https://dashboard.heroku.com/apps/<your heroku applicatin name here>` and click on the "Settings" menu on the top navbar. The second section on this page should be Config Vars. In this section click on the white/purple "Reveal Config Vars" button. Add a new Config Var with KEY set to "AUTH0_DOMAIN", "AUTH0_CLIENT_ID", and AUTH0_CLIENT_SECRET (without quotation marks) and paste for each into Value. 
   ![Heroku App settings highlighting Config Vars section and Reveal config vars button](./images/Step3Img5.png)
 ## 6. Deploy app on Heroku
