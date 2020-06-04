@@ -91,11 +91,10 @@ Once on the settings tab, you'll need to do two things:
    | --------------------- | ------------------------------------                      |
    | Application Login URI | (leave this blank)                                        |
    | Allowed Callback URLs | `http://localhost:3000/api/callback,`                     |
-   |                       | `https://cs48-s20-s0-t3-qa.herokuapp.com/api/callback,`   |
-   |                       | `https://cs48-s20-s0-t3-prod.herokuapp.com/api/callback ` |
+   |                       | `<URL that your application will be deployed on>/api/callback,`   |
    | Allowed Logout URLs   | `http://localhost:3000,`                                  |
-   |                       | `https://cs48-s20-s0-t3-qa.herokuapp.com,`                |
-   |                       | `https://cs48-s20-s0-t3-prod.herokuapp.com `              |
+   |                       | `<URL that your application will be deployed on>,`                |
+   
 
    Make sure to scroll down to the bottom of the page and click
    "Save Changes" at the bottom of the page to save
