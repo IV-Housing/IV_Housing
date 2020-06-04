@@ -63,7 +63,7 @@ For "Account Type", click "Personal", then "Create Account":
 
 ![create personal account](./images/Step6Img2.png)
 
-*Next, register a new application. You do this by navigating to the "Applications" page in the sidebar and clicking the
+* Next, register a new application. You do this by navigating to the "Applications" page in the sidebar and clicking the
 "Create Application" button.
 
 Give it a name:
@@ -75,7 +75,7 @@ Click to select "Single Page Application" as shown below:
 
 ![single page application](./images/Step6Img3.png)
 
-*In the configuration for the application you just created, click on the "Settings" tab. The settings tab is the second from right in the center of the page
+* In the configuration for the application you just created, click on the "Settings" tab. The settings tab is the second from right in the center of the page
 as shown here:
 
 ![click-settings-tab.png](./images/Step6Img4.png)
@@ -101,7 +101,7 @@ Once on the settings tab, you'll need to do two things:
    "Save Changes" at the bottom of the page to save
    your changes.
    
-   *Now, after clicking "Save Changes", scroll back to the top
+   * Now, after clicking "Save Changes", scroll back to the top
    where you see the `Basic Information`.
 
    You should see these fields:
@@ -124,7 +124,7 @@ Once on the settings tab, you'll need to do two things:
 
    - ok: `AUTH0_CLIENT_ID=7sdg8FSDg7s6dlkjsdHGl35345gfkBCQs8s`
    - NOT ok: `AUTH0_CLIENT_ID = 7sdg8FSDg7s6dlkjsdHGl35345gfkBCQs8s`
-   *Now find the `Connections` tab of **your app** (not the `Connections`
+   * Now find the `Connections` tab of **your app** (not the `Connections`
    item on the sidebar) and click it:
 
    ![connections-tab.png](./images/Step6Img6.png)
