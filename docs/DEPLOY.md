@@ -105,7 +105,7 @@ Once on the settings tab, you'll need to do two things:
 
    You should see these fields:
 
-   ![secret-values.png](./images/Step6Img6.png)
+   ![secret-values.png](./images/Step6Img5.png)
 
    At the right hand side of the fields
    `Domain`, `Client Id` and `Client Secret`, there is a box where you can
@@ -132,8 +132,6 @@ Once on the settings tab, you'll need to do two things:
 
    - Uncheck Username-Password-Authentication.
    - Ensure google-oauth2 is checked (it should be by default).
-
-   ![connections-settings.png](./images/Step6Img8.png)
    
   * Go to your Heroku application home page  at `https://dashboard.heroku.com/apps/<your heroku applicatin name here>` and click on the "Settings" menu on the top navbar. The second section on this page should be Config Vars. In this section click on the white/purple "Reveal Config Vars" button. Add a new Config Var with KEY set to "AUTH0_DOMAIN", "AUTH0_CLIENT_ID", and AUTH0_CLIENT_SECRET (without quotation marks) and paste for each the coresponding value from the .env into Value. 
   ![Heroku App settings highlighting Config Vars section and Reveal config vars button](./images/Step3Img5.png)
