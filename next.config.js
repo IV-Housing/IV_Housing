@@ -1,15 +1,8 @@
 require("dotenv").config();
 
 function mongodb_uri() {
-    if (process.env.NODE_ENV === "production") {
-      return process.env.MONGODB_URI_PRODUCTION;
-    } else if (process.env.NODE_ENV === "staging") {
-      return process.env.MONGODB_URI_STAGING;
-    } else if (process.env.USE_TEST_AUTH) {
-      return process.env.MONGODB_URI_TEST;
-    }
     return process.env.MONGODB_URI;
-  }
+}
 
 var token = process.env.MAP_TOKEN_PROD;
 if(process.env.MAP_TOKEN_LOCAL){
