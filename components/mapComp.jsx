@@ -38,7 +38,7 @@ export default function MapView(props){
                         }}
                 >
                     {props.list.map(house => (
-                        <Marker key={house.address} latitude={house.lat ? house.lat:0} longitude={house.lng ? house.lng:0}>
+                        <Marker key={house._id} latitude={house.lat ? house.lat:0} longitude={house.lng ? house.lng:0}>
                             <button className={utilStyles.marker} onClick={(e) => {
                                 e.preventDefault();
                                 setSelectedPark(house);

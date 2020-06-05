@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import utilStyles from '../../styles/utils.module.css'
 
-//const NodeGeocoder = require('node-geocoder');
-
 export default function ListingForm(props){
    const [submitted, setSubmitted] = useState(false);
    const [state, setState] = React.useState({ company: "Subleaser", address: "", size: "", totalPrice: "", website: "", phone: "" });
@@ -15,56 +13,46 @@ export default function ListingForm(props){
     };
 
     const postListing = async () => {
-        // const options = {
-        //     provider: 'opencage',
-        //     fetch: customFetchImplementation,
-        //     apiKey: 'ce9151e4db0e4c9c87af37b712013576',
-        //     formatter: null
-        // };
-
-        // const res = await geocoder.geocode({
-        //     address: state.address,
-        //     countryCode: 'us',
-        //     limit: 1
-        // });
-
-        console.log(state.comapny);
-        console.log(state.address);
-        console.log(state.size);
-        console.log(state.totalPrice);
-        console.log(state.website);
-        console.log(state.phone);
-
 		const response = await fetch("/api", {
             method: "POST",
-            // headers: {
-            //   "Content-Type": "application/json",
-            // },
             body: JSON.stringify({
               company: state.company,
               address: state.address,
               size: state.size,
               totalPrice: state.totalPrice,
-              pricePerPerson: 1,
               website: state.website,
               phone: state.phone,
-              lat: 0,
-              lng: 0,
             }),
         });
 	}
 
     const handleChange = e => {
-        const { name, value } = e.target;
-        setState({ ...state, [name]: value });
-        setState({company: e.target.vaule})
-      };
+        const { id, value} = e.target;
+        if(id === "company"){
+            setState({ company: e.target.value, address: state.address, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
+        }
+        else if(id === "address"){
+            setState({ company: state.company, address: e.target.value, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
+        }
+        else if(id === "size"){
+            setState({ company: state.company, address: state.address, size: e.target.value, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
+        }
+        else if(id === "totalPrice"){
+            setState({ company: state.company, address: state.address, size: state.size, totalPrice: e.target.value, website: state.website, phone: state.phone });
+        }        
+        else if(id === "website"){
+            setState({ company: state.company, address: state.address, size: state.size, totalPrice: state.totalPrice, website: e.target.value, phone: state.phone });
+        }
+        else if(id === "phone"){
+            setState({ company: state.company, address: state.address, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: e.target.value });
+        }
+    };
 
     return (
         <div className={utilStyles.listingForm}> 
             <form onSubmit={handleSubmit}>
-                <label for="comany" className={utilStyles.listingFormLabel}>Company:</label>
-                <select id="Company" defaultValue={state.company} onChange={handleChange} className={utilStyles.listingFormInput}>
+                <label for="company" className={utilStyles.listingFormLabel}>Company:</label>
+                <select id="company" defaultValue={state.company} onChange={handleChange} className={utilStyles.listingFormInput}>
                     <option value="Subleaser">Subleaser</option>
                     <option value="Kamap">Kamap</option>
                     <option value="Playa Life IV">Playa Life IV</option>
