@@ -141,9 +141,9 @@ Once on the settings tab, you'll need to do two things:
   - On the next page you can just click continue without filling any of the fields out
   * Verify your account through email
   * Now on your dashboard on OpenCage click on the API KEYS button
-  ![OpenCage Your Dahsboard page, highlighting API KEYS button](./images/Step6Img1.png)
+  ![OpenCage Your Dahsboard page, highlighting API KEYS button](./images/Step7Img1.png)
   * You should see on API key already made labeled My Project #1. You will want to copy this by clicking on the clipboard to the right of it. 
-  ![OpenCage API KEYS page, highlighting clipboard button](./images/Step6Img2.png)
+  ![OpenCage API KEYS page, highlighting clipboard button](./images/Step7Img2.png)
   * Go to your Heroku application home page  at `https://dashboard.heroku.com/apps/<your heroku applicatin name here>` and click on the "Settings" menu on the top navbar. The second section on this page should be Config Vars. In this section click on the white/purple "Reveal Config Vars" button. Add a new Config Var with KEY set to "OPENCAGE" (without quotation marks) and paste the key into Value. 
   ![Heroku App settings highlighting Config Vars section and Reveal config vars button](./images/Step3Img5.png)
   * 
