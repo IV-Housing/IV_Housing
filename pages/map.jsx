@@ -38,13 +38,12 @@ export default function Map(props){
 
     return (
        <Layout map user={user}>
-			<div className={utilStyles.containerMap}>
-				<h1 className={utilStyles.mapH1}>Listings Map</h1>
-				<div className={utilStyles.mapInfo}>
-					<Info/>
-				</div>
-				<div>
-					<MapForms filter={filter}/>
+			<div className={utilStyles.mapPage}>
+				<div className={utilStyles.containerMap}>
+					<div className={utilStyles.mapDivs}>
+						<MapForms filter={filter}/>
+						<div className={utilStyles.mapInfo}><Info/></div>
+					</div>
 					<MapView list={refinedData}/>
 				</div>
 			</div>
