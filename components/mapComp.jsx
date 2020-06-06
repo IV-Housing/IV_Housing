@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import ReactMapGL, {Marker, Popup} from "react-map-gl"
 import utilStyles from '../styles/utils.module.css'
 import CompView from './compTileComp.jsx'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
 
 export default function MapView(props){
-    const[viewport, setViewport] = useState({latitude: 34.41, longitude: -119.858, width: "77vw", height: "103vh", zoom: 15});
+    const[viewport, setViewport] = useState({latitude: 34.413, longitude: -119.861, width: "77vw", height: "103vh", zoom: 15});
     const[selectedPark, setSelectedPark] = useState(null);
     const[comp1, setComp1] = useState({address:"", company:"", size:0, totalPrice:0, phone:"", website:""});
     const[comp2, setComp2] = useState({address:"", company:"", size:0, totalPrice:0, phone:"", website:""});
@@ -21,19 +23,16 @@ export default function MapView(props){
 
     return(
         <div className = {utilStyles.mapCompContainer}>
-            <div className = {utilStyles.compContainer}>
-                <CompView comp={comp1}/>
-                <CompView comp={comp2}/>
-            </div>
             <div className = {utilStyles.mapView}>
+				<h1 className={utilStyles.mapH1}><FontAwesomeIcon icon={faMapMarkedAlt}/> &nbsp;Listings Map</h1>
                 <ReactMapGL
                     {...viewport}
                     mapboxApiAccessToken={process.env.MAP_TOKEN}
                     mapStyle="mapbox://styles/sethvanb/cka744x8c16b31ilhulkr0d26"
                     onViewportChange = {
                         viewport => {
-                            viewport.width = "77vw";
-                            viewport.height = "103vh";
+                            viewport.width = "50vw";
+                            viewport.height = "75vh";
                             setViewport(viewport)
                         }}
                 >
@@ -80,6 +79,10 @@ export default function MapView(props){
                         </Popup>
                     ): null}
                 </ReactMapGL>
+            </div>
+            <div className = {utilStyles.compContainer}>
+                <CompView comp={comp1}/>
+                <CompView comp={comp2}/>
             </div>
         </div>
     )

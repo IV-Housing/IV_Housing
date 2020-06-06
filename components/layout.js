@@ -13,6 +13,8 @@ export default function Layout(props){
      <Head>
       <meta name = "description" content = "Search for housing listings throughout Isla Vista!"/>
       <meta name = "og:title" content={siteTitle} />
+	  <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
+	  <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
       <title>{siteTitle}</title>
      </Head>
      <Navbar user={user}></Navbar>
