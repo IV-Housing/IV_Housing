@@ -46,8 +46,8 @@ async function createListing(req) {
   client.collection("Houses").insertOne(
     { company: house.company, 
       address: house.address, 
-      size: house.size, 
-      totalPrice: house.totalPrice, 
+      size: parseInt(house.size), 
+      totalPrice: parseInt(house.totalPrice), 
       pricePerPerson: 1, 
       website: house.website, 
       phone: house.phone, 
@@ -56,7 +56,6 @@ async function createListing(req) {
     }, 
     function(err, res) {
       if (err) throw err;
-      //client.close();
   });
 }
 

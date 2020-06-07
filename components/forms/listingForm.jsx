@@ -2,18 +2,23 @@ import React, { useState, useEffect } from 'react';
 import utilStyles from '../../styles/utils.module.css'
 
 export default function ListingForm(props){
-   const [submitted, setSubmitted] = useState(false);
+   const [submitted, setSubmitted] = useState("");
    const [state, setState] = React.useState({ company: "Subleaser", address: "", size: "", totalPrice: "", website: "", phone: "" });
 
     const handleSubmit = e => {
         e.preventDefault();
-        postListing();
-        setState({ company: "Subleaser", address: "", size: "", totalPrice: "", website: "", phone: "" });
-        setSubmitted(true);
+        if(state.address === "" || state.size === "" || state.totalPrice === "" || state.phone === ""){
+            setSubmitted("Please fill in all required fields");
+        }
+        else{
+            postListing();
+            setState({ company: "Subleaser", address: "", size: "", totalPrice: "", website: "", phone: "" });
+            setSubmitted("Submission Successful");
+        }
     };
 
     const postListing = async () => {
-		const response = await fetch("/api", {
+	    await fetch("/api", {
             method: "POST",
             body: JSON.stringify({
               company: state.company,
@@ -27,6 +32,7 @@ export default function ListingForm(props){
 	}
 
     const handleChange = e => {
+        setSubmitted("");
         const { id, value} = e.target;
         if(id === "company"){
             setState({ company: e.target.value, address: state.address, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
@@ -51,7 +57,7 @@ export default function ListingForm(props){
     return (
         <div className={utilStyles.listingForm}> 
             <form onSubmit={handleSubmit}>
-                <label for="company" className={utilStyles.listingFormLabel}>Company:</label>
+                <label htmlfor="company" className={utilStyles.listingFormLabel}>Company:</label>
                 <select id="company" defaultValue={state.company} onChange={handleChange} className={utilStyles.listingFormInput}>
                     <option value="Subleaser">Subleaser</option>
                     <option value="Kamap">Kamap</option>
@@ -60,20 +66,20 @@ export default function ListingForm(props){
                     <option value="Wolfe and Associates">Wolfe and Associates</option>
                     <option value="Meridian Group">Meridian Group</option>
                 </select><br></br>
-                <label for="address" className={utilStyles.listingFormLabel}>Address:</label>
+                <label htmlfor="address" className={utilStyles.listingFormLabel}>Address: (Required)</label>
                 <input type="text" id="address" name="address" value={state.address} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
-                <label for="size" className={utilStyles.listingFormLabel}>Avalible Size:</label>
+                <label htmlfor="size" className={utilStyles.listingFormLabel}>Avalible Size: (Required)</label>
                 <input type="number" id="size" name="size" value={state.size} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
-                <label for="totalPrice" className={utilStyles.listingFormLabel}>Total Price of Avalible Spots:</label>
+                <label htmlfor="totalPrice" className={utilStyles.listingFormLabel}>Total Price of Avalible Spots: (Required)</label>
                 <input type="number" id="totalPrice" name="totalPrice" value={state.totalPrice} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
-                <label for="website" className={utilStyles.listingFormLabel}>Original House Listing/Facebook Listing Webpage:</label>
+                <label htmlfor="website" className={utilStyles.listingFormLabel}>Original House Listing/Facebook Listing Webpage: (Optional)</label>
                 <input type="text" id="website" name="website" value={state.website} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
-                <label for="phone" className={utilStyles.listingFormLabel}>Contact Phone Number:</label>
+                <label htmlfor="phone" className={utilStyles.listingFormLabel}>Contact Phone Number: (Required)</label>
                 <input type="tel" id="phone" name="phone" value={state.phone} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
                 <input type="submit" value="Submit" className={utilStyles.listingFormButton}></input>
                 <input type="reset" className={utilStyles.listingFormButton}></input>
             </form>
-            {submitted && <p className={utilStyles.listingFormLabel2}>Submission Successful.</p>}
+            {submitted !== "" && <p className={utilStyles.listingFormLabel2}>{submitted}</p>}
         </div>
     );
 }
