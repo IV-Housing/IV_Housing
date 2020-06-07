@@ -1,7 +1,7 @@
 # Instructions for Deployment
 * to deploy you will need a github account
 * video walkthrough of instructions: https://www.youtube.com/watch?v=jtsq72x04v0
-> NOTE: the video covers how to set up everything except for the Auth0 or OpenCage APIs
+> NOTE: the video covers how to set up everything except for the Auth0(Step 5) or OpenCage(Step 6) APIs 
 ## 1. Fork repo onto your own github account
   * Goto https://github.com/ucsb-cs48-s20/project-s0-t3-iv-housing and click on the fork button in the top right. 
   ![Top of our Github page highlighting fork button](./images/Step1Img1.png)
