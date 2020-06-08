@@ -25,5 +25,6 @@ module.exports = {
         SESSION_COOKIE_LIFETIME: 7200, // 2 hours
         MAP_TOKEN: token,
         MONGODB_URI: mongodb_uri(),
+        OPENCAGE: process.env.OPENCAGE,
     },
 }

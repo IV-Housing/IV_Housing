@@ -1,4 +1,5 @@
-import { initDatabase } from "../../utils/mongodb";
+import { initDatabase } from "../../utils/mongodb"
+import NodeGeocoder from 'node-geocoder'
 
 export async function getHouses(){
   const client = await initDatabase();
@@ -7,38 +8,55 @@ export async function getHouses(){
   return houses.find().toArray();
 }
 
-async function createListing(req) {
-  const { address } = req.body;
-
-  if (!email) {
-    throw {
-      status: 400,
-      message: "Missing email",
-    };
-  }
-
-  const client = await initDatabase();
-  const users = client.collection("users");
-
-  const query = {
-    email,
+async function getLatLng(add){
+  const options = {
+    provider: 'opencage',
+    apiKey: process.env.OPENCAGE,
+    formatter: null
   };
 
-  const mutation = {
-    $setOnInsert: {
-      email,
-    },
-    $set: {
-      role: "admin",
-    },
-  };
+  const geocoder = NodeGeocoder(options);
 
-  const result = await users.findOneAndUpdate(query, mutation, {
-    upsert: true,
-    returnOriginal: false,
+  add = add + " 93117"
+  console.log(add);
+  const res = await geocoder.geocode({
+    address: add,
+    countryCode: 'us',
+    limit: 1
   });
 
-  return result.value;
+  return res[0];
+}
+
+async function createListing(req) {
+  let house = JSON.parse(req.body);
+  let result = await getLatLng(house.address);
+
+  console.log(house.company);
+  console.log(house.address);
+  console.log(house.size);
+  console.log(house.totalPrice);
+  console.log(house.totalPrice/house.size);
+  console.log(house.website);
+  console.log(house.phone);
+  console.log(result.latitude);
+  console.log(result.longitude);
+
+  const client = await initDatabase();
+  client.collection("Houses").insertOne(
+    { company: house.company, 
+      address: house.address, 
+      size: parseInt(house.size), 
+      totalPrice: parseInt(house.totalPrice), 
+      pricePerPerson: 1, 
+      website: house.website, 
+      phone: house.phone, 
+      lat: result.latitude, 
+      lng: result.longitude
+    }, 
+    function(err, res) {
+      if (err) throw err;
+  });
 }
 
 export default async function performAction(req, res) {
@@ -50,7 +68,10 @@ export default async function performAction(req, res) {
       break;
     }
     case "POST" : {
-      return createListing(req);
+      createListing(req);
+      res.statusCode = 200;
+      res.end();
+      break;
     }
     default: 
       res.statusCode = 405;
