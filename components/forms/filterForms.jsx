@@ -5,32 +5,37 @@ import utilStyles from '../../styles/utils.module.css'
 class FilterForms extends React.Component {
 	constructor(props) {
 		super(props)
-		this.state = {block:'Any',street:'Any',size:'Any',price:'Any Price',priceType:'total'}
+		this.state = {company: 'Any',block:'Any',street:'Any',size:'Any',price:'Any Price',priceType:'total'}
+		this.companyChange = this.companyChange.bind(this)
 		this.streetChange = this.streetChange.bind(this)
 		this.blockChange = this.blockChange.bind(this)
 		this.sizeChange = this.sizeChange.bind(this)
 		this.priceChange = this.priceChange.bind(this)
 		this.selPriceCahnge = this.selPriceCahnge.bind(this)
 	}
+	companyChange(event) {
+		this.state.company = event.target.value
+		this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
+	}
 	streetChange(event) {
 		this.state.street = event.target.value
-		this.props.filter(this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
+		this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
 	}
 	blockChange(event) {
 		this.state.block = event.target.value
-		this.props.filter(this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
+		this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
 	}
 	sizeChange(event) {
 		this.state.size = event.target.value
-		this.props.filter(this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
+		this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
 	}
 	priceChange(event) {
 		this.state.price = event.target.value
-		this.props.filter(this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
+		this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
 	}
 	selPriceCahnge(event) {
 		this.setState({priceType: event.target.value,price:'Any Price'},()=>{
-			this.props.filter(this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
+			this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
 		})
 
 	}
@@ -44,6 +49,16 @@ class FilterForms extends React.Component {
 
 		return (
 			<div className={utilStyles.formSelects}>
+				<select id="companySelect" defaultValue="default" onChange={this.companyChange}>
+					<option value = "Any">Any Company</option>
+                    <option value = "Subleaser">Subleaser</option>
+                    <option value = "KAMAP">KAMAP</option>
+					<option value = "The Koto Group">The Koto Group</option>
+					<option value = "Meridian Group">Meridian Group</option>
+                    <option value = "Playa Life IV">Playa Life IV</option>
+                    <option value ="Wolfe and Associates">Wolfe and Associates</option>
+				</select>
+
 				<select id="streetSelect" defaultValue="default" onChange={this.streetChange}>
 					<option value = "Any">Any Street</option>
 					<option value = "Cervantes Rd.">Cervantes Rd.</option>

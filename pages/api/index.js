@@ -48,11 +48,12 @@ async function createListing(req) {
       address: house.address, 
       size: parseInt(house.size), 
       totalPrice: parseInt(house.totalPrice), 
-      pricePerPerson: 1, 
       website: house.website, 
       phone: house.phone, 
       lat: result.latitude, 
-      lng: result.longitude
+      lng: result.longitude,
+      availability: true,
+      newlyAdded: true,
     }, 
     function(err, res) {
       if (err) throw err;
