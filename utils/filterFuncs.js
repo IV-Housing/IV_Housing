@@ -1,5 +1,6 @@
 // filterFuncs.js
 
+export function filterByCompany(company) { return (item)=>{ return item.company.indexOf(company)!==-1; } }
 export function filterByStreet(street) { return (item)=>{ return item.address.indexOf(street)!==-1; } }
 export function filterByBlock(block) { return (item)=>{ return item.address.substr(0,2)===block; } }
 

@@ -15,7 +15,7 @@ describe("Home Page", () => {
     it("has h2s containing Filter Listings and Sort Listings, 5 selects, 2 labels and a paragraph in left side form", () => {
         cy.get("h2").its(0).should('have.text', 'Filter Listings');
         cy.get("h2").its(1).should('have.text', 'Sort Listings');
-        cy.get('select').should('have.length', 5);
+        cy.get('select').should('have.length', 6);
         cy.get('label').its(0).should('have.text', 'Total Price');
         cy.get('label').its(1).should('have.text', ' Price Per Person');
         cy.get("p").its(0).should('have.text', 'Not finding the right place? Narrow down the filters to show preffered listings at the top!');
@@ -63,7 +63,7 @@ describe("Home Page", () => {
 
     it("has h2s containing Filter Listings and Sort Listings, 4 selects, and 2 labels in left side form", () => {
         cy.get("h2").its(0).should('have.text', 'Filter Results');
-        cy.get('select').should('have.length', 4);
+        cy.get('select').should('have.length', 5);
         cy.get('label').its(0).should('have.text', 'Total Price');
         cy.get('label').its(1).should('have.text', ' Price Per Person');
     });    

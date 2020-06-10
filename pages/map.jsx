@@ -16,12 +16,12 @@ export default function Map(props){
 	debugger
 	const [initList, setInitList] = useState([]);  // houses data
 	const [refinedData, setRefinedData] = useState([]);
-	const [{street,block,size,price,priceType}, setStreetBlock] = useState(
-		{ street:'Any', block:'Any', size:'Any', price:'Any Price', priceType:'total' }
+	const [{company,street,block,size,price,priceType}, setStreetBlock] = useState(
+		{ company:'Any',street:'Any', block:'Any', size:'Any', price:'Any Price', priceType:'total' }
 	);
 
-	const filter = (street,block,size,price,priceType) => { 
-		setStreetBlock({street,block,size,price,priceType}); 
+	const filter = (company,street,block,size,price,priceType) => { 
+		setStreetBlock({company,street,block,size,price,priceType}); 
 	}
     const getList = async () => {
 		const response = await fetch(`/api`, { method: "GET" });
@@ -33,8 +33,8 @@ export default function Map(props){
 	useEffect(()=>{ if(initList.length===0) getList();});
 	useEffect(() => {
 		let houses = [...initList];
-		setRefinedData( sortAndFilter(houses,street,block,size,price,priceType,'none') );
-	}, [initList, street, block, size, price, priceType]);
+		setRefinedData( sortAndFilter(houses,company,street,block,size,price,priceType,'none') );
+	}, [initList, company, street, block, size, price, priceType]);
 
     return (
        <Layout map user={user}>
