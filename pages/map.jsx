@@ -1,7 +1,7 @@
 // map.jsx
 import React, { useState, useEffect } from 'react';
 import fetch from "isomorphic-unfetch";
-import Layout, {siteTitle} from '../components/layout.js'
+import Layout from '../components/layout.js'
 import utilStyles from '../styles/utils.module.css'  // css style
 import MapView from "../components/mapComp.jsx"
 import MapForms from '../components/forms/mapForms.jsx'
@@ -44,8 +44,8 @@ export default function Map(props){
 						<MapForms filter={filter}/>
 						<div className={utilStyles.mapInfo}>
 							<p>Scroll to zoom in on the map and make clusters of houses more visible.</p>
-							<Info/
-						></div>
+							<Info/>
+						</div>
 					</div>
 					<MapView list={refinedData}/>
 				</div>

@@ -39,6 +39,7 @@ describe("Home Page", () => {
     it("has a link under the title Developers and paragraphs in the side disclaimer", () => {
         cy.get("a").its(3).should('have.text', 'Developers');
         cy.get("p").its(1).should('have.text', '*Price per person is calculated using total price and housing size so may vary depending on room arrangements');
+        //.should('have.text', '*Price per person is calculated using total price and housing size so may vary depending on room arrangements');
     });
   });
 
@@ -51,10 +52,6 @@ describe("Home Page", () => {
       cy.get("h1").its(0).should('have.text', ' Isla Vista Housing Search ');
     });
       
-    it("has an h1 at the top containing Listings Map", () => {
-        cy.get("h1").its(1).should('have.text', '  Listings Map');
-    });
-
     it("has links in nav bar under titles Listings and Map", () => {
         cy.get("a").its(0).should('have.text', 'Listings');
         cy.get("a").its(1).should('have.text', 'Map');
@@ -68,13 +65,14 @@ describe("Home Page", () => {
         cy.get('label').its(1).should('have.text', ' Price Per Person');
     });    
 
-    it("has the same paragraphs in the leftside comparisons views", () => {
-        cy.get("p").its(1).should('have.text', ' No house is selected yet. Select a house marker from the map and use the buttons add it to a comparison box.');
+    it("has the same paragraphs in the rightside comparisons views", () => {
         cy.get("p").its(2).should('have.text', ' No house is selected yet. Select a house marker from the map and use the buttons add it to a comparison box.');
+        cy.get("p").its(3).should('have.text', ' No house is selected yet. Select a house marker from the map and use the buttons add it to a comparison box.');
     }); 
 
     it("has a link under the title Developers and paragraphs in the side disclaimer", () => {
         cy.get("a").its(3).should('have.text', 'Developers');
-        cy.get("p").its(0).should('have.text', '*Price per person is calculated using total price and housing size so may vary depending on room arrangements');
+        cy.get("p").its(0).should('have.text', 'Scroll to zoom in on the map and make clusters of houses more visible.');
+        cy.get("p").its(1).should('have.text', '*Price per person is calculated using total price and housing size so may vary depending on room arrangements');
     });
   });
