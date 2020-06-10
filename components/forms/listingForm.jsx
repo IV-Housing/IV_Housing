@@ -67,7 +67,7 @@ export default function ListingForm(props){
                 <label htmlfor="company" className={utilStyles.listingFormLabel}>Company:</label>
                 <select id="company" defaultValue={state.company} onChange={handleChange} className={utilStyles.listingFormInput}>
                     <option value="Subleaser">Subleaser</option>
-                    <option value="Kamap">Kamap</option>
+                    <option value="KAMAP">KAMAP</option>
                     <option value="Playa Life IV">Playa Life IV</option>
                     <option value="The Koto Group">The Koto Group</option>
                     <option value="Wolfe and Associates">Wolfe and Associates</option>

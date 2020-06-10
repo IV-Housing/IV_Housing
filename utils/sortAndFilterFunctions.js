@@ -1,18 +1,20 @@
 // sortAndFilterFunctions.js
-
-import utilStyles from '../styles/utils.module.css'
 import { markActiveFilter, markInactiveFilter } from './filterStyling.js'
 import { sortAscendingTotal, sortDescendingTotal, 
 	sortAscendingPerPerson, sortDescendingPerPerson } from './sortFuncs.js'
-import { filterByStreet, filterByBlock, filterBySize,
+import { filterByCompany, filterByStreet, filterByBlock, filterBySize,
 	filterByPriceTotal, filterByPricePerPerson } from './filterFuncs.js'
 
-export default function sortAndFilter(houses,street,block,size,price,priceType,direction) {
+export default function sortAndFilter(houses, company, street, block, size, price, priceType, direction) {
 	let refinedHouses = houses;
+	let c = document.getElementById('companySelect');
 	let s = document.getElementById('streetSelect');
 	let b = document.getElementById('blockSelect');
 	let p = document.getElementById('priceSelect');
 	let si = document.getElementById('sizeSelect');
+
+	if (company!=='Any') { refinedHouses=refinedHouses.filter(filterByCompany(company)); markActiveFilter(c); }
+	else markInactiveFilter(c);	
 
 	if (street!=='Any') { refinedHouses=refinedHouses.filter(filterByStreet(street)); markActiveFilter(s); }
 	else markInactiveFilter(s);
@@ -32,5 +34,6 @@ export default function sortAndFilter(houses,street,block,size,price,priceType,d
 	else if (direction=='ascending') refinedHouses.sort(sortAscendingPerPerson);
 	else if (direction=='descending' && priceType=='total') refinedHouses.sort(sortDescendingTotal);
 	else if (direction=='descending') refinedHouses.sort(sortDescendingPerPerson);
+	
 	return refinedHouses;
 }
