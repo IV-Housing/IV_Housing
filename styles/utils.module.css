@@ -180,6 +180,7 @@
 	box-shadow: 5px 10px darkgrey;
 }
 .listingFormInput{
+	width: 150px;
 	float: right;
 }
 .listingFormLabel{
@@ -480,8 +481,10 @@
 	flex-direction: column;
 	justify-content: space-between;
 	padding: 10px;
+	font-size: 15px;
 } .comparisonView > .card > #cardBody {
 	height: 100%;
+	font-size: 13px;
 } .comparisonView > .card > #cardBody > #cardInfo {
 	height: 70%;
 	display: flex;
@@ -522,7 +525,7 @@
 
 .popup{
 	height: 190px;
-	width: 300px;
+	width: 350px;
 	padding: 0px;
 	margin: 0px;
 }
