@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSadTear } from '@fortawesome/free-solid-svg-icons'
 
 export default function DataView(props) {
+	console.log(props.data.length);
 	return (
 		<div className={utilStyles.view}>
 			<div className={utilStyles.viewButtons}>
