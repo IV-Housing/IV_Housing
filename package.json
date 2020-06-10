@@ -37,7 +37,7 @@
     "@fortawesome/react-fontawesome": "^0.1.9",
     "@rckeller/cypress-unfetch": "^1.0.1",
     "bootstrap": "^4.4.1",
-    "cypress": "^4.2.0",
+    "cypress": "^4.8.0",
     "dgram": "^1.0.1",
     "dns": "^0.2.2",
     "dotenv": "^8.2.0",
