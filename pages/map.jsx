@@ -42,7 +42,10 @@ export default function Map(props){
 				<div className={utilStyles.containerMap}>
 					<div className={utilStyles.mapDivs}>
 						<MapForms filter={filter}/>
-						<div className={utilStyles.mapInfo}><Info/></div>
+						<div className={utilStyles.mapInfo}>
+							<p>Scroll to zoom in on the map and make clusters of houses more visible.</p>
+							<Info/
+						></div>
 					</div>
 					<MapView list={refinedData}/>
 				</div>
