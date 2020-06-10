@@ -4,9 +4,10 @@ import utilStyles from '../styles/utils.module.css'
 import CompView from './compTileComp.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
 
 export default function MapView(props){
-    const[viewport, setViewport] = useState({latitude: 34.413, longitude: -119.861, width: "77vw", height: "103vh", zoom: 15});
+    const[viewport, setViewport] = useState({latitude: 34.413, longitude: -119.861, width: "50vw", height: "75vh", zoom: 15});
     const[selectedPark, setSelectedPark] = useState(null);
     const[comp1, setComp1] = useState({address:"", company:"", size:0, totalPrice:0, phone:"", website:""});
     const[comp2, setComp2] = useState({address:"", company:"", size:0, totalPrice:0, phone:"", website:""});
@@ -20,6 +21,8 @@ export default function MapView(props){
             setComp2(selectedPark);
         }
     }, [comp]);
+
+	// <img src="/houseLogo4.png" alt="House Icon" className = {utilStyles.imgView}/>
 
     return(
         <div className = {utilStyles.mapCompContainer}>
@@ -43,7 +46,7 @@ export default function MapView(props){
                                 setSelectedPark(house);
                                 setComp(0);
                             }}>
-                                 <img src="/houseLogo4.png" alt="House Icon" className = {utilStyles.imgView}/>
+								<FontAwesomeIcon icon={faHome} className={utilStyles.imgView}/>
                             </button>
                         </Marker>
                     ))}

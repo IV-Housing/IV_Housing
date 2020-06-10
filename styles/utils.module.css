@@ -5,10 +5,12 @@
 }
 
 .containerMap {
+	position: fixed;
 	padding: 15px;
 	text-align: center;
 	display: inline-flex;
 	flex-direction: row;
+	width: 100%;
 }
 
 .navbar{
@@ -213,6 +215,18 @@
 	min-height: 700px;
 }
 
+.viewContentEmpty {
+	margin-top: 80px;
+	font-size: 20px;
+	color: #888;
+}
+
+.viewContentIcon {
+	margin-top: 50px;
+	font-size: 200px;
+	color: #dfdfdf;
+}
+
 /*-----------------------------------------------------------------*/
 /* VIEW BUTTONS */
 .viewButtons {
@@ -397,7 +411,7 @@
 	margin-top: 65px;
 	display: flex;
 	flex-direction: column;
-	margin-right: 10px;
+	margin-right: 20px;
 	margin-left: 30px;
 }
 
@@ -408,11 +422,17 @@
     border-bottom-right-radius: 10px;
 	height: 300px;
 	width: 300px;
+	padding-left: 5px;
 	text-align: left;
 }
 
 .mapInfo {
+	text-align: left;
+	color: #555;
+	font-size: 16px;
+	width: 300px;
 	margin-left: 10px;
+	height: 300px;
 }
 
 /* map and comparison container */
@@ -444,12 +464,15 @@
     flex-direction: column;
 }
 .comparisonView > p {
-    padding: 5px 15px;
+    padding: 35px 65px 0px 65px;
+	color: #888;
 }
 
 .comparisonView > .card {
 	margin: 0px;
+	border: none;
     border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
 	box-shadow: none;
 	width: auto;
 	height: 240px;
@@ -480,6 +503,8 @@
 
 .imgView{
 	background: transparent;
+	color: blue;
+	font-size: 16px;
 }
 
 .compButtons{
