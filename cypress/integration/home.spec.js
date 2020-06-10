@@ -38,8 +38,7 @@ describe("Home Page", () => {
 
     it("has a link under the title Developers and paragraphs in the side disclaimer", () => {
         cy.get("a").its(3).should('have.text', 'Developers');
-        cy.get("p").its(1).should('have.text', '*Price per person is calculated using total price and housing size so may vary depending on room arrangements');
-        //.should('have.text', '*Price per person is calculated using total price and housing size so may vary depending on room arrangements');
+        cy.get("p").should('have.text', 'Not finding the right place? Narrow down the filters to show preffered listings at the top!*Price per person is calculated using total price and housing size so may vary depending on room arrangements');
     });
   });
 
