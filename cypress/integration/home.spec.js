@@ -52,7 +52,7 @@ describe("Home Page", () => {
     });
       
     it("has an h1 at the top containing Listings Map", () => {
-        cy.get("h1").its(1).should('have.text', 'Listings Map');
+        cy.get("h1").its(1).should('have.text', '  Listings Map');
     });
 
     it("has links in nav bar under titles Listings and Map", () => {
