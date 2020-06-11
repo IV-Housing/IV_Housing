@@ -111,7 +111,9 @@ class FilterForms extends React.Component {
 				
 				<select id="priceSelect" defaultValue="default" onChange={this.priceChange}>
 					{listOpts.map(item=>{
-						return <option value={item} key={item}>{item}</option>
+						let dollarSign='';
+						if (item!='Any Price') dollarSign = '$';
+						return <option value={item} key={item}>{dollarSign}{item}</option>
 					})}
 				</select>
 				<div className={utilStyles.radioSelect}>

@@ -64,56 +64,76 @@ export default function ListingForm(props){
     return (
         <div className={utilStyles.listingForm}> 
             <form onSubmit={handleSubmit}>
-                <label htmlfor="company" className={utilStyles.listingFormLabel}>Company:</label>
-                <select id="company" defaultValue={state.company} onChange={handleChange} className={utilStyles.listingFormInput}>
-                    <option value="Subleaser">Subleaser</option>
-                    <option value="KAMAP">KAMAP</option>
-                    <option value="Playa Life IV">Playa Life IV</option>
-                    <option value="The Koto Group">The Koto Group</option>
-                    <option value="Wolfe and Associates">Wolfe and Associates</option>
-                    <option value="Meridian Group">Meridian Group</option>
-                </select><br></br>
-                <label htmlfor="addressNumber" className={utilStyles.listingFormLabel}>Address Number: (Required)</label>
-                <input type="text" id="addrNum" name="addrNum" value={state.addrNum} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
-                <label htmlfor="addressStreet" className={utilStyles.listingFormLabel}>Address Street:</label>
-                <select id="addrStreet" defaultValue={state.addrStreet} onChange={handleChange} className={utilStyles.listingFormInput}>
-                    <option value = "Cervantes Rd.">Cervantes Rd.</option>
-					<option value = "El Greco Rd.">El Greco Rd.</option>
-					<option value = "Picasso Rd.">Picasso Rd.</option>
-					<option value = "Segovia Rd.">Segovia Rd.</option>
-					<option value = "Cordoba Rd.">Cordoba Rd.</option>
-					<option value = "Pardall Rd.">Pardall Rd.</option>
-					<option value = "Madrid Rd.">Madrid Rd.</option>
-					<option value = "Seville Rd.">Seville Rd.</option>
-					<option value = "Trigo Rd.">Trigo Rd.</option>
-					<option value = "El Nido Ln.">El Nido Ln.</option>
-					<option value = "Sabado Tarde Rd.">Sabado Tarde Rd.</option>
-					<option value = "Del Playa Dr.">Del Playa Dr.</option>
-					<option value = "El Colegio Rd.">El Colegio Rd.</option>
-					<option value = "Abrego Rd.">Abrego Rd.</option>
-					<option value = "Sueno Rd.">Sueno Rd.</option>
-					<option value = "Pasado Rd.">Pasado Rd.</option>
-					<option value = "Estero Rd.">Estero Rd.</option>
-					<option value = "Fortuna Rd.">Fortuna Rd.</option>
-					<option value = "Embarcadero Del Norte">Embarcadero Del Norte</option>
-					<option value = "Embarcadero Del Mar">Embarcadero Del Mar</option>
-					<option value = "Camino Del Pescadero">Camino Del Pescadero</option>
-					<option value = "Camino Del Sur">Camino Del Sur</option>
-					<option value = "Camino Corto">Camino Corto</option>
-					<option value = "Camino Lindo">Camino Lindo</option>
-                </select><br></br>
-                <label htmlfor="apartmentNumber" className={utilStyles.listingFormLabel}>Apartment Number: (Optional)</label>
-                <input type="text" id="aptNum" name="aptNum" value={state.aptNum} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
-                <label htmlfor="size" className={utilStyles.listingFormLabel}>Avalible Size: (Required)</label>
-                <input type="number" id="size" name="size" value={state.size} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
-                <label htmlfor="totalPrice" className={utilStyles.listingFormLabel}>Total Price of Avalible Spots: (Required)</label>
-                <input type="number" id="totalPrice" name="totalPrice" value={state.totalPrice} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
-                <label htmlfor="website" className={utilStyles.listingFormLabel}>Original House Listing/Facebook Listing Webpage: (Optional)</label>
-                <input type="text" id="website" name="website" value={state.website} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
-                <label htmlfor="phone" className={utilStyles.listingFormLabel}>Contact Phone Number: (Required)</label>
-                <input type="tel" id="phone" name="phone" value={state.phone} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
-                <input type="submit" value="Submit" className={utilStyles.listingFormButton}></input>
-                <input type="reset" className={utilStyles.listingFormButton}></input>
+				<div>
+					<div className={utilStyles.listingFormRow}>
+						<label htmlfor="company" className={utilStyles.listingFormLabel}>Company:</label>
+						<select id="company" defaultValue={state.company} onChange={handleChange} className={utilStyles.listingFormInput}>
+							<option value="Subleaser">Subleaser</option>
+							<option value="KAMAP">KAMAP</option>
+							<option value="Playa Life IV">Playa Life IV</option>
+							<option value="The Koto Group">The Koto Group</option>
+							<option value="Wolfe and Associates">Wolfe and Associates</option>
+							<option value="Meridian Group">Meridian Group</option>
+						</select><br></br>
+					</div>
+					<div className={utilStyles.listingFormRow}>
+						<label htmlfor="addressNumber" className={utilStyles.listingFormLabel}>Address Number: (Required)</label>
+						<input type="text" id="addrNum" name="addrNum" value={state.addrNum} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
+					</div>
+					<div className={utilStyles.listingFormRow}>
+						<label htmlfor="addressStreet" className={utilStyles.listingFormLabel}>Address Street:</label>
+						<select id="addrStreet" defaultValue={state.addrStreet} onChange={handleChange} className={utilStyles.listingFormInput}>
+							<option value = "Cervantes Rd.">Cervantes Rd.</option>
+							<option value = "El Greco Rd.">El Greco Rd.</option>
+							<option value = "Picasso Rd.">Picasso Rd.</option>
+							<option value = "Segovia Rd.">Segovia Rd.</option>
+							<option value = "Cordoba Rd.">Cordoba Rd.</option>
+							<option value = "Pardall Rd.">Pardall Rd.</option>
+							<option value = "Madrid Rd.">Madrid Rd.</option>
+							<option value = "Seville Rd.">Seville Rd.</option>
+							<option value = "Trigo Rd.">Trigo Rd.</option>
+							<option value = "El Nido Ln.">El Nido Ln.</option>
+							<option value = "Sabado Tarde Rd.">Sabado Tarde Rd.</option>
+							<option value = "Del Playa Dr.">Del Playa Dr.</option>
+							<option value = "El Colegio Rd.">El Colegio Rd.</option>
+							<option value = "Abrego Rd.">Abrego Rd.</option>
+							<option value = "Sueno Rd.">Sueno Rd.</option>
+							<option value = "Pasado Rd.">Pasado Rd.</option>
+							<option value = "Estero Rd.">Estero Rd.</option>
+							<option value = "Fortuna Rd.">Fortuna Rd.</option>
+							<option value = "Embarcadero Del Norte">Embarcadero Del Norte</option>
+							<option value = "Embarcadero Del Mar">Embarcadero Del Mar</option>
+							<option value = "Camino Del Pescadero">Camino Del Pescadero</option>
+							<option value = "Camino Del Sur">Camino Del Sur</option>
+							<option value = "Camino Corto">Camino Corto</option>
+							<option value = "Camino Lindo">Camino Lindo</option>
+						</select><br></br>
+					</div>
+					<div className={utilStyles.listingFormRow}>
+						<label htmlfor="apartmentNumber" className={utilStyles.listingFormLabel}>Apartment Number: (Optional)</label>
+						<input type="text" id="aptNum" name="aptNum" value={state.aptNum} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
+					</div>
+					<div className={utilStyles.listingFormRow}>
+						<label htmlfor="size" className={utilStyles.listingFormLabel}>Avalible Size: (Required)</label>
+						<input type="number" id="size" name="size" value={state.size} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
+					</div>
+					<div className={utilStyles.listingFormRow}>
+						<label htmlfor="totalPrice" className={utilStyles.listingFormLabel}>Total Price of Avalible Spots: (Required)</label>
+						<input type="number" id="totalPrice" name="totalPrice" value={state.totalPrice} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
+					</div>
+					<div className={utilStyles.listingFormRow}>
+						<label htmlfor="website" className={utilStyles.listingFormLabel}>Original House Listing/Facebook Listing Webpage: (Optional)</label>
+						<input type="text" id="website" name="website" value={state.website} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
+					</div>
+					<div className={utilStyles.listingFormRow}>
+						<label htmlfor="phone" className={utilStyles.listingFormLabel}>Contact Phone Number: (Required)</label>
+						<input type="tel" id="phone" name="phone" value={state.phone} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
+					</div>
+				</div>
+				<div>
+					<input type="submit" value="Submit" className={utilStyles.listingFormButton}></input>
+					<input type="reset" className={utilStyles.listingFormButton}></input>
+				</div>
             </form>
             {submitted !== "" && <p className={utilStyles.listingFormLabel2}>{submitted}</p>}
         </div>

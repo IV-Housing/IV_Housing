@@ -17,10 +17,10 @@ export default function Create(props){
   return (
     <div>
       <Layout create user={user}></Layout>
-        <ListingForm getFormInfo={getFormInfo}/>
-        <div className={utilStyles.mapInfo}>
-            <Info/>
-        </div>
+	  	<div className={utilStyles.createContent}>
+			<ListingForm getFormInfo={getFormInfo}/>
+			<div className={utilStyles.createInfo}><Info/></div>
+	  	</div>
     </div>
   );
 }

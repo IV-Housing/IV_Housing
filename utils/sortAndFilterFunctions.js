@@ -12,6 +12,8 @@ export default function sortAndFilter(houses, company, street, block, size, pric
 	let b = document.getElementById('blockSelect');
 	let p = document.getElementById('priceSelect');
 	let si = document.getElementById('sizeSelect');
+	let sT = document.getElementById('sortSelectTotal');
+	let sP = document.getElementById('sortSelectPer');
 
 	if (company!=='Any') { refinedHouses=refinedHouses.filter(filterByCompany(company)); markActiveFilter(c); }
 	else markInactiveFilter(c);	
@@ -29,11 +31,21 @@ export default function sortAndFilter(houses, company, street, block, size, pric
 	else if (price!=='Any Price') refinedHouses=refinedHouses.filter(filterByPricePerPerson(price));
 	if (price!=='Any Price') markActiveFilter(p);
 	else markInactiveFilter(p);
-
-	if (direction=='ascending' && priceType=='total') refinedHouses.sort(sortAscendingTotal);
-	else if (direction=='ascending') refinedHouses.sort(sortAscendingPerPerson);
-	else if (direction=='descending' && priceType=='total') refinedHouses.sort(sortDescendingTotal);
-	else if (direction=='descending') refinedHouses.sort(sortDescendingPerPerson);
+	
+	if (direction=='ascendingTotal' || direction=='descendingTotal') {
+		markActiveFilter(sT);
+		sP.options[0].selected = true;
+		markInactiveFilter(sP);
+		if (direction=='ascendingTotal') refinedHouses.sort(sortAscendingTotal);
+		else refinedHouses.sort(sortDescendingTotal);
+	} else if (sT) markInactiveFilter(sT);
+	if (direction=='ascendingPer' || direction=='descendingPer') {
+		markActiveFilter(sP);
+		sT.options[0].selected = true;
+		markInactiveFilter(sT);
+		if (direction=='ascendingPer') refinedHouses.sort(sortAscendingPerPerson);
+		else refinedHouses.sort(sortDescendingPerPerson);
+	} else if (sP) markInactiveFilter(sP);	
 	
 	return refinedHouses;
 }
