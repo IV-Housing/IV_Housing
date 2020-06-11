@@ -7,7 +7,7 @@ import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 
 export default function MapView(props){
-    const[viewport, setViewport] = useState({latitude: 34.415, longitude: -119.858, width: "50vw", height: "75vh", zoom: 14});
+    const[viewport, setViewport] = useState({latitude: 34.414, longitude: -119.86, width: "50vw", height: "75vh", zoom: 14.5});
     const[selectedPark, setSelectedPark] = useState(null);
     const[comp1, setComp1] = useState({address:"", company:"", size:0, totalPrice:0, phone:"", website:""});
     const[comp2, setComp2] = useState({address:"", company:"", size:0, totalPrice:0, phone:"", website:""});

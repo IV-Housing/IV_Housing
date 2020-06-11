@@ -167,8 +167,15 @@
 	color: #888;
 }
 
+.createContent {
+	display: inline-flex;
+	flex-direction: row;
+	width: 100%;
+	height: 700px;
+	margin-top: 30px;
+}
+
 .listingForm{
-	position: absolute;
 	margin: 15px;
 	padding: 10px;
 	margin-top: 100px;
@@ -179,7 +186,24 @@
 	background-color: #0984e3;
 	box-shadow: 5px 10px darkgrey;
 }
-.listingFormInput{
+
+.listingForm > form {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+}
+
+.listingFormRow {
+	margin-bottom: 15px;
+}
+.listingFormInput {
+	border: none;
+	height: 25px;
+	border-radius: 3px;
+	background-color: #eee;
+	padding-left: 3px;
 	width: 150px;
 	float: right;
 }
@@ -202,8 +226,14 @@
 	margin-right: 5px;
 	background-color: #0984e3;
 	color: white;
+	cursor: pointer;
 } .listingFormButton:hover {
 	background-color: #087cd4;
+}
+
+.createInfo {
+	margin-top: 0px !important;
+	margin-left: 30px;
 }
 
 /*-----------------------------------------------------------------*/
@@ -446,7 +476,7 @@
 }
 
 .compContainer{
-	margin-top: 63px;
+	margin-top: 50px;
 	margin-left: 20px;
 	margin-right: 20px;
 	display: inline-flex;
@@ -456,10 +486,11 @@
 }
 
 .comparisonView {
-	margin: 10px;
+	margin-top: 25px;
+	margin-left: 10px;
 	box-shadow: 4px 4px 3px #BBB;
     border-bottom-right-radius: 10px;
-	height: 240px;
+	height: 210px;
 	width: 100%;
 	display: inline-flex;
     flex-direction: column;
@@ -476,17 +507,19 @@
     border-top-left-radius: 10px;
 	box-shadow: none;
 	width: auto;
-	height: 240px;
+	height: 210px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	padding: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	font-size: 15px;
+} .comparisonView > .card > .cardHeader > #cardHeaderTitle {
+	font-size: 17px;
 } .comparisonView > .card > #cardBody {
 	height: 100%;
-	font-size: 13px;
 } .comparisonView > .card > #cardBody > #cardInfo {
-	height: 70%;
+	height: 85%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;

@@ -12,10 +12,10 @@ describe("Home Page", () => {
         cy.get("a").its(1).should('have.text', 'Map');
     });
 
-    it("has h2s containing Filter Listings and Sort Listings, 5 selects, 2 labels and a paragraph in left side form", () => {
+    it("has h2s containing Filter Listings and Sort Listings, 6 selects, 2 labels and a paragraph in left side form", () => {
         cy.get("h2").its(0).should('have.text', 'Filter Listings');
         cy.get("h2").its(1).should('have.text', 'Sort Listings');
-        cy.get('select').should('have.length', 6);
+        cy.get('select').should('have.length', 7);
         cy.get('label').its(0).should('have.text', 'Total Price');
         cy.get('label').its(1).should('have.text', ' Price Per Person');
         cy.get("p").its(0).should('have.text', 'Not finding the right place? Narrow down the filters to show preffered listings at the top!');
