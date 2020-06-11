@@ -60,7 +60,7 @@
 	font-size: 18px;
 	margin-left: 15px;
 	padding: 5px;
-	box-shadow: 1px 3px darkgrey; 
+	box-shadow: 1px 3px darkgrey;
 	background-color: #087cd4;
 
 }
@@ -489,8 +489,7 @@
 	margin-top: 25px;
 	margin-left: 10px;
 	box-shadow: 4px 4px 3px #BBB;
-    border-bottom-right-radius: 10px;
-	height: 210px;
+  border-bottom-right-radius: 10px;
 	width: 100%;
 	display: inline-flex;
     flex-direction: column;
@@ -507,7 +506,6 @@
     border-top-left-radius: 10px;
 	box-shadow: none;
 	width: auto;
-	height: 210px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -577,4 +575,3 @@
 	text-align: left;
 	width: 300px;
 }
-
