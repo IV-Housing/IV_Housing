@@ -8,10 +8,6 @@ import Image from "react-bootstrap/Image";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import React from 'react';
 
-
-
-
-
 export default function Navbar(props){
   const user = props.user;
   
@@ -23,6 +19,7 @@ export default function Navbar(props){
         <a href="/">Listings</a>
         <a href="/map">Map</a>
         {user && <a href="/create" >Add Listing</a>}
+        {user && <a href="/edit" >Edit Listings</a>}
         <Nav>
           {user ? (
             <NavDropdown
