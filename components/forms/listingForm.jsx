@@ -19,7 +19,7 @@ export default function ListingForm(props){
 
     const postListing = async () => {
         let addr = state.addrNum + " " + state.addrStreet + " " + state.aptNum;
-	    await fetch("/api", {
+	    await fetch("/api/create", {
             method: "POST",
             body: JSON.stringify({
               company: state.company,
@@ -27,7 +27,8 @@ export default function ListingForm(props){
               size: state.size,
               totalPrice: state.totalPrice,
               website: state.website,
-              phone: state.phone,
+			  phone: state.phone,
+			  userEmail: props.user.email,
             }),
         });
 	}
@@ -36,28 +37,28 @@ export default function ListingForm(props){
         setSubmitted("");
         const { id, value} = e.target;
         if(id === "company"){
-            setState({ company: e.target.value, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
+            setState({ company: value, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
         }
         else if(id === "addrNum"){
-            setState({ company: state.company, addrNum: e.target.value, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
+            setState({ company: state.company, addrNum: value, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
         }
         else if(id === "addrStreet"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: e.target.value, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: value, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
         }
         else if(id === "aptNum"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: e.target.value, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: value, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
         }
         else if(id === "size"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: e.target.value, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: value, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
         }
         else if(id === "totalPrice"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: e.target.value, website: state.website, phone: state.phone });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: value, website: state.website, phone: state.phone });
         }        
         else if(id === "website"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: e.target.value, phone: state.phone });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: value, phone: state.phone });
         }
         else if(id === "phone"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: e.target.value });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: value });
         }
     };
 
