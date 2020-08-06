@@ -3,9 +3,14 @@ import utilStyles from '../../styles/utils.module.css'
 
 export default function ListingForm(props){
    const [submitted, setSubmitted] = useState("");
-   const [state, setState] = React.useState({ company: "Subleaser", addrNum: "", addrStreet: "Del Playa Dr.", aptNum: "", size: "", totalPrice: "", website: "", phone: "" });
+   const [state, setState] = useState({ company: "Subleaser", addrNum: "", addrStreet: "Del Playa Dr.", aptNum: "", size: "", totalPrice: "", website: "", phone: "" });
+   const KAMAP = "";
+   const PLAYALIFEIV = "";
+   const KOTOGROUP = "";
+   const MERIDIAN = "";
+   const WOLFEASS = "";
 
-    const handleSubmit = e => {
+   const handleSubmit = e => {
         e.preventDefault();
         if(state.addrNum === "" || state.size === "" || state.totalPrice === "" || state.phone === ""){
             setSubmitted("Please fill in all required fields");
@@ -15,11 +20,11 @@ export default function ListingForm(props){
             setState({ company: "Subleaser", addrNum: "", addrStreet: "Del Playa Dr.", aptNum: "", size: "", totalPrice: "", website: "", phone: "" });
             setSubmitted("Submission Successful");
         }
-    };
+   };
 
     const postListing = async () => {
         let addr = state.addrNum + " " + state.addrStreet + " " + state.aptNum;
-	    await fetch("/api", {
+	    await fetch("/api/create", {
             method: "POST",
             body: JSON.stringify({
               company: state.company,
@@ -27,7 +32,8 @@ export default function ListingForm(props){
               size: state.size,
               totalPrice: state.totalPrice,
               website: state.website,
-              phone: state.phone,
+			  phone: state.phone,
+			  userEmail: props.user.email,
             }),
         });
 	}
@@ -35,31 +41,34 @@ export default function ListingForm(props){
     const handleChange = e => {
         setSubmitted("");
         const { id, value} = e.target;
-        if(id === "company"){
-            setState({ company: e.target.value, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
-        }
-        else if(id === "addrNum"){
-            setState({ company: state.company, addrNum: e.target.value, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
+        if(id === "addrNum"){
+            setState({ company: state.company, addrNum: value, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
         }
         else if(id === "addrStreet"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: e.target.value, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: value, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
         }
         else if(id === "aptNum"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: e.target.value, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: value, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
         }
         else if(id === "size"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: e.target.value, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: value, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
         }
         else if(id === "totalPrice"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: e.target.value, website: state.website, phone: state.phone });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: value, website: state.website, phone: state.phone });
         }        
         else if(id === "website"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: e.target.value, phone: state.phone });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: value, phone: state.phone });
         }
         else if(id === "phone"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: e.target.value });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: value });
         }
-    };
+	};
+	
+	if(props.user.email === KAMAP){ state.company = "KAMAP"}
+    else if(props.user.email === PLAYALIFEIV){state.company = "Playa Life IV"}
+    else if(props.user.email === KOTOGROUP){state.company = "The Koto Group"}
+    else if(props.user.email === MERIDIAN){state.company = "Meridian Group"}
+    else if(props.user.email === WOLFEASS){state.company = "Wolfe and Associates"}
 
     return (
         <div className={utilStyles.listingForm}> 
@@ -67,14 +76,7 @@ export default function ListingForm(props){
 				<div>
 					<div className={utilStyles.listingFormRow}>
 						<label htmlfor="company" className={utilStyles.listingFormLabel}>Company:</label>
-						<select id="company" defaultValue={state.company} onChange={handleChange} className={utilStyles.listingFormInput}>
-							<option value="Subleaser">Subleaser</option>
-							<option value="KAMAP">KAMAP</option>
-							<option value="Playa Life IV">Playa Life IV</option>
-							<option value="The Koto Group">The Koto Group</option>
-							<option value="Wolfe and Associates">Wolfe and Associates</option>
-							<option value="Meridian Group">Meridian Group</option>
-						</select><br></br>
+						<input type="text" id="company" name="company" value={state.company} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
 					</div>
 					<div className={utilStyles.listingFormRow}>
 						<label htmlfor="addressNumber" className={utilStyles.listingFormLabel}>Address Number: (Required)</label>

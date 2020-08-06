@@ -18,8 +18,8 @@ export default function Create(props){
     <div>
       <Layout create user={user}></Layout>
 	  	<div className={utilStyles.createContent}>
-			<ListingForm getFormInfo={getFormInfo}/>
-			<div className={utilStyles.createInfo}><Info/></div>
+          <ListingForm user = {user} getFormInfo={getFormInfo}/>
+          <div className={utilStyles.createInfo}><Info/></div>
 	  	</div>
     </div>
   );

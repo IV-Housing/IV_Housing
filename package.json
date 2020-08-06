@@ -64,6 +64,7 @@
     "react-image": "^3.0.3",
     "react-map-gl": "^5.2.5",
     "request": "^2.88.2",
+    "shell-quote": "^1.7.2",
     "start-server-and-test": "^1.10.11",
     "webpack": "^4.43.0"
   },
