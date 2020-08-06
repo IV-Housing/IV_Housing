@@ -45,35 +45,33 @@ async function getLatLng(add){
 }
   
 async function updateListing(req) {
-    // let house = JSON.parse(req.body);
-    // let result = await getLatLng(house.address);
+    let house = JSON.parse(req.body);
+    let update = {};
+    if(house.addrChange){
+      // let result = await getLatLng(house.address);
+      // update = {
+      //   address: house.address, 
+      //   size: parseInt(house.size), 
+      //   totalPrice: parseInt(house.totalPrice), 
+      //   website: house.website, 
+      //   phone: house.phone, 
+      //   lat: result.latitude, 
+      //   lng: result.longitude,
+      // }
+    }else{
+      update = {
+        size: parseInt(house.size), 
+        totalPrice: parseInt(house.totalPrice), 
+        website: house.website, 
+        phone: house.phone, 
+      }
+    }
   
-    // console.log(house.company);
-    // console.log(house.address);
-    // console.log(house.size);
-    // console.log(house.totalPrice);
-    // console.log(house.totalPrice/house.size);
-    // console.log(house.website);
-    // console.log(house.phone);
-    // console.log(result.latitude);
-    // console.log(result.longitude);
-  
-    // const client = await initDatabase();
-    // client.collection("Houses").insertOne(
-    //   { company: house.company, 
-    //     address: house.address, 
-    //     size: parseInt(house.size), 
-    //     totalPrice: parseInt(house.totalPrice), 
-    //     website: house.website, 
-    //     phone: house.phone, 
-    //     lat: result.latitude, 
-    //     lng: result.longitude,
-    //     availability: true,
-    //     newlyAdded: true,
-    //   }, 
-    //   function(err, res) {
-    //     if (err) throw err;
-    // });
+    const client = await initDatabase();
+    client.collection("Houses").findOneAndUpdate(
+      {_id : ObjectId(house.id)},
+      {$set: update},
+    );
 }
   
   export default async function performAction(req, res) {
