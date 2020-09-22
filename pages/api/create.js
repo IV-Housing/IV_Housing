@@ -11,7 +11,6 @@ async function getLatLng(add){
     const geocoder = NodeGeocoder(options);
   
     add = add + " 93117"
-    //console.log(add);
     const res = await geocoder.geocode({
       address: add,
       countryCode: 'us',
@@ -39,6 +38,9 @@ async function getLatLng(add){
     let id = client.collection("Houses").insertOne(
       { company: house.company, 
         address: house.address, 
+        addrNum: house.addrNum,
+        addrStreet: house.addrStreet,
+        aptNum: house.aptNum,
         size: parseInt(house.size), 
         totalPrice: parseInt(house.totalPrice), 
         website: house.website, 
@@ -47,6 +49,8 @@ async function getLatLng(add){
         lng: result.longitude,
         availability: true,
         newlyAdded: true,
+        notes: "",
+        email: house.email,
       }).then(result => {
           client.collection("Users").findOneAndUpdate(
             { email : house.userEmail },

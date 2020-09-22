@@ -5,7 +5,7 @@ import utilStyles from '../../styles/utils.module.css'
 class FilterForms extends React.Component {
 	constructor(props) {
 		super(props)
-		this.state = {company: 'Any',block:'Any',street:'Any',size:'Any',price:'Any Price',priceType:'total'}
+		this.state = {company: 'Any', block:'Any', street:'Any', size:'Any', price:'Any Price', priceType:'total'}
 		this.companyChange = this.companyChange.bind(this)
 		this.streetChange = this.streetChange.bind(this)
 		this.blockChange = this.blockChange.bind(this)

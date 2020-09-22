@@ -34,7 +34,6 @@ async function getLatLng(add){
     const geocoder = NodeGeocoder(options);
   
     add = add + " 93117"
-    console.log(add);
     const res = await geocoder.geocode({
       address: add,
       countryCode: 'us',
@@ -48,22 +47,27 @@ async function updateListing(req) {
     let house = JSON.parse(req.body);
     let update = {};
     if(house.addrChange){
-      // let result = await getLatLng(house.address);
-      // update = {
-      //   address: house.address, 
-      //   size: parseInt(house.size), 
-      //   totalPrice: parseInt(house.totalPrice), 
-      //   website: house.website, 
-      //   phone: house.phone, 
-      //   lat: result.latitude, 
-      //   lng: result.longitude,
-      // }
+      let result = await getLatLng(house.address);
+      update = {
+        address: house.address, 
+        addrNum: house.addrNum,
+        addrStreet: house.addrStreet,
+        aptNum: house.aptNum,
+        size: parseInt(house.size), 
+        totalPrice: parseInt(house.totalPrice), 
+        website: house.website, 
+        phone: house.phone, 
+        email: house.email,
+        lat: result.latitude, 
+        lng: result.longitude,
+      }
     }else{
       update = {
         size: parseInt(house.size), 
         totalPrice: parseInt(house.totalPrice), 
         website: house.website, 
         phone: house.phone, 
+        email: house.email,
       }
     }
   
@@ -72,6 +76,17 @@ async function updateListing(req) {
       {_id : ObjectId(house.id)},
       {$set: update},
     );
+}
+
+async function deleteListing(req){
+  let house = JSON.parse(req.body);
+  //console.log(house.id);
+  let client = await initDatabase();
+  client.collection("Houses").deleteOne({_id : ObjectId(house.id)});
+
+  client = await initDatabase();
+  const users = client.collection("Users");
+  users.updateMany({}, {$pull: {houses: ObjectId(house.id)}});
 }
   
   export default async function performAction(req, res) {
@@ -90,6 +105,12 @@ async function updateListing(req) {
       }
       case "POST" : {
         updateListing(req);
+        res.statusCode = 200;
+        res.end();
+        break;
+      }
+      case "DELETE" : {
+        deleteListing(req);
         res.statusCode = 200;
         res.end();
         break;

@@ -62,7 +62,7 @@ export default function Edit(props){
   return (
     <Layout edit user={user}>
         <div className={utilStyles.editViewBox}>
-            <EditView data={listings}/>
+            <EditView user={user} data={listings}/>
         </div>
     </Layout>
   );

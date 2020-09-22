@@ -3,7 +3,7 @@ import utilStyles from '../../styles/utils.module.css'
 
 export default function ListingForm(props){
    const [submitted, setSubmitted] = useState("");
-   const [state, setState] = useState({ company: "Subleaser", addrNum: "", addrStreet: "Del Playa Dr.", aptNum: "", size: "", totalPrice: "", website: "", phone: "" });
+   const [state, setState] = useState({ company: "Subleaser", addrNum: "", addrStreet: "Del Playa Dr.", aptNum: "", size: "", totalPrice: "", website: "", phone: "", email: ""});
    const KAMAP = "";
    const PLAYALIFEIV = "";
    const KOTOGROUP = "";
@@ -17,22 +17,30 @@ export default function ListingForm(props){
         }
         else{
             postListing();
-            setState({ company: "Subleaser", addrNum: "", addrStreet: "Del Playa Dr.", aptNum: "", size: "", totalPrice: "", website: "", phone: "" });
+            setState({ company: "Subleaser", addrNum: "", addrStreet: "Del Playa Dr.", aptNum: "", size: "", totalPrice: "", website: "", phone: "", email: "" });
             setSubmitted("Submission Successful");
         }
    };
 
     const postListing = async () => {
-        let addr = state.addrNum + " " + state.addrStreet + " " + state.aptNum;
+		let addr = state.addrNum + " " + state.addrStreet + " " + state.aptNum;
+		let email = state.email;
+		if(email === ""){
+			email = props.user.email;
+		}
 	    await fetch("/api/create", {
             method: "POST",
             body: JSON.stringify({
               company: state.company,
-              address: addr,
+			  address: addr,
+			  addrNum: state.addrNum,
+			  addrStreet: state.addrStreet,
+			  aptNum: state.aptNum,
               size: state.size,
               totalPrice: state.totalPrice,
               website: state.website,
 			  phone: state.phone,
+			  email: email,
 			  userEmail: props.user.email,
             }),
         });
@@ -42,33 +50,36 @@ export default function ListingForm(props){
         setSubmitted("");
         const { id, value} = e.target;
         if(id === "addrNum"){
-            setState({ company: state.company, addrNum: value, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
+            setState({ company: state.company, addrNum: value, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email });
         }
         else if(id === "addrStreet"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: value, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: value, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email });
         }
         else if(id === "aptNum"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: value, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: value, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email });
         }
         else if(id === "size"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: value, totalPrice: state.totalPrice, website: state.website, phone: state.phone });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: value, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email });
         }
         else if(id === "totalPrice"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: value, website: state.website, phone: state.phone });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: value, website: state.website, phone: state.phone, email: state.email });
         }        
         else if(id === "website"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: value, phone: state.phone });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: value, phone: state.phone, email: state.email });
         }
         else if(id === "phone"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: value });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: value, email: state.email});
+		}
+		else if(id === "email"){
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: value});
         }
 	};
 	
-	if(props.user.email === KAMAP){ state.company = "KAMAP"}
-    else if(props.user.email === PLAYALIFEIV){state.company = "Playa Life IV"}
-    else if(props.user.email === KOTOGROUP){state.company = "The Koto Group"}
-    else if(props.user.email === MERIDIAN){state.company = "Meridian Group"}
-    else if(props.user.email === WOLFEASS){state.company = "Wolfe and Associates"}
+	if(props.user.email === KAMAP){ state.company = "KAMAP"; state.email = "kamapproperties@hotmail.com"; state.phone = "(805)685-2627";}
+    else if(props.user.email === PLAYALIFEIV){state.company = "Playa Life IV"; state.email = "manager@playalifeiv.com"; state.phone = "(805)603-4777";}
+    else if(props.user.email === KOTOGROUP){state.company = "The Koto Group"; state.email = "info@kotogroup.com"; state.phone = "(805)973-7077";}
+    else if(props.user.email === MERIDIAN){state.company = "Meridian Group"; state.email = "info@meridiangrouprem.com"; state.phone = "(805)692-2500";}
+    else if(props.user.email === WOLFEASS){state.company = "Wolfe and Associates"; state.email = "mail@rlwa.com"; state.phone = "(805)964-6770";}
 
     return (
         <div className={utilStyles.listingForm}> 
@@ -130,6 +141,10 @@ export default function ListingForm(props){
 					<div className={utilStyles.listingFormRow}>
 						<label htmlfor="phone" className={utilStyles.listingFormLabel}>Contact Phone Number: (Required)</label>
 						<input type="tel" id="phone" name="phone" value={state.phone} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
+					</div>
+					<div className={utilStyles.listingFormRow}>
+						<label htmlfor="email" className={utilStyles.listingFormLabel}>Contact Email: (Set to login gmail if empty)</label>
+						<input type="text" id="email" name="email" value={state.email} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
 					</div>
 				</div>
 				<div>
