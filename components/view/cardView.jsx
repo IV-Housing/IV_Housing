@@ -6,7 +6,7 @@ import Card from './card.jsx'
 export default function CardView(props) {
 	return (
 		<div className={utilStyles.cardView}>
-			{ props.data.map((house)=>(<Card h={house}/>)) }
+			{ props.data.map((house)=>(<Card key={house._id} h={house}/>)) }
 		</div>
 	);
 }

@@ -58,6 +58,7 @@ async function updateListing(req) {
         website: house.website, 
         phone: house.phone, 
         email: house.email,
+        notes: house.notes,
         lat: result.latitude, 
         lng: result.longitude,
       }
@@ -68,6 +69,7 @@ async function updateListing(req) {
         website: house.website, 
         phone: house.phone, 
         email: house.email,
+        notes: house.notes,
       }
     }
   

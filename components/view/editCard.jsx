@@ -1,7 +1,7 @@
 import utilStyles from '../../styles/utils.module.css'
 import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBed, faEnvelope, faPhone, faTrashAlt} from '@fortawesome/free-solid-svg-icons'
+import { faBed, faEnvelope, faPhone, faTrashAlt, faStickyNote, faGlobe} from '@fortawesome/free-solid-svg-icons'
 
 export default function EditCard(props) {
     const [editing, setEditing] = useState(false); 
@@ -17,7 +17,8 @@ export default function EditCard(props) {
         totalPrice: props.h.totalPrice,
         website: props.h.website, 
         phone: props.h.phone,
-        email: props.h.email
+        email: props.h.email,
+        notes: props.h.notes,
     });
     const [state, setState] = useState({
         availability: props.h.availability,
@@ -28,7 +29,8 @@ export default function EditCard(props) {
         totalPrice: props.h.totalPrice,
         website: props.h.website, 
         phone: props.h.phone,
-        email: props.h.email
+        email: props.h.email,
+        notes: props.h.notes,
     });
 
     const updateAvail = async (e)=>{
@@ -45,7 +47,8 @@ export default function EditCard(props) {
             totalPrice: listing.totalPrice, 
             website: listing.website, 
             phone: listing.phone,
-            email: listing.email
+            email: listing.email,
+            notes: listing.notes,
         });
         await fetch("/api/edit", {
             method: "PUT",
@@ -59,6 +62,7 @@ export default function EditCard(props) {
     const switchView = ()=>{
         setEditing(!editing);
         setTrash(false);
+        setRequired("")
     }
 
     const toggleTrash = ()=>{
@@ -75,14 +79,15 @@ export default function EditCard(props) {
             totalPrice: listing.totalPrice, 
             website: listing.website, 
             phone: listing.phone,
-            email: listing.email
+            email: listing.email,
+            notes: listing.notes,
         });
         switchView();
     }
 
     const submit = ()=>{
         if(state.addrNum === "" || state.size === "" || state.totalPrice === "" || state.phone === ""){
-            setRequired("Make sure all required fields are filled in")
+            setRequired("MAKE SURE ALL REQUIRED FIELDS ARE FILLED IN")
         }
         else{
             updateListing();
@@ -100,6 +105,7 @@ export default function EditCard(props) {
                 website: state.website, 
                 phone: state.phone,
                 email: email, 
+                notes: state.notes,
             });
             switchView();
         }
@@ -128,6 +134,7 @@ export default function EditCard(props) {
               website: state.website,
               phone: state.phone,
               email: email,
+              notes: state.notes,
               id: props.h._id,
             }),
         });
@@ -151,28 +158,31 @@ export default function EditCard(props) {
     const handleChange = e => {
         const { id, value} = e.target;
         if(id === "addrNum"){
-            setState({ availability: state.availability, addrNum: value, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email });
+            setState({ availability: state.availability, addrNum: value, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email, notes: state.notes });
         }
         else if(id === "addrStreet"){
-            setState({ availability: state.availability, addrNum: state.addrNum, addrStreet: value, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email });
+            setState({ availability: state.availability, addrNum: state.addrNum, addrStreet: value, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email, notes: state.notes });
         }
         else if(id === "aptNum"){
-            setState({ availability: state.availability, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: value, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email });
+            setState({ availability: state.availability, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: value, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email, notes: state.notes });
         }
         else if(id === "size"){
-            setState({ availability: state.availability, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: value, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email });
+            setState({ availability: state.availability, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: value, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email, notes: state.notes });
         }
         else if(id === "totalPrice"){
-            setState({ availability: state.availability, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: value, website: state.website, phone: state.phone, email: state.email });
+            setState({ availability: state.availability, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: value, website: state.website, phone: state.phone, email: state.email, notes: state.notes });
         }        
         else if(id === "website"){
-            setState({ availability: state.availability, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: value, phone: state.phone, email: state.email });
+            setState({ availability: state.availability, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: value, phone: state.phone, email: state.email, notes: state.notes });
         }
         else if(id === "phone"){
-            setState({ availability: state.availability, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: value, email: state.email });
+            setState({ availability: state.availability, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: value, email: state.email, notes: state.notes });
         }
         else if(id === "email"){
-            setState({ availability: state.availability, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: value});
+            setState({ availability: state.availability, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: value, notes: state.notes});
+        }
+        else if(id === "notes"){
+            setState({ availability: state.availability, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email, notes: value});
         }
     };
 
@@ -199,9 +209,9 @@ export default function EditCard(props) {
                         </div>
                         <div id={utilStyles.cardBody}>
                             <div id={utilStyles.cardInfo}>
-                                <label htmlfor="addressNumber" className={utilStyles.cardHeaderTitle}>Address Number: (Required)</label>
+                                <label htmlFor="addressNumber" className={utilStyles.cardHeaderTitle}>Address Number: (Required)</label>
                                 <input type="text" id="addrNum" name="addrNum" value={state.addrNum} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
-                                <label htmlfor="addressStreet" className={utilStyles.cardHeaderTitle}>Address Street:</label>
+                                <label htmlFor="addressStreet" className={utilStyles.cardHeaderTitle}>Address Street:</label>
                                 <select id="addrStreet" defaultValue={state.addrStreet} onChange={handleChange} className={utilStyles.listingFormInput}>
                                     <option value = "Cervantes Rd.">Cervantes Rd.</option>
                                     <option value = "El Greco Rd.">El Greco Rd.</option>
@@ -228,18 +238,21 @@ export default function EditCard(props) {
                                     <option value = "Camino Corto">Camino Corto</option>
                                     <option value = "Camino Lindo">Camino Lindo</option>
                                 </select><br></br>
-                                <label htmlfor="apartmentNumber" className={utilStyles.cardHeaderTitle}>Apartment Number: (Optional)</label>
+                                <label htmlFor="apartmentNumber" className={utilStyles.cardHeaderTitle}>Apartment Number: (Optional)</label>
                                 <input type="text" id="aptNum" name="aptNum" value={state.aptNum} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
-                                <label htmlfor="size" className={utilStyles.cardHeaderTitle}>Avalible Size: (Required)</label>
+                                <label htmlFor="size" className={utilStyles.cardHeaderTitle}>Avalible Size: (Required)</label>
                                 <input type="number" id="size" name="size" value={state.size} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
-                                <label htmlfor="totalPrice" className={utilStyles.cardHeaderTitle}>Total Price of Avalible Spots: (Required)</label>
+                                <label htmlFor="totalPrice" className={utilStyles.cardHeaderTitle}>Total Price of Avalible Spots: (Required)</label>
                                 <input type="number" id="totalPrice" name="totalPrice" value={state.totalPrice} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
-                                <label htmlfor="website" className={utilStyles.cardHeaderTitle}>Original House Listing/Facebook Listing Webpage: (Optional)</label>
+                                <label htmlFor="website" className={utilStyles.cardHeaderTitle}>Original House Listing/Facebook Listing Webpage: (Optional)</label>
                                 <input type="text" id="website" name="website" value={state.website} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
-                                <label htmlfor="phone" className={utilStyles.cardHeaderTitle}>Contact Phone Number: (Required)</label>
+                                <label htmlFor="phone" className={utilStyles.cardHeaderTitle}>Contact Phone Number: (Required)</label>
                                 <input type="tel" id="phone" name="phone" value={state.phone} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
-                                <label htmlfor="email" className={utilStyles.cardHeaderTitle}>Contact Email: (Set to login gmail if empty)</label>
+                                <label htmlFor="email" className={utilStyles.cardHeaderTitle}>Contact Email: (Set to login gmail if empty)</label>
                                 <input type="text" id="email" name="email" value={state.email} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
+                                <label htmlFor="notes" className={utilStyles.cardHeaderTitle}>Notes/Amenities: (Optional)</label>
+                                <textarea id="notes" name="notes" value={state.notes} onChange={handleChange} className={utilStyles.listingFormTextArea}></textarea><br></br>
+                                {required!=="" && <p className={utilStyles.cardHeaderTitle}>{required}</p>}
                             </div>
                             <a><button onClick={switchView}>Cancel</button></a>
                             <a><button onClick={submit}>Submit</button></a>
@@ -262,7 +275,8 @@ export default function EditCard(props) {
                                 <div><FontAwesomeIcon icon={faBed} className={utilStyles.icon}/>{listing.size}</div>
                                 <div><FontAwesomeIcon icon={faPhone} className={utilStyles.icon}/>Contact at {listing.phone}</div>
                                 <div><FontAwesomeIcon icon={faEnvelope} className={utilStyles.icon}/>{listing.email}</div>
-                                <div>{listing.website}</div>
+                                <div><FontAwesomeIcon icon={faGlobe} className={utilStyles.icon}/>{listing.website}</div>
+                                <div className={utilStyles.cardNotesBox}><FontAwesomeIcon icon={faStickyNote} className={utilStyles.icon}/><pre className={utilStyles.cardNotes}>{listing.notes}</pre></div>
                             </div>
                             <a><button onClick={setInfo}>Edit</button></a>
                         </div>

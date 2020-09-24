@@ -20,7 +20,7 @@ export default function TableView(props){
 				<tbody>
 					{
 						props.data.map(house =>(
-							<tr>
+							<tr key={house._id}>
 								<td><a href={house.website}>{house.address}</a></td>
 								<td>{house.company}</td>
 								<td>{house.size}</td>

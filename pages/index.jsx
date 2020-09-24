@@ -17,15 +17,15 @@ export default function Index(props){
 	const [refinedData, setRefinedData] = useState([]);
 	const [direction, setDirection] = useState("ascending");
 	const [view, setView] = useState('table');
-	const [{company, street, block, size, price, priceType}, setStreetBlock] = useState(
-		{company: 'Any', street:'Any', block:'Any', size:'Any', price:'Any Price', priceType:'total' }
+	const [{company, street, block, size, price, priceType, avail}, setStreetBlock] = useState(
+		{company: 'Any', street:'Any', block:'Any', size:'Any', price:'Any Price', priceType:'total', avail:'available' }
 	);
 
 	const sortByPrice = (direction)=>{ setDirection(direction); }
 	const toggleTable = ()=>{ setView('table'); }
 	const toggleCard = ()=>{ setView('card'); }
-	const filter = (company, street, block, size, price, priceType) => { 
-		setStreetBlock({company,street,block,size,price,priceType}); 
+	const filter = (company, street, block, size, price, priceType,avail) => { 
+		setStreetBlock({company,street,block,size,price,priceType,avail}); 
 	}
 
 	useEffect(()=>{ if(initList.length===0) getList(); });
@@ -39,8 +39,8 @@ export default function Index(props){
 
 	useEffect(() => {
 		let houses = [...initList];
-		setRefinedData( sortAndFilter(houses, company, street, block, size, price, priceType, direction) );
-	}, [initList, company, street, block, size, price, priceType, direction]);
+		setRefinedData( sortAndFilter(houses, company, street, block, size, price, priceType, avail, direction) );
+	}, [initList, company, street, block, size, price, priceType, avail, direction]);
 	
 	useEffect(() => {
 		let t = document.getElementById('tableButton');

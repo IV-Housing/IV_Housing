@@ -49,7 +49,7 @@ async function getLatLng(add){
         lng: result.longitude,
         availability: true,
         newlyAdded: true,
-        notes: "",
+        notes: house.notes,
         email: house.email,
       }).then(result => {
           client.collection("Users").findOneAndUpdate(

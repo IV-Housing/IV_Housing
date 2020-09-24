@@ -5,39 +5,44 @@ import utilStyles from '../../styles/utils.module.css'
 class FilterForms extends React.Component {
 	constructor(props) {
 		super(props)
-		this.state = {company: 'Any', block:'Any', street:'Any', size:'Any', price:'Any Price', priceType:'total'}
+		this.state = {company: 'Any', block:'Any', street:'Any', size:'Any', price:'Any Price', priceType:'total', avail: 'available'}
 		this.companyChange = this.companyChange.bind(this)
 		this.streetChange = this.streetChange.bind(this)
 		this.blockChange = this.blockChange.bind(this)
 		this.sizeChange = this.sizeChange.bind(this)
 		this.priceChange = this.priceChange.bind(this)
 		this.selPriceCahnge = this.selPriceCahnge.bind(this)
+		this.availChange = this.availChange.bind(this)
 	}
 	companyChange(event) {
 		this.state.company = event.target.value
-		this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
+		this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType,this.state.avail)
 	}
 	streetChange(event) {
 		this.state.street = event.target.value
-		this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
+		this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType,this.state.avail)
 	}
 	blockChange(event) {
 		this.state.block = event.target.value
-		this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
+		this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType,this.state.avail)
 	}
 	sizeChange(event) {
 		this.state.size = event.target.value
-		this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
+		this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType,this.state.avail)
 	}
 	priceChange(event) {
 		this.state.price = event.target.value
-		this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
+		this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType,this.state.avail)
 	}
 	selPriceCahnge(event) {
 		this.setState({priceType: event.target.value,price:'Any Price'},()=>{
-			this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType)
+			this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType,this.state.avail)
 		})
 
+	}
+	availChange(event){
+		this.state.avail = event.target.value
+		this.props.filter(this.state.company,this.state.street,this.state.block,this.state.size,this.state.price,this.state.priceType,this.state.avail)
 	}
 	render() {
 		let priceType=this.state.priceType
@@ -120,6 +125,12 @@ class FilterForms extends React.Component {
 					<label><input type="radio" name="price" value="total" onChange={this.selPriceCahnge} checked={priceType==='total'} />Total Price</label>
 					<label>	<input type="radio" name="price" value="per" onChange={this.selPriceCahnge} checked={priceType==='per'} />Price Per Person</label>
 				</div>
+
+				<select id="availSelect" defaultValue="default" onChange={this.availChange}>
+					<option value = 'available'>Available</option>
+                    <option value = 'not available'>Not Available</option>
+                    <option value = 'any'>Any Availabality</option>
+				</select>
 			</div>
 		);
 	}

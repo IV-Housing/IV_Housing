@@ -3,15 +3,16 @@ import { markActiveFilter, markInactiveFilter } from './filterStyling.js'
 import { sortAscendingTotal, sortDescendingTotal, 
 	sortAscendingPerPerson, sortDescendingPerPerson } from './sortFuncs.js'
 import { filterByCompany, filterByStreet, filterByBlock, filterBySize,
-	filterByPriceTotal, filterByPricePerPerson } from './filterFuncs.js'
+	filterByPriceTotal, filterByPricePerPerson, filterByAvail } from './filterFuncs.js'
 
-export default function sortAndFilter(houses, company, street, block, size, price, priceType, direction) {
+export default function sortAndFilter(houses, company, street, block, size, price, priceType, avail, direction) {
 	let refinedHouses = houses;
 	let c = document.getElementById('companySelect');
 	let s = document.getElementById('streetSelect');
 	let b = document.getElementById('blockSelect');
 	let p = document.getElementById('priceSelect');
 	let si = document.getElementById('sizeSelect');
+	let a = document.getElementById('availSelect');
 	let sT = document.getElementById('sortSelectTotal');
 	let sP = document.getElementById('sortSelectPer');
 
@@ -31,6 +32,10 @@ export default function sortAndFilter(houses, company, street, block, size, pric
 	else if (price!=='Any Price') refinedHouses=refinedHouses.filter(filterByPricePerPerson(price));
 	if (price!=='Any Price') markActiveFilter(p);
 	else markInactiveFilter(p);
+
+	if(avail!=='any'){ refinedHouses=refinedHouses.filter(filterByAvail(avail));}
+	if(avail!=='available'){markActiveFilter(a);}
+	else markInactiveFilter(a);
 	
 	if (direction=='ascendingTotal' || direction=='descendingTotal') {
 		markActiveFilter(sT);

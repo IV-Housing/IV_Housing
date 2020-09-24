@@ -3,7 +3,7 @@ import utilStyles from '../../styles/utils.module.css'
 
 export default function ListingForm(props){
    const [submitted, setSubmitted] = useState("");
-   const [state, setState] = useState({ company: "Subleaser", addrNum: "", addrStreet: "Del Playa Dr.", aptNum: "", size: "", totalPrice: "", website: "", phone: "", email: ""});
+   const [state, setState] = useState({ company: "Subleaser", addrNum: "", addrStreet: "Del Playa Dr.", aptNum: "", size: "", totalPrice: "", website: "", phone: "", email: "", notes: ""});
    const KAMAP = "";
    const PLAYALIFEIV = "";
    const KOTOGROUP = "";
@@ -17,7 +17,7 @@ export default function ListingForm(props){
         }
         else{
             postListing();
-            setState({ company: "Subleaser", addrNum: "", addrStreet: "Del Playa Dr.", aptNum: "", size: "", totalPrice: "", website: "", phone: "", email: "" });
+            setState({ company: "Subleaser", addrNum: "", addrStreet: "Del Playa Dr.", aptNum: "", size: "", totalPrice: "", website: "", phone: "", email: "", notes: ""});
             setSubmitted("Submission Successful");
         }
    };
@@ -41,6 +41,7 @@ export default function ListingForm(props){
               website: state.website,
 			  phone: state.phone,
 			  email: email,
+			  notes: state.notes,
 			  userEmail: props.user.email,
             }),
         });
@@ -50,28 +51,31 @@ export default function ListingForm(props){
         setSubmitted("");
         const { id, value} = e.target;
         if(id === "addrNum"){
-            setState({ company: state.company, addrNum: value, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email });
+            setState({ company: state.company, addrNum: value, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email, notes: state.notes });
         }
         else if(id === "addrStreet"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: value, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: value, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email, notes: state.notes });
         }
         else if(id === "aptNum"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: value, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: value, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email, notes: state.notes });
         }
         else if(id === "size"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: value, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: value, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email, notes: state.notes });
         }
         else if(id === "totalPrice"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: value, website: state.website, phone: state.phone, email: state.email });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: value, website: state.website, phone: state.phone, email: state.email, notes: state.notes });
         }        
         else if(id === "website"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: value, phone: state.phone, email: state.email });
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: value, phone: state.phone, email: state.email, notes: state.notes });
         }
         else if(id === "phone"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: value, email: state.email});
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: value, email: state.email, notes: state.notes});
 		}
 		else if(id === "email"){
-            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: value});
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: value, notes: state.notes});
+		}
+		else if(id === "notes"){
+            setState({ company: state.company, addrNum: state.addrNum, addrStreet: state.addrStreet, aptNum: state.aptNum, size: state.size, totalPrice: state.totalPrice, website: state.website, phone: state.phone, email: state.email, notes: value});
         }
 	};
 	
@@ -86,15 +90,15 @@ export default function ListingForm(props){
             <form onSubmit={handleSubmit}>
 				<div>
 					<div className={utilStyles.listingFormRow}>
-						<label htmlfor="company" className={utilStyles.listingFormLabel}>Company:</label>
+						<label htmlFor="company" className={utilStyles.listingFormLabel}>Company:</label>
 						<input type="text" id="company" name="company" value={state.company} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
 					</div>
 					<div className={utilStyles.listingFormRow}>
-						<label htmlfor="addressNumber" className={utilStyles.listingFormLabel}>Address Number: (Required)</label>
+						<label htmlFor="addressNumber" className={utilStyles.listingFormLabel}>Address Number: (Required)</label>
 						<input type="text" id="addrNum" name="addrNum" value={state.addrNum} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
 					</div>
 					<div className={utilStyles.listingFormRow}>
-						<label htmlfor="addressStreet" className={utilStyles.listingFormLabel}>Address Street:</label>
+						<label htmlFor="addressStreet" className={utilStyles.listingFormLabel}>Address Street:</label>
 						<select id="addrStreet" defaultValue={state.addrStreet} onChange={handleChange} className={utilStyles.listingFormInput}>
 							<option value = "Cervantes Rd.">Cervantes Rd.</option>
 							<option value = "El Greco Rd.">El Greco Rd.</option>
@@ -123,28 +127,32 @@ export default function ListingForm(props){
 						</select><br></br>
 					</div>
 					<div className={utilStyles.listingFormRow}>
-						<label htmlfor="apartmentNumber" className={utilStyles.listingFormLabel}>Apartment Number: (Optional)</label>
+						<label htmlFor="apartmentNumber" className={utilStyles.listingFormLabel}>Apartment Number: (Optional)</label>
 						<input type="text" id="aptNum" name="aptNum" value={state.aptNum} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
 					</div>
 					<div className={utilStyles.listingFormRow}>
-						<label htmlfor="size" className={utilStyles.listingFormLabel}>Avalible Size: (Required)</label>
+						<label htmlFor="size" className={utilStyles.listingFormLabel}>Avalible Size: (Required)</label>
 						<input type="number" id="size" name="size" value={state.size} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
 					</div>
 					<div className={utilStyles.listingFormRow}>
-						<label htmlfor="totalPrice" className={utilStyles.listingFormLabel}>Total Price of Avalible Spots: (Required)</label>
+						<label htmlFor="totalPrice" className={utilStyles.listingFormLabel}>Total Price of Avalible Spots: (Required)</label>
 						<input type="number" id="totalPrice" name="totalPrice" value={state.totalPrice} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
 					</div>
 					<div className={utilStyles.listingFormRow}>
-						<label htmlfor="website" className={utilStyles.listingFormLabel}>Original House Listing/Facebook Listing Webpage: (Optional)</label>
+						<label htmlFor="website" className={utilStyles.listingFormLabel}>Original House Listing/Facebook Listing Webpage: (Optional)</label>
 						<input type="text" id="website" name="website" value={state.website} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
 					</div>
 					<div className={utilStyles.listingFormRow}>
-						<label htmlfor="phone" className={utilStyles.listingFormLabel}>Contact Phone Number: (Required)</label>
+						<label htmlFor="phone" className={utilStyles.listingFormLabel}>Contact Phone Number: (Required)</label>
 						<input type="tel" id="phone" name="phone" value={state.phone} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
 					</div>
 					<div className={utilStyles.listingFormRow}>
-						<label htmlfor="email" className={utilStyles.listingFormLabel}>Contact Email: (Set to login gmail if empty)</label>
+						<label htmlFor="email" className={utilStyles.listingFormLabel}>Contact Email: (Set to login gmail if empty)</label>
 						<input type="text" id="email" name="email" value={state.email} onChange={handleChange} className={utilStyles.listingFormInput}></input><br></br>
+					</div>
+					<div className={utilStyles.listingFormRow}>
+						<label htmlFor="notes" className={utilStyles.listingFormLabel}>Notes/Amenities: (Optional)</label>
+						<textarea id="notes" name="notes" value={state.notes} onChange={handleChange} className={utilStyles.listingFormTextArea}></textarea><br></br>
 					</div>
 				</div>
 				<div>

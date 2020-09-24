@@ -192,7 +192,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 85%;
+	height: 93%;
 }
 
 .listingFormRow {
@@ -201,6 +201,15 @@
 .listingFormInput {
 	border: none;
 	height: 25px;
+	border-radius: 3px;
+	background-color: #eee;
+	padding-left: 3px;
+	width: 150px;
+	float: right;
+}
+.listingFormTextArea{
+	border: none;
+	height: 100px;
 	border-radius: 3px;
 	background-color: #eee;
 	padding-left: 3px;
@@ -347,6 +356,14 @@
 	margin-right: 15px;
 }
 
+.cardNotesBox{
+	display: inline-flex;
+	flex-direction: row;
+}
+.cardNotes{
+	margin-top: -5px;
+}
+
 #cardPrice {
 	padding-bottom: 1px;
 }
@@ -466,7 +483,7 @@
 	margin-bottom: 10px;
 	box-shadow: 4px 4px 3px #BBB;
     border-bottom-right-radius: 10px;
-	height: 340px;
+	height: 390px;
 	width: 300px;
 	padding-left: 5px;
 	text-align: left;

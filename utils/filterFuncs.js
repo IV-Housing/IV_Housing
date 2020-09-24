@@ -35,3 +35,14 @@ export function filterByPricePerPerson(price) {
 		}
 	}
 }
+
+export function filterByAvail(avail) { 
+	return (item)=>{ 
+		if(avail === "available"){
+			return item.availability; 
+		}
+		else{
+			return !(item.availability);
+		}
+	} 
+}
