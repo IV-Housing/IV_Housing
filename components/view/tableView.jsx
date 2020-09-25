@@ -21,7 +21,7 @@ export default function TableView(props){
 					{
 						props.data.map(house =>(
 							<tr key={house._id}>
-								<td><a href={house.website}>{house.address}</a></td>
+								<td><a href={house.website}>{house.addrNum + " " + house.addrStreet + " " + house.aptNum}</a></td>
 								<td>{house.company}</td>
 								<td>{house.size}</td>
 								<td>${house.totalPrice}</td>

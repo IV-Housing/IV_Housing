@@ -60,7 +60,7 @@ export default function MapView(props){
                             }}
                         >
                             <div className={utilStyles.popup}>
-                                <h3 className={utilStyles.popHead}>{selectedPark.address}</h3>
+                                <h3 className={utilStyles.popHead}>{selectedPark.addrNum + " " + selectedPark.addrStreet + " " + selectedPark.aptNum}</h3>
                                 <p className={utilStyles.popContent}>Size: {selectedPark.size}</p>
                                 <p className={utilStyles.popContent}>Total Price: ${selectedPark.totalPrice}</p>
                                 <p className={utilStyles.popContent}><a href={selectedPark.website}>More Info</a></p>

@@ -8,7 +8,7 @@ export default function Card(props) {
 	return (
 		<div className={utilStyles.card}>
 			<div className={utilStyles.cardHeader}>
-				<div id={utilStyles.cardHeaderTitle}>{props.h.address} &nbsp;▶&nbsp; {props.h.company}</div>
+				<div id={utilStyles.cardHeaderTitle}>{props.h.addrNum + " " + props.h.addrStreet + " " + props.h.aptNum} &nbsp;▶&nbsp; {props.h.company}</div>
 				<div id={utilStyles.cardHeaderSubTitle}>${props.h.totalPrice} total</div>
 			</div>
 			<div id={utilStyles.cardBody}>
