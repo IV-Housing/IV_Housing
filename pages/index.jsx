@@ -42,25 +42,27 @@ export default function Index(props){
 		setRefinedData( sortAndFilter(houses, company, street, block, size, price, priceType, avail, direction) );
 	}, [initList, company, street, block, size, price, priceType, avail, direction]);
 	
-	useEffect(() => {
-		let t = document.getElementById('tableButton');
-		let c = document.getElementById('cardButton');
-		if (view=='table') {
-			t.classList.toggle(utilStyles['clicked']);
-			if (c.classList.contains(utilStyles['clicked'])) c.classList.toggle(utilStyles['clicked']);
-		} if (view=='card') {
-			c.classList.toggle(utilStyles['clicked']);
-			if (t.classList.contains(utilStyles['clicked'])) t.classList.toggle(utilStyles['clicked']);
-		}
-	}, [view]);
+	// useEffect(() => {
+	// 	let t = document.getElementById('tableButton');
+	// 	let c = document.getElementById('cardButton');
+	// 	if (view=='table') {
+	// 		t.classList.toggle(utilStyles['clicked']);
+	// 		if (c.classList.contains(utilStyles['clicked'])) c.classList.toggle(utilStyles['clicked']);
+	// 	} if (view=='card') {
+	// 		c.classList.toggle(utilStyles['clicked']);
+	// 		if (t.classList.contains(utilStyles['clicked'])) t.classList.toggle(utilStyles['clicked']);
+	// 	}
+	// }, [view]);
 
 	return (
 		<Layout user={user} index>
 			<div className={utilStyles.containerIndex}>
-				<div className={utilStyles.indexDivs}>
+				<div className={utilStyles.filterSortInfo}>
 					<IndexForms filter={filter} sortByPrice={sortByPrice}/>
-					<DataView chosenView={view} data={refinedData} toggleTable={toggleTable} toggleCard={toggleCard}/>
 					<Info/>
+				</div>
+				<div className={utilStyles.indexDivs}>
+					<DataView chosenView={/*view*/'card'} data={refinedData} toggleTable={toggleTable} toggleCard={toggleCard}/>
 				</div>
 			</div>
 		</Layout>

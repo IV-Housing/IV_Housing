@@ -54,6 +54,7 @@ class FilterForms extends React.Component {
 
 		return (
 			<div className={utilStyles.formSelects}>
+				<h2>Filter Listings</h2>
 				<select id="companySelect" defaultValue="default" onChange={this.companyChange}>
 					<option value = "Any">Any Company</option>
                     <option value = "Subleaser">Subleaser</option>

@@ -15,6 +15,7 @@ class SortForms extends React.Component {
 	render() {
 		return (
 			<div className={utilStyles.formSelects}>
+				<h2>Sort Listings</h2>
 				<select id="sortSelectTotal" defaultValue="anyTotal" onChange={this.sortChange}>
 					<option value="anyTotal">By Total Price</option>
 					<option value="ascendingTotal">Price Low to High</option>

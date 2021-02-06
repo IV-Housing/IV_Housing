@@ -1,609 +1,651 @@
-.containerIndex{
-	padding: 15px;
-	text-align: center;
-	background-color: #f0f0f0;
-}
 
-.containerMap {
-	position: fixed;
-	padding: 15px;
-	text-align: center;
-	display: inline-flex;
-	flex-direction: row;
-	width: 100%;
-}
+@media (min-width:1200px){
+	.containerIndex{
+		background-color: #f0f0f0;
+	}
 
-.navbar{
-	position: fixed;
-	margin-block-start: 0em;
-	background-color: #0984e3;
-	display: inline-flex;
-	width: 100%;
-	height: 80px;
-	align-items: center;
-	border-bottom-style: solid;
-	border-color: #0c60a0;
-	z-index: 3;
-}
+	.filterSortInfo{
+		position: fixed;
+		top: 80px;
+		display: inline-flex;
+		flex-direction: column;
+		height: 100%;
+		width: 25%;
+		text-align: center;
+		overflow-y: scroll;
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+	.filterSortInfo::-webkit-scrollbar{
+		display: none;
+	}
 
-.navbar > h1 {
-	color: white;
-	font-weight: 300;
-	letter-spacing: 0.7px;
-	margin-left: 45px;
-}
+	.indexDivs{
+		position: fixed;
+		top: 80px;
+		right: 0px;
+		height: 100%;
+		width: 75%;
+		justify-content: center;
+		overflow-y: scroll;
+	}
 
-.navlinks {
-	position: absolute;
-	display: inline-flex;
-	right: 0px;
-}
+	/*-----------------------------------------------------------------*/
+	/* CARD/TABLE VIEW */
+	.view{
+		width: 100%;
+		margin-bottom: 100px;
+	}
 
-.navbar > .navlinks >  a {
-	border-radius: 4px;
-	padding: 15px;
-	margin-left: 5px;
-	margin-right: 5px;
-	color: white;
-} .navbar > .navlinks >  a:hover {
-	background-color: #087cd4;
-}
+	.viewContentEmpty {
+		text-align: center;
+		margin-top: 80px;
+		font-size: 20px;
+		color: #888;
+	}
 
-.navUser{
-	margin-right: 10px;
-	display: inline-flex;
-	margin-left: -20px;
-}
+	.viewContentIcon {
+		margin-top: 50px;
+		font-size: 200px;
+		color: #dfdfdf;
+	}
 
-.navLogout{
-	color: white;
-	font-size: 18px;
-	margin-left: 15px;
-	padding: 5px;
-	box-shadow: 1px 3px darkgrey;
-	background-color: #087cd4;
+	/*-----------------------------------------------------------------*/
+	/* CARD VIEW */
+	.cardView {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: auto auto auto;
+	}
 
-}
+	.card {
+		border-style: solid;
+		border-color: #bbb;
+		border-width: 1px;
+		border-radius: 3px;
+		box-shadow: 0.1px 0.1px 5px #bbb;
+		margin: 10px 10px 0px 0px;
+		padding: 15px;
+		background-color: white;
+	}
 
-.navLogin{
-	border-radius: 4px;
-	padding: 15px;
-	margin-left: -25px;
-	margin-right: 5px;
-	color: white;
-}.navLogin:hover{
-	background-color: #087cd4;
-}
+	.cardHeader {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
 
-.heroImage {
-	height: 65vh;
-	width: fit-content;
-	opacity: 0.5;
-}
+	#cardHeaderTitle {
+		color: #0984e3;;
+		font-size: 20px;
+		font-weight: bold;
+	}
 
-.searchH1{
-	text-align: middle;
-	margin-bottom: 30px;
-	margin-top: 20px;
-	color: #0984e3;
-}
+	#cardHeaderSubTitle {
+		margin-top: 3px;
+		color: #888;
+	}
 
-.mapH1{
-	text-align: left;
-	margin-left: 10px;
-	font-size: 38px;
-	color: #0984e3;
-	margin-bottom: 10px;
-}
+	#cardBody {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
 
-.indexDivs{
-	display: flex;
-	justify-content: center;
-	margin-bottom: 75px;
-	margin-top: 65px;
-}
+	#cardInfo {
+		text-align: left;
+		padding-top: 0px;
+	} .icon {
+		color: #888;
+		font-size: 18px;
+		margin-right: 15px;
+	}
 
-/*-----------------------------------------------------------------*/
-/* FORMS */
+	.cardNotesBox{
+		display: inline-flex;
+		flex-direction: row;
+	}
+	.cardNotes{
+		margin-top: -5px;
+	}
 
-.forms {
-	min-height: 400px;
-	max-height: 600px;
-	position: sticky;
-	top: 160px;
-	height: 400px;
-	text-align: left;
-	width: 260px;
-}
+	#cardPrice {
+		padding-bottom: 1px;
+	}
 
-.forms > h2 {
-	font-size: 22px;
-	color: #888;
-	margin-bottom: 5px;
-}
+	#cardBody > a > button {
+		margin-right: 25px;
+		margin-bottom: 10px;
+		background-color: white;
+		border: 1px solid #bbb;
+		border-radius: 4px;
+		padding: 4px 10px 4px 10px;
+		cursor: pointer;
+		font-size: 16px;
+		color: #888;
+	} #cardBody > a > button:hover {
+		background-color: #eee;
+		color: black;
+	}
 
-.forms > p {
-	font-size: 15px;
-	margin-top: 30px;
-	color: #888;
-}
+	.forms{
+		width: auto;
+		text-align: center;
+	}
 
-.formSelects {
-	display: inline-flex;
-	flex-direction: column;
-}
+	.formSelects > h2 {
+		color: #0984e3;
+		text-align: left;
+		margin: 5px;
+		padding: 0px;
+	}
 
-.formSelects > select {
-	cursor: pointer;
-	font-size: 20px;
-	padding: 7px;
-	margin-bottom: 4px;
-	border-left-style: none;
-	border-right-style: none;
-	border-top-style: none;
-	margin-left: 20px;
-	color: #888;
-	background-color: #f0f0f0;
-	min-width: 248px;
-} .formSelects > select:hover {
-	color: black;
-} .formSelects > select:focus {
-	outline: none;
-}
-.active {
-	background-color: #ddd !important;
-	color: black !important;
-	border-right-style: solid !important;
-	border-color: #0984e3 !important;
-	border-width: 5px !important;
-	font-weight: bold;
-	border-bottom-style: none !important;
-}
+	.formSelects {
+		display: inline-flex;
+		flex-direction: column;
+	}
 
-.radioSelect {
-	display: inline-flex;
-	flex-direction: column;
-	margin-left: 35px;
-	color: #888;
-}
+	.formSelects > select {
+		cursor: pointer;
+		font-size: 20px;
+		padding: 7px;
+		margin-bottom: 4px;
+		border-left-style: none;
+		border-right-style: none;
+		border-top-style: none;
+		margin-left: 20px;
+		color: #888;
+		background-color: #f0f0f0;
+		min-width: 248px;
+	} .formSelects > select:hover {
+		color: black;
+	} .formSelects > select:focus {
+		outline: none;
+	}
+	.active {
+		background-color: #ddd !important;
+		color: black !important;
+		border-right-style: solid !important;
+		border-color: #0984e3 !important;
+		border-width: 5px !important;
+		font-weight: bold;
+		border-bottom-style: none !important;
+	}
 
-.createContent {
-	display: inline-flex;
-	flex-direction: row;
-	width: 100%;
-	height: 700px;
-	margin-top: 30px;
-}
+	.radioSelect {
+		text-align: left;
+		display: inline-flex;
+		flex-direction: column;
+		margin-left: 35px;
+		color: #888;
+	}
 
-.listingForm{
-	margin: 15px;
-	padding: 10px;
-	margin-top: 100px;
-	margin-left: 20%;
-	text-align: center;
-	height: auto;
-	width: 750px;
-	background-color: #0984e3;
-	box-shadow: 5px 10px darkgrey;
-}
+	/*-----------------------------------------------------------------*/
+	/* INFO (text right of table) */
+	.info {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 300px;
+		color: #888;
+		font-size: 15px;
+		margin-bottom: 100px;
+	} .info > p {
+		margin-bottom: 13px;
+	} .info > a {
+		color: #888;
+	} .info > a:hover {
+		text-decoration: underline;
+		color: #888;
+	} #copywright {
+		color: #555;
+	}
 
-.listingForm > form {
-	padding: 20px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	height: 93%;
-}
 
-.listingFormRow {
-	margin-bottom: 15px;
-}
-.listingFormInput {
-	border: none;
-	height: 25px;
-	border-radius: 3px;
-	background-color: #eee;
-	padding-left: 3px;
-	width: 150px;
-	float: right;
-}
-.listingFormTextArea{
-	border: none;
-	height: 100px;
-	border-radius: 3px;
-	background-color: #eee;
-	padding-left: 3px;
-	width: 150px;
-	float: right;
-}
-.listingFormLabel{
-	color: white;
-	float: left;
-	font-weight: bold;
-}
-.listingFormLabel2{
-	color: white;
-	font-weight: bold;
-}
-.listingFormButton{
-	font-weight: bold;
-	font-size: 18px;
-	border: 0px;
-	border-radius: 4px;
-	padding: 15px;
-	margin-left: 5px;
-	margin-right: 5px;
-	background-color: #0984e3;
-	color: white;
-	cursor: pointer;
-} .listingFormButton:hover {
-	background-color: #087cd4;
-}
 
-.createInfo {
-	margin-top: 0px !important;
-	margin-left: 30px;
-}
 
-/*-----------------------------------------------------------------*/
-/* CARD/TABLE VIEW */
 
-.view {
-	margin-left: 30px;
-	margin-right: 40px;
-	width: 940px;
-	min-height: 700px;
-}
 
-.viewContentEmpty {
-	margin-top: 80px;
-	font-size: 20px;
-	color: #888;
-}
 
-.viewContentIcon {
-	margin-top: 50px;
-	font-size: 200px;
-	color: #dfdfdf;
-}
 
-/*-----------------------------------------------------------------*/
-/* VIEW BUTTONS */
-.viewButtons {
-	position: sticky;
-	position: -webkit-sticky;
-	top: 79.5px;
-	background-color: #f0f0f0;
-}
-.viewButtons > button {
-	border-style: solid;
-	width: 50%;
-	height: 60px;
-	border-color: #f0f0f0;
-	border-bottom-color: #ccc;
-	border-radius: 5px;
-	border-bottom-width: 5px;
-	background-color: #f0f0f0;
-	font-size: 20px;
-	color: #888;
-	font-weight: bold;
-}
-.viewButtons > button:hover {
-	background-color: #d8e6f2;
-	cursor: pointer;
-	color: #0984e3;
-}
-.viewButtons > button:focus {
-	outline: none;
-}
-.clicked {
-	border-bottom-color: #0984e3 !important;
-	color: #0984e3 !important;
-}
 
-/*-----------------------------------------------------------------*/
-/* CARD VIEW */
-.cardView {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-top: 20px;
-}
+	/* .containerMap {
+		position: fixed;
+		padding: 15px;
+		text-align: center;
+		display: inline-flex;
+		flex-direction: row;
+		width: 100%;
+	} */
 
-.card {
-	border-style: solid;
-	border-color: #bbb;
-	border-width: 1px;
-	border-radius: 3px;
-	box-shadow: 0.1px 0.1px 5px #bbb;
-	width: 931px;
-	margin: 10px 0px 10px 0px;
-	background-color: white;
-}
+	.navbar{
+		position: fixed;
+		margin-block-start: 0em;
+		background-color: #0984e3;
+		display: inline-flex;
+		width: 100%;
+		height: 80px;
+		align-items: center;
+		border-bottom-style: solid;
+		border-color: #0c60a0;
+		z-index: 3;
+	}
 
-.cardHeader {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	margin: 14px 28px 7px 20px;
-}
+	.navbar > h1 {
+		color: white;
+		font-weight: 300;
+		letter-spacing: 0.7px;
+		margin-left: 45px;
+	}
 
-#cardHeaderTitle {
-	color: #0984e3;;
-	font-size: 20px;
-	font-weight: bold;
-}
+	.navlinks {
+		position: absolute;
+		display: inline-flex;
+		right: 0px;
+	}
 
-#cardHeaderSubTitle {
-	margin-top: 3px;
-	color: #888;
-}
+	.navbar > .navlinks >  a {
+		border-radius: 4px;
+		padding: 15px;
+		margin-left: 5px;
+		margin-right: 5px;
+		color: white;
+	} .navbar > .navlinks >  a:hover {
+		background-color: #087cd4;
+	}
 
-#cardBody {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: flex-end;
-	margin: 7px 0px 12px 20px;
-}
+	.navUser{
+		margin-right: 10px;
+		display: inline-flex;
+		margin-left: -20px;
+	}
 
-#cardInfo {
-	text-align: left;
-	padding-top: 0px;
-} .icon {
-	color: #888;
-	font-size: 18px;
-	margin-right: 15px;
-}
+	.navLogout{
+		color: white;
+		font-size: 18px;
+		margin-left: 15px;
+		padding: 5px;
+		box-shadow: 1px 3px darkgrey;
+		background-color: #087cd4;
 
-.cardNotesBox{
-	display: inline-flex;
-	flex-direction: row;
-}
-.cardNotes{
-	margin-top: -5px;
-}
+	}
 
-#cardPrice {
-	padding-bottom: 1px;
-}
+	.navLogin{
+		border-radius: 4px;
+		padding: 15px;
+		margin-left: -25px;
+		margin-right: 5px;
+		color: white;
+	}.navLogin:hover{
+		background-color: #087cd4;
+	}
 
-#cardBody > a > button {
-	margin-right: 25px;
-	margin-bottom: 10px;
-	background-color: white;
-	border: 1px solid #bbb;
-	border-radius: 4px;
-	padding: 4px 10px 4px 10px;
-	cursor: pointer;
-	font-size: 16px;
-	color: #888;
-} #cardBody > a > button:hover {
-	background-color: #eee;
-	color: black;
-}
+	.heroImage {
+		height: 65vh;
+		width: fit-content;
+		opacity: 0.5;
+	}
 
-/*-----------------------------------------------------------------*/
-/* TABLE VIEW */
-.table {
-	color: #444;
-	width: 940px;
-	margin-top: 0px;
-}
-.table > thead th {
-	position: sticky;
-	position: -webkit-sticky;
-	top: 172px;
-	background-color: #f0f0f0;
-	height: 40px;
-	border-bottom: 3px solid #888;
-} #line {
-	position: sticky;
-	position: -webkit-sticky;
-	top: 140px;
-	border: 16px solid #f0f0f0;
-	margin: 0px;
-}
-.innerTableDiv {
-	height: 365px;
-	min-height: 365px;
-	max-height: 365px;
-	overflow-y: auto;
-}
+	.searchH1{
+		text-align: middle;
+		margin-bottom: 30px;
+		margin-top: 20px;
+		color: #0984e3;
+	}
 
-/*-----------------------------------------------------------------*/
-/* EDIT VIEW */
-.editViewBox{
-	width: 100vw;
-	height: 100vh;
-	text-align: center;
-}
-.editView {
-	padding: 0px;
-	width: auto;
-	margin-top: 100px;
-	display: inline-flex;
-	flex-direction: column;
-}
+	.mapH1{
+		text-align: left;
+		margin-left: 10px;
+		font-size: 38px;
+		color: #0984e3;
+		margin-bottom: 10px;
+	}
 
-/*-----------------------------------------------------------------*/
-/* INFO (text right of table) */
-.info {
-	position: -webkit-sticky;
-	position: sticky;
-	top: 160px;
-	text-align: left;
-	width: 300px;
-	height: 400px;
-	color: #888;
-	font-size: 15px;
-} .info > p {
-	margin-bottom: 13px;
-} .info > a {
-	color: #888;
-} .info > a:hover {
-	text-decoration: underline;
-	color: #888;
-} #copywright {
-	color: #555;
-}
+	/*-----------------------------------------------------------------*/
+	/* FORMS */
 
-/*-----------------------------------------------------------------*/
-/* FOOTER */
-.footer {
-	margin-top: 100px;
-	color: #fff;
-	font-weight: 300;
-	padding: 5px;
-	text-align: end;
-	padding-right: 60px;
-	width: 100vw;
-	height: 60px;
-}
+	/* .forms {
+		min-height: 400px;
+		max-height: 600px;
+		position: sticky;
+		top: 160px;
+		height: 600px;
+		text-align: left;
+		width: 260px;
+	} */
 
-/*-----------------------------------------------------------------*/
-/* MAP PAGE */
+	/* .forms > p {
+		font-size: 15px;
+		margin-top: 30px;
+		color: red;
+	} */
 
-.mapPage {
-	display: flex;
-	flex-direction: column;
-	height: 700px;
-}
+	.createContent {
+		display: inline-flex;
+		flex-direction: row;
+		width: 100%;
+		height: 700px;
+		margin-top: 30px;
+	}
 
-.mapDivs {
-	margin-top: 65px;
-	display: flex;
-	flex-direction: column;
-	margin-right: 20px;
-	margin-left: 30px;
-}
+	.listingForm{
+		margin: 15px;
+		padding: 10px;
+		margin-top: 100px;
+		margin-left: 20%;
+		text-align: center;
+		height: auto;
+		width: 750px;
+		background-color: #0984e3;
+		box-shadow: 5px 10px darkgrey;
+	}
 
-.mapForms {
-	margin-top: 85px;
-	margin-bottom: 10px;
-	box-shadow: 4px 4px 3px #BBB;
-    border-bottom-right-radius: 10px;
-	height: 390px;
-	width: 300px;
-	padding-left: 5px;
-	text-align: left;
-}
+	.listingForm > form {
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 93%;
+	}
 
-.mapInfo {
-	text-align: left;
-	color: #555;
-	font-size: 16px;
-	width: 300px;
-	margin-left: 10px;
-	height: 300px;
-}
+	.listingFormRow {
+		margin-bottom: 15px;
+	}
+	.listingFormInput {
+		border: none;
+		height: 25px;
+		border-radius: 3px;
+		background-color: #eee;
+		padding-left: 3px;
+		width: 150px;
+		float: right;
+	}
+	.listingFormTextArea{
+		border: none;
+		height: 100px;
+		border-radius: 3px;
+		background-color: #eee;
+		padding-left: 3px;
+		width: 150px;
+		float: right;
+	}
+	.listingFormLabel{
+		color: white;
+		float: left;
+		font-weight: bold;
+	}
+	.listingFormLabel2{
+		color: white;
+		font-weight: bold;
+	}
+	.listingFormButton{
+		font-weight: bold;
+		font-size: 18px;
+		border: 0px;
+		border-radius: 4px;
+		padding: 15px;
+		margin-left: 5px;
+		margin-right: 5px;
+		background-color: #0984e3;
+		color: white;
+		cursor: pointer;
+	} .listingFormButton:hover {
+		background-color: #087cd4;
+	}
 
-/* map and comparison container */
-.mapCompContainer{
-	margin-top: 80px;
-	display: inline-flex;
-	flex-direction: row;
-	width: 100%;
-	height: auto;
-}
+	.createInfo {
+		margin-top: 0px !important;
+		margin-left: 30px;
+	}
 
-.compContainer{
-	margin-top: 50px;
-	margin-left: 20px;
-	margin-right: 20px;
-	display: inline-flex;
-	flex-direction: column;
-	height: auto;
-	width: 100%;
-}
+	/*-----------------------------------------------------------------*/
+	/* CARD/TABLE VIEW */
 
-.comparisonView {
-	margin-top: 25px;
-	margin-left: 10px;
-	box-shadow: 4px 4px 3px #BBB;
-  border-bottom-right-radius: 10px;
-	width: 100%;
-	display: inline-flex;
-    flex-direction: column;
-}
-.comparisonView > p {
-    padding: 35px 65px 0px 65px;
-	color: #888;
-}
+	/* .view {
+		margin-left: 30px;
+		margin-right: 40px;
+		width: 940px;
+		min-height: 700px;
+	} */
 
-.comparisonView > .card {
-	margin: 0px;
-	border: none;
-    border-bottom-right-radius: 10px;
-    border-top-left-radius: 10px;
-	box-shadow: none;
-	width: auto;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	font-size: 15px;
-} .comparisonView > .card > .cardHeader > #cardHeaderTitle {
-	font-size: 17px;
-} .comparisonView > .card > #cardBody {
-	height: 100%;
-} .comparisonView > .card > #cardBody > #cardInfo {
-	height: 85%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
 
-.mapView{
-	text-align: center;
-}
 
-.marker{
-	background: transparent;
-	border: none;
-	cursor: pointer;
-	width: 25px;
-	height: 25px;
-}
+	/*-----------------------------------------------------------------*/
+	/* VIEW BUTTONS */
+	.viewButtons {
+		position: sticky;
+		position: -webkit-sticky;
+		top: 79.5px;
+		background-color: #f0f0f0;
+	}
+	.viewButtons > button {
+		border-style: solid;
+		width: 50%;
+		height: 60px;
+		border-color: #f0f0f0;
+		border-bottom-color: #ccc;
+		border-radius: 5px;
+		border-bottom-width: 5px;
+		background-color: #f0f0f0;
+		font-size: 20px;
+		color: #888;
+		font-weight: bold;
+	}
+	.viewButtons > button:hover {
+		background-color: #d8e6f2;
+		cursor: pointer;
+		color: #0984e3;
+	}
+	.viewButtons > button:focus {
+		outline: none;
+	}
+	.clicked {
+		border-bottom-color: #0984e3 !important;
+		color: #0984e3 !important;
+	}
 
-.imgView{
-	background: transparent;
-	color: blue;
-	font-size: 16px;
-}
+	/*-----------------------------------------------------------------*/
+	/* TABLE VIEW */
+	.table {
+		color: #444;
+		width: 940px;
+		margin-top: 0px;
+	}
+	.table > thead th {
+		position: sticky;
+		position: -webkit-sticky;
+		top: 172px;
+		background-color: #f0f0f0;
+		height: 40px;
+		border-bottom: 3px solid #888;
+	} #line {
+		position: sticky;
+		position: -webkit-sticky;
+		top: 140px;
+		border: 16px solid #f0f0f0;
+		margin: 0px;
+	}
+	.innerTableDiv {
+		height: 365px;
+		min-height: 365px;
+		max-height: 365px;
+		overflow-y: auto;
+	}
 
-.compButtons{
-	display: inline-block;
-	border: 1px solid #0984e3;
-	border-radius: 3px;
-	color: #0984e3;
-	background-color: white;
-	padding: 10px;
-	margin: 5px;
-	text-align: center;
-	font-size: 15px;
-	width: 135px;
-}
+	/*-----------------------------------------------------------------*/
+	/* EDIT VIEW */
+	.editViewBox{
+		width: 100vw;
+		height: 100vh;
+		text-align: center;
+	}
+	.editView {
+		padding: 0px;
+		width: auto;
+		margin-top: 100px;
+		display: inline-flex;
+		flex-direction: column;
+	}
 
-.popup{
-	height: 190px;
-	width: 350px;
-	padding: 0px;
-	margin: 0px;
-}
+	/*-----------------------------------------------------------------*/
+	/* FOOTER */
+	.footer {
+		margin-top: 100px;
+		color: #fff;
+		font-weight: 300;
+		padding: 5px;
+		text-align: end;
+		padding-right: 60px;
+		width: 100vw;
+		height: 60px;
+	}
 
-.popHead{
-	font-size: 20px;
-	margin: 5px;
-	padding: 0px;
-	text-align: middle;
-}
+	/*-----------------------------------------------------------------*/
+	/* MAP PAGE */
 
-.popContent{
-	padding: 0px;
-	margin: 5px;
-	font-size: 15px;
-	text-align: left;
-	width: 300px;
+	.mapPage {
+		display: flex;
+		flex-direction: column;
+		height: 700px;
+	}
+
+	.mapDivs {
+		margin-top: 65px;
+		display: flex;
+		flex-direction: column;
+		margin-right: 20px;
+		margin-left: 30px;
+	}
+
+	.mapForms {
+		margin-top: 85px;
+		margin-bottom: 10px;
+		box-shadow: 4px 4px 3px #BBB;
+		border-bottom-right-radius: 10px;
+		height: 390px;
+		width: 300px;
+		padding-left: 5px;
+		text-align: left;
+	}
+
+	.mapInfo {
+		text-align: left;
+		color: #555;
+		font-size: 16px;
+		width: 300px;
+		margin-left: 10px;
+		height: 300px;
+	}
+
+	/* map and comparison container */
+	.mapCompContainer{
+		margin-top: 80px;
+		display: inline-flex;
+		flex-direction: row;
+		width: 100%;
+		height: auto;
+	}
+
+	.compContainer{
+		margin-top: 50px;
+		margin-left: 20px;
+		margin-right: 20px;
+		display: inline-flex;
+		flex-direction: column;
+		height: auto;
+		width: 100%;
+	}
+
+	.comparisonView {
+		margin-top: 25px;
+		margin-left: 10px;
+		box-shadow: 4px 4px 3px #BBB;
+	border-bottom-right-radius: 10px;
+		width: 100%;
+		display: inline-flex;
+		flex-direction: column;
+	}
+	.comparisonView > p {
+		padding: 35px 65px 0px 65px;
+		color: #888;
+	}
+
+	.comparisonView > .card {
+		margin: 0px;
+		border: none;
+		border-bottom-right-radius: 10px;
+		border-top-left-radius: 10px;
+		box-shadow: none;
+		width: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 15px;
+	} .comparisonView > .card > .cardHeader > #cardHeaderTitle {
+		font-size: 17px;
+	} .comparisonView > .card > #cardBody {
+		height: 100%;
+	} .comparisonView > .card > #cardBody > #cardInfo {
+		height: 85%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.mapView{
+		text-align: center;
+	}
+
+	.marker{
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		width: 25px;
+		height: 25px;
+	}
+
+	.imgView{
+		background: transparent;
+		color: blue;
+		font-size: 16px;
+	}
+
+	.compButtons{
+		display: inline-block;
+		border: 1px solid #0984e3;
+		border-radius: 3px;
+		color: #0984e3;
+		background-color: white;
+		padding: 10px;
+		margin: 5px;
+		text-align: center;
+		font-size: 15px;
+		width: 135px;
+	}
+
+	.popup{
+		height: 190px;
+		width: 350px;
+		padding: 0px;
+		margin: 0px;
+	}
+
+	.popHead{
+		font-size: 20px;
+		margin: 5px;
+		padding: 0px;
+		text-align: middle;
+	}
+
+	.popContent{
+		padding: 0px;
+		margin: 5px;
+		font-size: 15px;
+		text-align: left;
+		width: 300px;
+	}
 }
